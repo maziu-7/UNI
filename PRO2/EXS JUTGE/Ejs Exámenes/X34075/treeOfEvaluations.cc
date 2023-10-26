@@ -1,6 +1,8 @@
 #include "treeOfEvaluations.hh"
 
 BinTree<bool> treeOfEvaluations(BinTree<string> t) {
+    if (t.empty()) return BinTree<bool>();
+
     BinTree<bool> l = treeOfEvaluations(t.left());
     BinTree<bool> r = treeOfEvaluations(t.right());
 
@@ -9,5 +11,5 @@ BinTree<bool> treeOfEvaluations(BinTree<string> t) {
 
     if (t.value() == "and") return BinTree<bool>(l.value() and r.value(),l,r);
     else if (t.value() == "or") return BinTree<bool>(l.value() or r.value(),l,r);
-    return BinTree<bool>(not l.value());
+    return BinTree<bool>(not l.value(),l,r);
 }
