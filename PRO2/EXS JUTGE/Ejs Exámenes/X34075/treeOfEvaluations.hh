@@ -1,3 +1,8 @@
+#include <iostream>
+#include <string>
+
+using namespace std;
+
 #include "BinTree.hh"
 
 // Pre:  t és un arbre no buit que representa una expressió booleana correcta
