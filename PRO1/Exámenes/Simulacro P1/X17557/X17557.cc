@@ -3,23 +3,31 @@ using namespace std;
 
 int main() {
     char x;
+    bool mid_b = false;
+    bool is_a = false;
     int c_counter = 0;
     int d_counter = 0;
-    bool no_b = false;
-    bool a_before = false;
-    bool a_after = false;
-    bool primer = false;
+    int found_d = 0;
+
     while (cin >> x) {
-        if (primer) {
-            if (x == 'a') a_before = true;
-            primer = false;
+        if (x == 'a') {
+            if (found_d != 0) {
+                d_counter += found_d;
+                found_d = 0;
+            }
+            is_a = true;
+            mid_b = false;
         }
-        if (x == 'c') {
-            if (a_before and no_b) ++c_counter;
+        else if (x == 'b') {
+            mid_b = true;
+            is_a = false;
+            found_d = 0;
         }
-        else if (x == 'd') {
-            if (a_after)
+        else if (x == 'c') {
+            if (not mid_b and is_a) ++c_counter;
+            mid_b = false;
         }
-        cout << c_counter << ' ' << d_counter << endl;
+        else ++found_d;
     }
+    cout << c_counter << ' ' << d_counter << endl;        
 }
