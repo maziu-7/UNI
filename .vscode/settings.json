@@ -1,3 +1,6 @@
 {
-    "C_Cpp.default.compilerPath": "/home/maziu7/uni/maziu-7/pro1/X12568.cc"
+    "C_Cpp.default.compilerPath": "/home/maziu7/uni/maziu-7/pro1/X12568.cc",
+    "files.associations": {
+        "iostream": "cpp"
+    }
 }
