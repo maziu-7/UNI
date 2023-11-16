@@ -8,5 +8,5 @@ int simpleAlternatedSum(int n) {
     }
     // Cas recursiu: si n és parell, restem n; si n és senar, sumem n
     if (n % 2 == 0) return -n + simpleAlternatedSum(n - 1);
-    else return n + simpleAlternatedSum(n - 1);
+    return n + simpleAlternatedSum(n - 1);
 }
