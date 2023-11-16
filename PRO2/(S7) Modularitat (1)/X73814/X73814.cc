@@ -4,10 +4,10 @@
 using namespace std;
 
 int main() {
-    int n;
-    cin >> n;
-    vector<Estudiant> v(n);
-    for (int i = 0; i < n; ++i) {
+    int N;
+    cin >> N;
+    vector<Estudiant> v(N);
+    for (int i = 0; i < N; ++i) {
         v[i].llegir();
     }
 
@@ -34,4 +34,10 @@ int main() {
     for (int i = 0; i < salida.size(); ++i) {
         salida[i].escriure();
     }
+    
+    sortida.push_back(e);
+
+    for(int i = 0; i < sortida.size(); ++i) {
+		sortida[i].escriure();
+	}
 }

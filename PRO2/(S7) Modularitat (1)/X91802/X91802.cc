@@ -1,5 +1,4 @@
 #include "Estudiant.hh"
-#include "PRO2Excepcio.hh"
 #include <vector>
 using namespace std;
 
