@@ -14,7 +14,7 @@ int main() {
     vector<Estudiant> salida;
     salida.push_back(v[0]);
     int j = 0;
-    for (int i = 0; i < n; ++i) {
+    for (int i = 0; i < N; ++i) {
         if (v[i].consultar_DNI() == salida[j].consultar_DNI()) {
             if (v[i].te_nota()) {
                 if (salida[i].te_nota()) {
