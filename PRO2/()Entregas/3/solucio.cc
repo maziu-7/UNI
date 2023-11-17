@@ -6,28 +6,41 @@
 /* Pre: el paràmetre implícit no està ple */
 /* Post: b = indica si el p.i. original conté un estudiant amb el dni d'est;
    si b = fals, s'ha afegit l'estudiant est al paràmetre implícit */
-void Cjt_estudiants::afegir_estudiant(const Estudiant &est, bool& b)
-{
-  if (nest >= MAX_NEST) throw PRO2Excepcio("Conjunt ple");
-  int i = nest - 1;
-  bool b = false;
-  int dni = est.consultar_DNI();
-  while (i >= 0 and not b) {
-    if (dni > vest[i].consultar_DNI()) b = true;
+void Cjt_estudiants::afegir_estudiant(const Estudiant &est, bool& b) {
+    int pos_est = cerca_dicot(vest, 0, nest - 1, est.consultar_DNI());
+    if (pos_est < nest and vest[pos_est].consultar_DNI() == est.consultar_DNI()) b = true;
+    //l'estudiant ja està inclós al vector
+
+    //en cas de que no ho estigui:
     else {
-        vest[i+1] = vest[i];
-        --i;
+        b = false;
+        for (int i = nest - 1; i >= pos_est; --i) {
+            vest[i + 1] = vest[i];
+        }
+        vest[pos_est] = est;
+        ++nest;
+
+        if (pos_est <= imax) ++imax;
+        if (est.te_nota()) {
+            if (imax == -1) imax = pos_est;
+            else if (est.consultar_nota() > vest[imax].consultar_nota()) imax = pos_est;
+            else if (est.consultar_nota() == vest[imax].consultar_nota()) {
+                if (est.consultar_DNI() < vest[imax].consultar_DNI()) imax = pos_est;
+            }
+        }
     }
-  }
-  //i és la posició més avançada amb el DNI més petit que dni, si n'hi ha;
-  //si no, i = -1
-  vest[i+1] = est;
-  ++nest;
 }
 
 /* Pre: cert */
 /* Post: el paràmetre implicit no conté cap estudiant sense nota */ 
-void Cjt_estudiants::eliminar_estudiants_sense_nota()
-{
-  
+void Cjt_estudiants::eliminar_estudiants_sense_nota() {
+    int est_sense_nota = 0;
+    for (int i = 0; i < nest; ++i) {
+        //fiquem els estudiants sense nota al final del vector
+        if (not vest[i].te_nota()) ++est_sense_nota;
+        else vest[i - est_sense_nota] = vest[i];
+    }
+    //modifiquem el nombre d'estudiants ja que els que no
+    //tenen nota no ens interessen
+    nest = nest - est_sense_nota;
 }
