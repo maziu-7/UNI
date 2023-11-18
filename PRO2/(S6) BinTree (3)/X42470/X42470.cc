@@ -1,30 +1,21 @@
+#include <iostream>
+#include <algorithm>
 #include "BinTree.hh"
+using namespace std;
 
-int calc_desequilibri(const BinTree<int> &a, BinTree<int> &agd) {
-    if (a.empty()) {
-        agd = BinTree<int>();
-        return 0;
-    }
-    else {
-        BinTree<int> left,right;
-        int he = 0;
-        int hd = 0;
-        if (!a.left().empty()) {
-            he = calc_desequilibri(a.left(),left) + 1;
-        }
-        else if (!a.right().empty()) {
-            hd = calc_desequilibri(a.right(),right) + 1;
-        }
-        agd = BinTree<int>(he-hd,left,right);
-
-        if (he > hd) return he;
-        return hd;
-    }
+void i_agd(const BinTree<int> &a, BinTree<int> &agd, int& h){
+	if(a.empty()) h = 0;
+	else{
+		int he, hd;
+		BinTree<int> agde,agdd;
+		i_agd(a.left(),agde,he);
+		i_agd(a.right(),agdd,hd);
+		agd = BinTree<int>(he-hd,agde,agdd);
+		h = max(he,hd)+1;
+	}
 }
 
-/* Pre: a=A */
-/* Post: agd es un arbre amb la mateixa estructura que A on cada
-   node conte el grau de desequilibri del subarbre d'A corresponent */
-void arbre_graus_desequilibri(const BinTree<int> &a, BinTree<int> &agd) {
-    calc_desequilibri(a,agd);
+void arbre_graus_desequilibri(const BinTree<int> &a, BinTree<int> &agd){
+	int h;
+	i_agd(a,agd,h);
 }
