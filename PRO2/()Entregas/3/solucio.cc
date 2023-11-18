@@ -14,20 +14,19 @@ void Cjt_estudiants::afegir_estudiant(const Estudiant &est, bool& b) {
     //en cas de que no ho estigui:
     else {
         b = false;
-        //
+        //desplaçem tots els estudiants entre pos_est i nest - 1 una posició cap a la dreta
         for (int i = nest - 1; i >= pos_est; --i) {
             vest[i + 1] = vest[i];
         }
         vest[pos_est] = est;
         ++nest;
 
-        //
+        //si pos_est es troba a una posició menor o igual a la d'imax, sumem 1 a imax
         if (pos_est <= imax) ++imax;
-        //
         if (est.te_nota()) {
-            //
+            //si no hi ha imax, pos_est es el nou imax
             if (imax == -1) imax = pos_est;
-            //
+            //en cas de que ja hi hagi, analitzem tots els possibles casos on podria canviar el seu valor
             else if (est.consultar_nota() > vest[imax].consultar_nota()) imax = pos_est;
             else if (est.consultar_nota() == vest[imax].consultar_nota()) {
                 if (est.consultar_DNI() < vest[imax].consultar_DNI()) imax = pos_est;
@@ -46,7 +45,8 @@ void Cjt_estudiants::eliminar_estudiants_sense_nota() {
         //els que tenen nota es posicionen al principi del vector, i justament
         //després van tots els que no tenen nota
         else vest[i - est_sense_nota] = vest[i];
-        //si 
+        //calculem la nova posició d'imax, ja que estem modificant la posició
+        //dels estudiants i es possible que la d'imax canviï
         if (imax == i) imax = i - est_sense_nota;
     }
     //modifiquem el nombre d'estudiants ja que els que no
