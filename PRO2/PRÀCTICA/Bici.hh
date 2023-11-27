@@ -12,7 +12,7 @@ private:
 
 public:
     bool existe_bici(string idb);
-
+    
 
 };
 

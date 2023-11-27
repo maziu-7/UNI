@@ -7,11 +7,20 @@
 #include "BinTree.hh"
 
 class Cjt_estaciones {
+    private:
+        map<string,Estacion> est;
+        BinTree<string> a_est;
+        int plazas_totales;
 
-private:
-    map<string,Estacion> e;
+        void inicializar_arbol(BinTree<string> &a);
+        //inicializar arbol
+        //inicializar map
+        //inicializar plazas libres totales
 
-public:
+    public:
+        Cjt_estaciones();
+        
+        void inicializar_estaciones();
 
 };
 
