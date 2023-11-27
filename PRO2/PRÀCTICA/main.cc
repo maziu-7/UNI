@@ -1,8 +1,10 @@
 #include "Cjt_bicis.hh"
-#include "Cjt_bicis.hh"
+#include "Cjt_estaciones.hh"
 #include "BinTree.hh"
 
 int main() {
+    //declarar estaciones y bicis
+    //inicializar estaciones
     string op;
     while (cin >> op and op != "fin") {
         if (op == "alta_bici" or "ab") {
@@ -33,7 +35,7 @@ int main() {
 
         }
         else {
-            
+
         }
     }
 }
