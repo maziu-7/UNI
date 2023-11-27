@@ -11,5 +11,5 @@ bool is_prime(int n) {
 }
 
 bool is_perfect_prime(int n) {
-     
+    if ()
 }
