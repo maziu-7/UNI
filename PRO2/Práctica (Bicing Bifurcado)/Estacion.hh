@@ -2,7 +2,6 @@
  * @file Estacion.hh
  * @brief Especificación de la clase Estacion
  */
-
 #ifndef ESTACION_HH
 #define ESTACION_HH
 
@@ -11,7 +10,6 @@
 #ifndef NO_DIAGRAM
 #include <set>
 #endif
-
 
 /**
  * @class Estacion 
