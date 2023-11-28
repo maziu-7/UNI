@@ -33,7 +33,7 @@ public:
 
      /**
      * @brief Modificadora que añade una bici a una estación
-     * \pre: string identificador de la bici
+     * \pre: string identificador de una bici y de una estación
      * \post: si la estación no existe, si la bici ya está
      * en la estación o si la bici no cabe se escribe un
      * mensaje de error en el canal de salida
