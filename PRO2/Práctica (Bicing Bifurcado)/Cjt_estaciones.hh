@@ -2,8 +2,8 @@
  * @file Cjt_estaciones.hh
  * @brief Especificación de la clase Cjt_estaciones
  */
-#ifndef CONJ_ESTACIONES_HH
-#define CONJ_ESTACIONES_HH
+#ifndef CJT_ESTACIONES_HH
+#define CJT_ESTACIONES_HH
 
 #include "Estacion.hh"
 #include "BinTree.hh"

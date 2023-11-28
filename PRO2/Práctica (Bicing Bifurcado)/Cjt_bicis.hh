@@ -2,8 +2,8 @@
  * @file Cjt_bicis.hh
  * @brief Especificación de la clase Cjt_bicis
  */
-#ifndef CONJ_BICIS_HH
-#define CONJ_BICIS_HH
+#ifndef CJT_BICIS_HH
+#define CJT_BICIS_HH
 
 #ifndef NO_DIAGRAM
 #include <iostream>
