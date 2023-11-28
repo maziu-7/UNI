@@ -5,6 +5,8 @@
 #ifndef CJT_BICIS_HH
 #define CJT_BICIS_HH
 
+#include "Bici.hh"
+
 #ifndef NO_DIAGRAM
 #include <iostream>
 #include <map>
