@@ -9,7 +9,6 @@
 #include "Bici.hh"
 
 #ifndef NO_DIAGRAM
-#include <map>
 #include <set>
 #endif
 
