@@ -30,7 +30,7 @@ public:
     /**
      * @brief Constructora por defecto
      * \pre: cierto
-     * \post: Una clase Estacion vacía para guardar los
+     * \post: una clase Estacion vacía para guardar los
      * identificadores de las bicis que contiene 
      */
     Estacion();

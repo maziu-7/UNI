@@ -1,6 +1,6 @@
+#include "Estacion.hh"
 #include "Cjt_bicis.hh"
 #include "Cjt_estaciones.hh"
-#include "BinTree.hh"
 
 int main() {
     //declarar estaciones y bicis
