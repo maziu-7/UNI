@@ -13,8 +13,8 @@ using namespace std;
 
 /**
  * @class Bici 
- * @brief Contiene los viajes que realiza cada bici en una lista
- * de pares de strings, con su estación de origen y su estación de destino.
+ * @brief Contiene los viajes que realiza cada bici en un vector
+ * de strings, con su estación de origen y su estación de destino.
  */
 class Bici {
 
