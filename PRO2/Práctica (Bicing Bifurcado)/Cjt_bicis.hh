@@ -31,7 +31,7 @@ public:
      */
     Cjt_bicis();
 
-     /**
+    /**
      * @brief Modificadora que añade una bici a una estación
      * \pre: string identificador de una bici y de una estación
      * \post: si la estación no existe, si la bici ya está
