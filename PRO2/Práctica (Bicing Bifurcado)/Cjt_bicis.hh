@@ -41,7 +41,7 @@ public:
     void alta_bici(string idb, string ide);
 
     /**
-     * @brief Modificadora que da de baja la bici especificada
+     * @brief Modificadora que da de baja una bici
      * \pre: string identificador de la bici
      * \post: si la bici no existe se produce un mensaje de error
      * en el canal de salida, en caso contrario, se elimina la bici
