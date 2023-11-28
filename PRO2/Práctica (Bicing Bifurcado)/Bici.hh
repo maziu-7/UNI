@@ -3,12 +3,12 @@
 
 #include <iostream>
 #include <list>
+using namespace std;
 
 class Bici {
 
 private:
-    string idb;
-    string estacion;
+    list<pair<string,string>> viajes; //
 
 public:
     bool existe_bici(string idb);
