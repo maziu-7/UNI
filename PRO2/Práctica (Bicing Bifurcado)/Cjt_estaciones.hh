@@ -16,7 +16,7 @@
 class Cjt_estaciones {
 
 private:
-    BinTree<Estacion> arbol_estaciones;
+    BinTree<string> arbol_estaciones;
     map<string,Estacion> estacion;
     int plazas_totales;
 
@@ -35,15 +35,33 @@ public:
     Cjt_estaciones();
 
     /**
-     * @brief Lee los parámetros de entrada y va
-     * añadiéndolos a Cjt_estaciones
-     * \pre: ha de estar creado un árbol vacío
+     * @brief Lee los parámetros de entrada y va añadiéndolos
+     * a Cjt_estaciones
+     * \pre: árbol de strings (identificadores de estación) vacío
      * \post: los parámetros se guardan en el árbol
      */
     void inicializar_estaciones();
 
     /**
-     * @brief Consultora que indica si existe la estación
+     * @brief Modificadora que añade una bici a una estación
+     * \pre: string identificador de la bici
+     * \post: si la estación no existe, si la bici ya está
+     * en la estación o si la bici no cabe se escribe un
+     * mensaje de error en el canal de salida
+     */
+    void alta_bici(string idb, string ide);
+
+    /**
+     * @brief Modificadora que da de baja la bici especificada
+     * \pre: string identificador de la bici
+     * \post: si la bici no existe se produce un mensaje de error
+     * en el canal de salida, en caso contrario, se elimina la bici
+     * del sistema, modificando también las plazas libres de la estación
+     */
+    void baja_bici(string idb, string ide);
+
+    /**
+     * @brief Consultora que indica si existe una estación
      * \pre: string identificador de la estación
      * \post: si la estación no existe, devuelve falso
      */
@@ -51,13 +69,21 @@ public:
 
     /**
      * @brief Modificadora que mueve una bici de una estación a otra
-     * \pre: string identificador de la estación destino y el string
-     * identificador de la bicicleta
+     * \pre: string identificador de la estación destino y string
+     * identificador de la bici
      * \post: si la estación destino o la bici no existen, si la
      * estación destino es igual a la estación origen o si la bici no
-     * cabe en la estación destino, se produce un error
+     * cabe en la estación destino, se escribe un error en el canal de salida
      */
     void mover_bici(string destino, string idb);
+
+    /**
+     * @brief Consultora que indica si una estación está llena
+     * \pre: cierto
+     * \post: si la estación no existe, se escribe un mensaje de error
+     * en el canal de salida
+     */
+    bool estacion_llena(string ide) const;
 
     /**
      * @brief ?
@@ -73,5 +99,4 @@ public:
      */
     Estacion leer(string ide);
 };
-
 #endif

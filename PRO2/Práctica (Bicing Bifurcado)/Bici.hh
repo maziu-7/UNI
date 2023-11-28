@@ -7,48 +7,56 @@
 
 #ifndef NO_DIAGRAM
 #include <iostream>
-#include <list>
+#include <vector>
 using namespace std;
 #endif
 
 /**
  * @class Bici 
- * @brief Contiene los viajes que realiza cada bici
- * en una lista de pares de strings, con su estación
- * de origen y su estación de destino.
+ * @brief Contiene los viajes que realiza cada bici en una lista
+ * de pares de strings, con su estación de origen y su estación de destino.
  */
 class Bici {
 
 private:
-    list<pair<string,string>> viajes_bici; //viajes de cada bici
+    vector<string> viajes_bici; //viajes de cada bici
+    string estacion;
 
 public:
     /**
      * @brief Constructora por defecto
      * \pre: cierto
-     * \post: una bici Bici vacía donde se guardan los
-     * viajes que ha hecho una bici
+     * \post: una clase Bici vacía donde se guardan los viajes
+     * que ha hecho una bici
      */
     Bici();
 
     /**
-     * @brief Modificadora que añade un viaje a la bici Bici
+     * @brief Modificadora que añade un viaje a una bici
      * \pre: dos strings de identificación de estación, origen y destino
      * \post: si la estación no existe, si la bici no existe,
      * si la bici no cabe o si origen y destino son iguales,
-     * se produce un mensaje de error, sino, se añade el nuevo
-     * viaje a viajes_bici
+     * se escribe un mensaje de error en el canal de salida,
+     * en caso contrario, se añade el viaje nuevo a viajes_bici
      */
     void viaje_nuevo(string origen, string destino);
 
     /**
-     * @brief Escritora que escribe todos los viajes de una bici
-     * \pre: string de identificador de la bici
-     * \post: si la estación no existe escribe un mensaje
-     * de error, sino, escribe en el canal de salida todos
-     * los viajes hechos por la bici identificada
+     * @brief Escritora que imprime todos los viajes de una bici
+     * \pre: string identificador de la bici
+     * \post: si la estación no existe escribe un mensaje de error en
+     * el canal de salida
      */
-    Bici imprimir_viajes(string idb);
-};
+    void imprimir_viajes(string idb);
 
+    /**
+     * @brief 
+     */
+    string consultar_estacion() const;
+    
+    /**
+     * @brief  
+     */
+    void cambiar_estacion(string ide);
+};
 #endif
