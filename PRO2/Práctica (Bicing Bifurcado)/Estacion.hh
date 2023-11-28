@@ -16,7 +16,7 @@
 /**
  * @class Estacion 
  * @brief Contiene las bicis que hay en una estación, almacenadas
- * en un mapa con sus respectivos identificadores y viajes
+ * en un set con sus respectivos identificadores y viajes
  */
 class Estacion {
 
