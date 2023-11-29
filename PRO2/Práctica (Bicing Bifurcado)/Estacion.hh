@@ -73,7 +73,7 @@ public:
     bool estacion_llena() const;
 
     /**
-     * @brief Consultora que indica qué bicis contiene la estación
+     * @brief Consultora que indica qué bicis contiene una estación
      * \pre: string identificador de la estación
      * \post: si la estación no existe se escribe un mensaje de error
      * en el canal de salida
