@@ -18,7 +18,7 @@ int numberSubsequences(const string &s, char c1, char c2, char c3) {
          */
         if (s[i] == c1) ++count_c1;
         else if (s[i] == c2) count_c2 += count_c1;
-        else count_c3 += count_c2;
+        else if (s[i] == c3) count_c3 += count_c2;
     }
     //Retornamos count_c3 porque es donde se acumulan todas las posibilidades totales
     //de subsecuencias entre c1, c2 y c3.
