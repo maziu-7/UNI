@@ -33,12 +33,12 @@ public:
 
     /**
      * @brief Modificadora que añade una bici a una estación
-     * \pre: string identificador de la bici
+     * \pre: string identificador de la bici y de la estación
      * \post: si la estación no existe, si la bici ya está
      * en la estación o si la bici no cabe se escribe un
      * mensaje de error en el canal de salida
      */
-    void alta_bici(string idb);
+    void alta_bici(string idb, string ide);
 
     /**
      * @brief Modificadora que da de baja la bici especificada
