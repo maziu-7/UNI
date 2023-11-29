@@ -78,6 +78,6 @@ public:
      * \post: si la estación no existe se escribe un mensaje de error
      * en el canal de salida
      */
-    void bicis_estacion(string ide);
+    void bicis_estacion(string ide) const;
 };
 #endif
