@@ -20,7 +20,7 @@
 class Cjt_bicis {
 
 private:
-    map<string,Bici> conjunto_bicis; //
+    map<string,Bici> conjunto_bicis; //identificadores de las bicis junto a sus viajes
 
 public:
     /**
@@ -52,7 +52,16 @@ public:
     /**
      * @brief 
      */
-    void cambiar_estacion(string idb, string ide);
+    void mover_bici(string idb, string ide);
+
+    /**
+     * @brief Lectora que devuelve la estación correspondiente
+     * a su identificador
+     * \pre: string identificador de la estación
+     * \post: si la estación no existe se escribe un mensaje
+     * de error en el canal de salida
+     */
+    Estacion leer(string ide);
 
     /**
      * @brief Consultora que indica si existe una bici

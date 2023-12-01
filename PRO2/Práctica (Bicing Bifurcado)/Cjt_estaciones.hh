@@ -58,7 +58,7 @@ public:
      * en el canal de salida, en caso contrario, se elimina la bici
      * del sistema, modificando también las plazas libres de la estación
      */
-    void baja_bici(string idb, string ide);
+    void baja_bici(string idb);
 
     /**
      * @brief Consultora que indica si existe una estación
@@ -83,7 +83,17 @@ public:
      * \post: si la estación no existe, se escribe un mensaje de error
      * en el canal de salida
      */
-    bool estacion_llena(string ide) const;
+    bool estacion_llena() const;
+
+    /**
+     * @brief Modificadora que altera la capacidad de la estación especificada
+     * \pre: string identificador de la estación y un entero
+     * estrictamente positivo
+     * \post: si la estación no existe o si el entero es un número
+     * menor a la cantidad de bicis que hay actualmente en la estación,
+     * se escribe un error en el canal de salida
+     */
+    void modificar_capacidad(int n);
 
     /**
      * @brief ?
@@ -98,5 +108,18 @@ public:
      * de error en el canal de salida
      */
     Estacion leer(string ide);
+
+    /**
+     * @brief Consultora que indica qué bicis contiene una estación
+     * \pre: string identificador de la estación
+     * \post: si la estación no existe se escribe un mensaje de error
+     * en el canal de salida
+     */
+    void bicis_estacion(string ide) const;
+
+    /**
+     * @brief 
+     */
+    int cantidad_bicis(string ide) const;
 };
 #endif

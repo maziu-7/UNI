@@ -57,6 +57,6 @@ public:
     /**
      * @brief  
      */
-    void cambiar_estacion(string ide);
+    void mover_bici(string ide);
 };
 #endif
