@@ -18,7 +18,7 @@ class Cjt_estaciones {
 private:
     BinTree<string> arbol_estaciones;
     map<string,Estacion> estacion;
-    int plazas_totales;
+    int plazas_libres_totales;
 
     void inicializar_arbol(BinTree<string> &a);
     //inicializar arbol
