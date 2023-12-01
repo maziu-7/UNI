@@ -13,14 +13,14 @@ using namespace std;
 
 /**
  * @class Bici 
- * @brief Contiene los viajes que realiza cada bici en un vector
- * de strings, con su estación de origen y su estación de destino.
+ * @brief Contiene los viajes que realiza cada bici en una lista
+ * de pair de strings, con su estación de origen y su estación de destino.
  */
 class Bici {
 
 private:
     list<pair<string,string>> viajes_bici; //viajes de cada bici
-    string estacion;
+    string estacion; //identificador de estación de la bici
 
 public:
     /**

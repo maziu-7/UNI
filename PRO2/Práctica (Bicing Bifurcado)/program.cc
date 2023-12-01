@@ -5,7 +5,7 @@
 int main() {
     Cjt_estaciones e;
     Cjt_bicis b;
-    e.inicializar_estaciones();
+    e.inicializar_estaciones(); //hacerlo en el .cc para probar casos
     string op;
     while (cin >> op and op != "fin") {
         string idb, ide;
