@@ -43,7 +43,7 @@ public:
 
     /**
      * @brief Escritora que imprime todos los viajes de una bici
-     * \pre: string identificador de la bici
+     * \pre: cierto
      * \post: si la estación no existe escribe un mensaje de error en
      * el canal de salida
      */
