@@ -62,10 +62,10 @@ public:
 
     /**
      * @brief Consultora que indica si existe una estación
-     * \pre: string identificador de la estación
+     * \pre: cert
      * \post: si la estación no existe, devuelve falso
      */
-    bool existe_estacion(string ide);
+    bool existe_estacion(string ide) const;
 
     /**
      * @brief Modificadora que mueve una bici de una estación a otra
@@ -99,15 +99,6 @@ public:
      * @brief ?
      */
     void subir_bicis();
-
-    /**
-     * @brief Lectora que devuelve la estación correspondiente
-     * a su identificador
-     * \pre: string identificador de la estación
-     * \post: si la estación no existe se escribe un mensaje
-     * de error en el canal de salida
-     */
-    Estacion leer(string ide);
 
     /**
      * @brief Consultora que indica qué bicis contiene una estación

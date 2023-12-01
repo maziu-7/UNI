@@ -47,7 +47,7 @@ public:
      * \post: si la estación no existe escribe un mensaje de error en
      * el canal de salida
      */
-    void imprimir_viajes(string idb);
+    void imprimir_viajes();
 
     /**
      * @brief 

@@ -55,21 +55,20 @@ public:
     void mover_bici(string idb, string ide);
 
     /**
-     * @brief Lectora que devuelve la estación correspondiente
-     * a su identificador
-     * \pre: string identificador de la estación
-     * \post: si la estación no existe se escribe un mensaje
-     * de error en el canal de salida
-     */
-    Estacion leer(string ide);
-
-    /**
      * @brief Consultora que indica si existe una bici
      * \pre: string identificador de la bici
      * \post: si la bici no existe se escribe un mensaje
      * error en el canal de salida 
      */
     bool existe_bici(string idb);
+
+    /**
+     * @brief Escritora que imprime todos los viajes de una bici
+     * \pre: string identificador de la bici
+     * \post: si la estación no existe escribe un mensaje de error en
+     * el canal de salida
+     */
+    void imprimir_viajes(string idb);
 
     /**
      * @brief Consultora que indica en qué estación
