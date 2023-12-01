@@ -22,7 +22,8 @@ int main() {
         }
         else if (op == "baja_bici" or op == "bb") {
             cin >> idb;
-            if (not b.existe_bici(idb)) cout << "error: no existe la bici" << endl;
+            cout << "#bb " << idb << endl;
+            if (not b.existe_bici(idb)) cout << "error: la bici no existe" << endl;
             else {
                 e.baja_bici(idb);
                 b.baja_bici(idb);
@@ -31,20 +32,23 @@ int main() {
 
         else if (op == "estacion_bici" or op == "eb") {
             cin >> idb;
-            if (not b.existe_bici(idb)) cout << "error: no existe la bici" << endl;
+            cout << "#eb " << idb << endl;
+            if (not b.existe_bici(idb)) cout << "error: la bici no existe" << endl;
             else cout << b.estacion_bici(idb) << endl;
         }
 
         else if (op == "viajes_bici" or op == "vb") {
             cin >> idb;
-            if (not b.existe_bici(ide)) cout << "error: no existe la bici" << endl;
+            cout << "#vb " << idb << endl;
+            if (not b.existe_bici(ide)) cout << "error: la bici no existe" << endl;
             else b.imprimir_viajes(idb);
         }
 
         else if (op == "mover_bici" or op == "mb") {
             cin >> idb >> ide;
-            if (not b.existe_bici(ide)) cout << "error: no existe la estacion" << endl;
-            else if (not b.existe_bici(idb)) cout << "error: no existe la bici" << endl;
+            cout << "#mb " << idb << ' ' << ide << endl;
+            if (not e.existe_estacion(ide)) cout << "error: la estacion no existe" << endl;
+            else if (not b.existe_bici(idb)) cout << "error: la bici no existe" << endl;
             //else if (b.iguales(ide,idb)) cout << "error: la bici ya esta en el sitio" << endl;
             else if (e.estacion_llena()) cout << "error: la bici no cabe" << endl;
             else {
@@ -54,20 +58,22 @@ int main() {
 
         else if (op == "bicis_estacion" or op == "be") {
             cin >> ide;
-            if (not b.existe_bici(ide)) cout << "error: no existe la estacion" << endl;
+            cout << "#be " << ide << endl;
+            if (not b.existe_bici(ide)) cout << "error: la estacion no existe" << endl;
             else e.bicis_estacion(ide);
         }
 
         else if (op == "modificar_capacitat" or op == "mc") {
-            cin >> ide;
             int n;
-            cin >> n;
-            if (not b.existe_bici(ide)) cout << "error: no existe la estacion" << endl;
+            cin >> ide >> n;
+            cout << "#mc " << ide << ' ' << n << endl;
+            if (not b.existe_bici(ide)) cout << "error: la estacion no existe" << endl;
             else if (e.cantidad_bicis(ide) < n) cout << "error: capacidad insuficiente" << endl;
             else e.modificar_capacidad(n);
         }
 
         else if (op == "plazas_libres" or op == "pl") {
+            cout << "#pl" << endl;
             //cout << e.plazas_libres() << endl;
         }
 
