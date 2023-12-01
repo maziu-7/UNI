@@ -96,7 +96,7 @@ public:
     void modificar_capacidad(int n);
 
     /**
-     * @brief ?
+     * @brief 
      */
     void subir_bicis();
 

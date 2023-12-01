@@ -12,9 +12,9 @@ int main() {
         if (op == "alta_bici" or op == "ab") {
             cin >> idb >> ide;
             cout << "#ab " << idb << " " << ide << endl;
-            if(b.existe_bici(idb)) cout << "error" << endl;
-            else if(not e.existe_estacion(ide)) cout << "error" << endl;
-            else if(e.estacion_llena()) cout << "error" << endl;
+            if (b.existe_bici(idb)) cout << "error" << endl;
+            else if (not e.existe_estacion(ide)) cout << "error" << endl;
+            else if (e.estacion_llena()) cout << "error" << endl;
             else {
                 b.alta_bici(idb,ide);
                 e.alta_bici(idb,ide);
@@ -23,7 +23,10 @@ int main() {
         else if (op == "baja_bici" or op == "bb") {
             cin >> idb;
             if (not b.existe_bici(idb)) cout << "error: no existe la bici" << endl;
-            else e.baja_bici(idb);
+            else {
+                e.baja_bici(idb);
+                b.baja_bici(idb);
+            }
         }
 
         else if (op == "estacion_bici" or op == "eb") {

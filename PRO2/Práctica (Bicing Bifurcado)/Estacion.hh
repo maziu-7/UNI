@@ -52,7 +52,7 @@ public:
     /**
      * @brief 
      */
-    string bici_seleccionada_para_subir();
+    string bici_sube();
 
     /**
      * @brief Modificadora que altera la capacidad de la estación especificada
@@ -74,10 +74,10 @@ public:
 
     /**
      * @brief Consultora que indica qué bicis contiene una estación
-     * \pre: string identificador de la estación
+     * \pre: cierto
      * \post: si la estación no existe se escribe un mensaje de error
      * en el canal de salida
      */
-    void bicis_estacion(string ide) const;
+    void bicis_estacion() const;
 };
 #endif
