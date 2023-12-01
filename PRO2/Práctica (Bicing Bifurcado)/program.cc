@@ -76,7 +76,7 @@ int main() {
         }
 
         else if (op == "plazas_libres" or op == "pl") {
-            //cout << b.plazas_libres() << endl;
+            //cout << e.plazas_libres() << endl;
         }
 
         else if (op == "subir_bicis" or op == "sb") {

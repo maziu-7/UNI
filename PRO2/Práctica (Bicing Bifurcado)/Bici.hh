@@ -7,7 +7,7 @@
 
 #ifndef NO_DIAGRAM
 #include <iostream>
-#include <vector>
+#include <list>
 using namespace std;
 #endif
 
@@ -19,7 +19,7 @@ using namespace std;
 class Bici {
 
 private:
-    vector<string> viajes_bici; //viajes de cada bici
+    list<pair<string,string>> viajes_bici; //viajes de cada bici
     string estacion;
 
 public:
