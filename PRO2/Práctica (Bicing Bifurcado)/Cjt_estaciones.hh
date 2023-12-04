@@ -112,5 +112,10 @@ public:
      * @brief 
      */
     int cantidad_bicis(string ide) const;
+
+    /**
+     * @brief 
+     */
+    void i_subir_bicis();
 };
 #endif
