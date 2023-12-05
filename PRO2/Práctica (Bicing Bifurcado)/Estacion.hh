@@ -20,7 +20,7 @@ class Estacion {
 
 private:
     set<string> Bicis; //identificador de la bici junto a sus viajes
-    int plazas_libres; //plazas libres de una estación
+    int pl_estacion; //plazas libres de una estación
 
 public:
     /**

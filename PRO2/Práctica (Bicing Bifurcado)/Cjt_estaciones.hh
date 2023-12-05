@@ -8,6 +8,10 @@
 #include "Estacion.hh"
 #include "BinTree.hh"
 
+#ifndef NO_DIAGRAM
+#include <map>
+#endif
+
 /**
  * @class Cjt_estaciones 
  * @brief Contiene todas las estaciones en un árbol de
@@ -18,7 +22,7 @@ class Cjt_estaciones {
 private:
     BinTree<string> arbol_estaciones;
     map<string,Estacion> estacion;
-    int plazas_libres_totales;
+    int pl_totales;
 
     void inicializar_arbol(BinTree<string> &a);
     //inicializar arbol
