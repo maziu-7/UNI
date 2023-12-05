@@ -12,7 +12,7 @@ using namespace std;
 #endif
 
 /**
- * @class Bici 
+ * @class Bici
  * @brief Contiene los viajes que realiza cada bici en una lista
  * de pair de strings, con su estación de origen y su estación de destino.
  */
