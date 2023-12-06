@@ -1,9 +1,7 @@
 #include "Cjt_estaciones.hh"
 using namespace std;
 
-Cjt_estaciones::Cjt_estaciones() {
-    
-}
+Cjt_estaciones::Cjt_estaciones() {}
 
 void Cjt_estaciones::inicializar_arbol(BinTree<string>& a) {
     string ide;
@@ -41,8 +39,7 @@ bool Cjt_estaciones::existe_estacion(string ide) const {
 }
 
 /*void Cjt_estaciones::mover_bici(string destino, string idb) {
-    bici -> estacion -> cjt estaciones?
-    viaje nuevo
+    
 }*/
 
 bool Cjt_estaciones::estacion_llena(const string ide) {
@@ -70,15 +67,26 @@ int Cjt_estaciones::plazas_totales() const {
 
 }*/
 
-/*void Cjt_estaciones::i_subir_bicis(const BinTree<string>& a, Cjt_bicis& cb) {
-    if (cas base) {
-        ...
-    }
-    else {
+void Cjt_estaciones::i_subir_bicis(const BinTree<string>& a, Cjt_bicis& cb) {
+    if (not a.right().empty() and not a.left().empty()) {
+        map<string, Estacion>::iterator it = estaciones.begin();
+        it = estaciones.find(a.value());
+        map<string, Estacion>::iterator izq = estaciones.begin();
+        izq = estaciones.find(a.left().value());
+        map<string, Estacion>::iterator der = estaciones.begin();
+        der = estaciones.find(a.right().value());
+        while(not (*it).second.estacion_llena() and ((*izq).second.cantidad_bicis() != 0 or (*der).second.cantidad_bicis() != 0)) {
+            if ((*der).second.cantidad_bicis() > (*der).second.cantidad_bicis()) {
+                //mover_bici();
+            }
 
+            /*else {
+
+            }*/
+        }
     }
-    
-    primero a.left despues a.right
+}
+/*primero a.left despues a.right
     calculo:
         condiciones del bucle:
             -espacio en el padre
@@ -87,4 +95,4 @@ int Cjt_estaciones::plazas_totales() const {
                 -cual izq o der tiene mas bicis
                 -en caso de empate coger la bici con menor id
     llamadas recursivas a los hijos
-}*/
+*/

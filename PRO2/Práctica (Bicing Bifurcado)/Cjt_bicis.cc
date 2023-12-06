@@ -1,9 +1,7 @@
 #include "Cjt_bicis.hh"
 using namespace std;
 
-Cjt_bicis::Cjt_bicis() {
-
-}
+Cjt_bicis::Cjt_bicis() {}
 
 void Cjt_bicis::anadir_bici(string idb) {
     Bici b;
@@ -26,4 +24,10 @@ bool Cjt_bicis::existe_bici(string idb) {
 
 string Cjt_bicis::estacion_bici(string idb) {
     return conjunto_bicis.find(idb)->first;
+}
+
+void Cjt_bicis::imprimir_viajes(string idb) {
+    map<string, Bici>::iterator it;
+    it = conjunto_bicis.find(idb);
+    (*it).second.imprimir_viajes();
 }

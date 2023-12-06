@@ -1,9 +1,7 @@
 #include "Estacion.hh"
 using namespace std;
 
-Estacion::Estacion() {
-
-}
+Estacion::Estacion() {}
 
 void Estacion::anadir_bici(string idb) {
     Bici b;

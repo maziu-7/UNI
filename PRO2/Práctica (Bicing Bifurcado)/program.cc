@@ -46,7 +46,7 @@ int main() {
             cin >> idb;
             cout << "#vb " << idb << endl;
             if (not b.existe_bici(ide)) cout << "error: la bici no existe" << endl;
-            //else b.imprimir_viajes(idb);
+            else b.imprimir_viajes(idb);
         }
 
         else if (op == "mover_bici" or op == "mb") {
@@ -83,11 +83,12 @@ int main() {
         }
 
         else if (op == "subir_bicis" or op == "sb") {
-            
+            cout << "#sb" << endl;
         }
 
         else if (op == "asignar_estacion" or op == "ae") {
-            
+            cin >> idb;
+            cout << "#ae " << idb << endl; 
         }
     }
 }

@@ -70,5 +70,10 @@ public:
      * de error en el canal de salida
      */
     string estacion_bici(string idb);
+
+    /**
+     * @brief 
+     */
+    void imprimir_viajes(string idb);
 };
 #endif
