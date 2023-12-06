@@ -38,9 +38,9 @@ bool Cjt_estaciones::existe_estacion(string ide) const {
     return true;
 }
 
-/*void Cjt_estaciones::mover_bici(string destino, string idb) {
+void Cjt_estaciones::mover_bici(string idb, string ide) {
     
-}*/
+}
 
 bool Cjt_estaciones::estacion_llena(const string ide) {
     if ((*estaciones.find(ide)).second.estacion_llena()) return true;

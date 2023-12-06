@@ -12,11 +12,6 @@ void Cjt_bicis::eliminar_bici(string idb) {
     conjunto_bicis.erase(idb);
 }
 
-/*bool Cjt_bicis::estaciones_iguales(const string ide, const string idb) {
-    if ( == ide) return true;
-    return false;
-}*/
-
 bool Cjt_bicis::existe_bici(string idb) {
     if (conjunto_bicis.find(idb) == conjunto_bicis.end()) return false;
     return true;
@@ -30,4 +25,12 @@ void Cjt_bicis::imprimir_viajes(string idb) {
     map<string, Bici>::iterator it;
     it = conjunto_bicis.find(idb);
     (*it).second.imprimir_viajes();
+}
+
+void Cjt_bicis::mover_bici(string idb, string ide) {
+    map<string, Bici>::iterator it;
+}
+
+void Cjt_bicis::modificar_estacion(string idb, string ide) {
+    
 }

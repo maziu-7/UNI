@@ -48,5 +48,10 @@ public:
      * el canal de salida
      */
     void imprimir_viajes();
+
+    /**
+     * @brief 
+     */
+    void mover_bici(string ide);
 };
 #endif

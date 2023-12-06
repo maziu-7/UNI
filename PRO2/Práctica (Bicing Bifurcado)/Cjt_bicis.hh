@@ -50,11 +50,6 @@ public:
     void eliminar_bici(string idb);
 
     /**
-     * @brief
-     
-    bool estaciones_iguales(const string ide, const string idb);*/
-
-    /**
      * @brief Consultora que indica si existe una bici
      * \pre: string identificador de la bici
      * \post: si la bici no existe se escribe un mensaje
@@ -75,5 +70,15 @@ public:
      * @brief 
      */
     void imprimir_viajes(string idb);
+
+    /**
+     * @brief 
+     */
+    void mover_bici(string idb, string ide);
+
+    /**
+     * @brief 
+     */
+    void modificar_estacion(string idb, string ide);
 };
 #endif

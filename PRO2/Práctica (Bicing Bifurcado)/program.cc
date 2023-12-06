@@ -56,9 +56,9 @@ int main() {
             else if (not b.existe_bici(idb)) cout << "error: la bici no existe" << endl;
             else if (b.estacion_bici(idb) == ide) cout << "error: la bici ya esta en el sitio" << endl;
             else if (e.estacion_llena(ide)) cout << "error: la bici no cabe" << endl;
-            /*else {
+            else {
                 b.mover_bici(ide,idb);
-            }*/
+            }
         }
 
         else if (op == "bicis_estacion" or op == "be") {
@@ -68,7 +68,7 @@ int main() {
             else e.bicis_estacion(ide);
         }
 
-        else if (op == "modificar_capacitat" or op == "mc") {
+        else if (op == "modificar_capacidad" or op == "mc") {
             int n;
             cin >> ide >> n;
             cout << "#mc " << ide << ' ' << n << endl;

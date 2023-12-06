@@ -16,3 +16,7 @@ void Bici::imprimir_viajes() {
         cout << pos->first << ' ' << pos->second << endl;
     }
 }
+
+void Bici::mover_bici(string ide) {
+    
+}

@@ -77,7 +77,7 @@ public:
      * estación destino es igual a la estación origen o si la bici no
      * cabe en la estación destino, se escribe un error en el canal de salida
      */
-    void mover_bici(string destino, string idb);
+    void mover_bici(string idb, string ide);
 
     /**
      * @brief Consultora que indica si una estación está llena
