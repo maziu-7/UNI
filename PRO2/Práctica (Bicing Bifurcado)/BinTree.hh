@@ -21,29 +21,29 @@ using namespace std;
 template <typename T>
 class BinTree {
 
-    struct Node {
-        T x;
-        shared_ptr<Node> left;
-        shared_ptr<Node> right;
+  struct Node {
+    T x;
+    shared_ptr<Node> left;
+    shared_ptr<Node> right;
 
-        Node (const T& x, shared_ptr<Node> left, shared_ptr<Node> right)
-        :   x(x), left(left), right(right)
-        {   }
+    Node (const T& x, shared_ptr<Node> left, shared_ptr<Node> right)
+      :   x(x), left(left), right(right)
+    {   }
 
-    };
+  };
 
-    // A tree only holds a node pointer.
-    shared_ptr<Node> p;
+  // A tree only holds a node pointer.
+  shared_ptr<Node> p;
 
-    // Constructs a tree from a node pointer.
-    BinTree (shared_ptr<Node> p)
+  // Constructs a tree from a node pointer.
+  BinTree (shared_ptr<Node> p)
     :   p(p)
-    {   }    
+  {   }    
     
-    // Notes:
-    //   - default operator=() is good.
-    //   - default destructor is good. Θ(n) where n is the number of nodes in the tree.
-    //   - std::swap() already works by default.
+  // Notes:
+  //   - default operator=() is good.
+  //   - default destructor is good. Θ(n) where n is the number of nodes in the tree.
+  //   - std::swap() already works by default.
 
 
 
@@ -87,62 +87,66 @@ class BinTree {
   
 public:
 
-    // Constructs an empty tree. Θ(1).
-    BinTree ()
+  // Constructs an empty tree. Θ(1).
+  BinTree ()
     :   p(nullptr)
-    {
-      inputformat = outputformat = INLINEFORMAT;
-    }
+  {
+    inputformat = outputformat = INLINEFORMAT;
+  }
     
-  	BinTree(const BinTree<int>&t) {
-    	p = t.p;
-    	inputformat=t.inputformat;
-    	outputformat=t.outputformat;
-  	}
+  BinTree(const BinTree &t) {
+    p = t.p;
+    inputformat=t.inputformat;
+    outputformat=t.outputformat;
+  }
     
-	BinTree &operator=(const BinTree &t) {
-    	p = t.p;
-    	return *this;
-  	}
+  BinTree &operator=(const BinTree &t) {
+    inputformat=t.inputformat;
+    outputformat=t.outputformat;
+    p = t.p;
+    return *this;
+  }
 	
-    // Constructs a tree with a value x and no subtrees. Θ(1).
-    explicit BinTree (const T& x) {
-        p = make_shared<Node>(x, nullptr, nullptr);
-    }
+  // Constructs a tree with a value x and no subtrees. Θ(1).
+  explicit BinTree (const T& x) {
+    inputformat = outputformat = INLINEFORMAT;
+    p = make_shared<Node>(x, nullptr, nullptr);
+  }
 
-    // Constructs a tree with a value x and two subtrees left and right. Θ(1).
-    explicit BinTree (const T& x, const BinTree& left, const BinTree& right) {
-        p = make_shared<Node>(x, left.p, right.p);
-    }
+  // Constructs a tree with a value x and two subtrees left and right. Θ(1).
+  explicit BinTree (const T& x, const BinTree& left, const BinTree& right) {
+    inputformat = outputformat = INLINEFORMAT;
+    p = make_shared<Node>(x, left.p, right.p);
+  }
 
-    // Tells if this tree is empty. Θ(1).
-    bool empty () const {
-        return not p;
-    }
+  // Tells if this tree is empty. Θ(1).
+  bool empty () const {
+    return not p;
+  }
     
-    // Returns the left subtree of this tree (cannot be empty). Θ(1).
-    BinTree left () const {
-        assert(not empty());
-        BinTree t = BinTree(p->left);
-	t.inputformat = inputformat;
-	t.outputformat = outputformat;
-	return t;
-    }
+  // Returns the left subtree of this tree (cannot be empty). Θ(1).
+  BinTree left () const {
+    assert(not empty());
+    BinTree t = BinTree(p->left);
+    t.inputformat = inputformat;
+    t.outputformat = outputformat;
+    return t;
+  }
 
-    // Returns the right subtree of this tree (cannot be empty). Θ(1).
-    BinTree right () const {
-        assert(not empty());
-        BinTree t = BinTree(p->right);
-	t.inputformat = inputformat;
-	t.outputformat = outputformat;
-	return t;
-    }
+  // Returns the right subtree of this tree (cannot be empty). Θ(1).
+  BinTree right () const {
+    assert(not empty());
+    BinTree t = BinTree(p->right);
+    t.inputformat = inputformat;
+    t.outputformat = outputformat;
+    return t;
+  }
 
-    // Returns the value of this tree (cannot be empty). Θ(1).
-    const T& value () const {
-        assert(not empty());
-        return p->x;
-    }
+  // Returns the value of this tree (cannot be empty). Θ(1).
+  const T& value () const {
+    assert(not empty());
+    return p->x;
+  }
 
 
 
@@ -696,21 +700,28 @@ std::ostream& operator<<(std::ostream &os, const BinTree<T> &t) {
 
 template <class T>
 std::istream& operator>>(std::istream &is, BinTree<T> &t) {
-  int format = t.getInputFormat();
-  if (format == BinTree<T>::INLINEFORMAT) {
+  int inputformat = t.getInputFormat();
+  int outputformat = t.getOutputFormat();
+  if (inputformat == BinTree<T>::INLINEFORMAT) {
     string s;
     is >> s;
     BinTree<T>::readStringTree(s, t);
+    t.setInputFormat(inputformat);
+    t.setOutputFormat(outputformat);
     return is;
   }
-  if (format == BinTree<T>::POSTORDERFORMAT) {
+  if (inputformat == BinTree<T>::POSTORDERFORMAT) {
     BinTree<T>::readBinTreePostOrder(is, t);
+    t.setInputFormat(inputformat);
+    t.setOutputFormat(outputformat);
     return is;
   }
   //is.clear();
   //is.ignore();
-  if (format == BinTree<T>::LEFTVISUALFORMAT) {
+  if (inputformat == BinTree<T>::LEFTVISUALFORMAT) {
     BinTree<T>::readLeftVisualFormat(is, t);
+    t.setInputFormat(inputformat);
+    t.setOutputFormat(outputformat);
     return is;
   }
   vector<string> v;
@@ -718,10 +729,10 @@ std::istream& operator>>(std::istream &is, BinTree<T> &t) {
   while (getline(is, line) and line != "")
     v.push_back(line);
   BinTree<T>::readVisualFormat(v, t);
+  t.setInputFormat(inputformat);
+  t.setOutputFormat(outputformat);
   return is;
 }
-
-
 
 #endif
 
