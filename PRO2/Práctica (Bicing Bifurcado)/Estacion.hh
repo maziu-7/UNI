@@ -19,8 +19,9 @@
 class Estacion {
 
 private:
-    set<string> Bicis; //identificador de la bici junto a sus viajes
+    set<string> bicis; //identificador de cada bici
     int pl_estacion; //plazas libres de una estación
+    int capacidad;
 
 public:
     /**
@@ -38,7 +39,7 @@ public:
      * en la estación o si la bici no cabe se escribe un
      * mensaje de error en el canal de salida
      */
-    void alta_bici(string idb, string ide);
+    void anadir_bici(string idb);
 
     /**
      * @brief Modificadora que da de baja la bici especificada
@@ -47,17 +48,11 @@ public:
      * en el canal de salida, en caso contrario, se elimina la bici
      * del sistema, modificando también las plazas libres de la estación
      */
-    void baja_bici(string idb);
-
-    /**
-     * @brief 
-     */
-    string bici_sube();
+    void eliminar_bici(string idb);
 
     /**
      * @brief Modificadora que altera la capacidad de la estación especificada
-     * \pre: string identificador de la estación y un entero
-     * estrictamente positivo
+     * \pre: entero estrictamente positivo
      * \post: si la estación no existe o si el entero es un número
      * menor a la cantidad de bicis que hay actualmente en la estación,
      * se escribe un error en el canal de salida
@@ -79,5 +74,15 @@ public:
      * en el canal de salida
      */
     void bicis_estacion() const;
+
+    /**
+     * @brief 
+     */
+    int cantidad_bicis() const;
+
+    /**
+     * @brief
+     */
+    int plazas_libres() const;
 };
 #endif

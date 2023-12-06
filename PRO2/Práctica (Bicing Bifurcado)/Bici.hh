@@ -50,11 +50,6 @@ public:
     void imprimir_viajes();
 
     /**
-     * @brief 
-     */
-    string consultar_estacion() const;
-    
-    /**
      * @brief  
      */
     void mover_bici(string ide);

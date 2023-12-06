@@ -21,13 +21,9 @@ class Cjt_estaciones {
 
 private:
     BinTree<string> arbol_estaciones;
-    map<string,Estacion> estacion;
+    map<string, Estacion> estaciones;
     int pl_totales;
-
-    void inicializar_arbol(BinTree<string> &a);
-    //inicializar arbol
-    //inicializar map
-    //inicializar plazas libres totales
+    void inicializar_arbol(BinTree<string>& a);
 
 public:
     /**
@@ -62,7 +58,7 @@ public:
      * en el canal de salida, en caso contrario, se elimina la bici
      * del sistema, modificando también las plazas libres de la estación
      */
-    void baja_bici(string idb);
+    void baja_bici(string idb, string ide);
 
     /**
      * @brief Consultora que indica si existe una estación
@@ -83,11 +79,11 @@ public:
 
     /**
      * @brief Consultora que indica si una estación está llena
-     * \pre: cierto
+     * \pre: string idenficador de estación
      * \post: si la estación no existe, se escribe un mensaje de error
      * en el canal de salida
      */
-    bool estacion_llena() const;
+    bool estacion_llena(const string ide);
 
     /**
      * @brief Modificadora que altera la capacidad de la estación especificada
@@ -97,12 +93,7 @@ public:
      * menor a la cantidad de bicis que hay actualmente en la estación,
      * se escribe un error en el canal de salida
      */
-    void modificar_capacidad(int n);
-
-    /**
-     * @brief 
-     */
-    void subir_bicis();
+    void modificar_capacidad(string ide, int n);
 
     /**
      * @brief Consultora que indica qué bicis contiene una estación
@@ -116,6 +107,16 @@ public:
      * @brief 
      */
     int cantidad_bicis(string ide) const;
+
+    /**
+     * @brief 
+     */
+    int plazas_totales() const;
+
+    /**
+     * @brief 
+     */
+    void subir_bicis();
 
     /**
      * @brief 
