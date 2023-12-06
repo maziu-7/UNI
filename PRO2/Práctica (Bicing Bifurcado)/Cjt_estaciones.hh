@@ -117,7 +117,7 @@ public:
 
     /**
      * @brief 
-     
-    void subir_bicis(Cjt_bicis& cb);*/
+     */
+    void subir_bicis(Cjt_bicis& cb);
 };
 #endif

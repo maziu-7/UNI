@@ -63,11 +63,11 @@ int Cjt_estaciones::plazas_totales() const {
     return pl_totales;
 }
 
-/*void Cjt_estaciones::subir_bicis(Cjt_bicis& cb) {
+void Cjt_estaciones::subir_bicis(Cjt_bicis& b) {
+    i_subir_bicis(arbol_estaciones, b);
+}
 
-}*/
-
-void Cjt_estaciones::i_subir_bicis(const BinTree<string>& a, Cjt_bicis& cb) {
+void Cjt_estaciones::i_subir_bicis(const BinTree<string>& a, Cjt_bicis& b) {
     if (not a.right().empty() and not a.left().empty()) {
         map<string, Estacion>::iterator it = estaciones.begin();
         it = estaciones.find(a.value());
@@ -76,13 +76,15 @@ void Cjt_estaciones::i_subir_bicis(const BinTree<string>& a, Cjt_bicis& cb) {
         map<string, Estacion>::iterator der = estaciones.begin();
         der = estaciones.find(a.right().value());
         while(not (*it).second.estacion_llena() and ((*izq).second.cantidad_bicis() != 0 or (*der).second.cantidad_bicis() != 0)) {
-            if ((*der).second.cantidad_bicis() > (*der).second.cantidad_bicis()) {
-                //mover_bici();
+            if ((*izq).second.cantidad_bicis() > (*der).second.cantidad_bicis()) {
+                
             }
+            else if ((*izq).second.cantidad_bicis() < (*der).second.cantidad_bicis()) {
 
-            /*else {
+            }
+            else {
 
-            }*/
+            }
         }
     }
 }
