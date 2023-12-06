@@ -1,9 +1,7 @@
 #include "Bici.hh"
 using namespace std;
 
-Bici::Bici() {
-    
-}
+Bici::Bici() {}
 
 void Bici::viaje_nuevo(string origen, string destino) {
     pair<string, string> viajes(origen, destino);
@@ -18,5 +16,5 @@ void Bici::imprimir_viajes() {
 }
 
 void Bici::mover_bici(string ide) {
-    
+
 }
