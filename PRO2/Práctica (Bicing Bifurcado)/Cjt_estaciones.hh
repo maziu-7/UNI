@@ -6,6 +6,7 @@
 #define CJT_ESTACIONES_HH
 
 #include "Estacion.hh"
+#include "Cjt_bicis.hh"
 #include "BinTree.hh"
 
 #ifndef NO_DIAGRAM
@@ -24,6 +25,7 @@ private:
     map<string, Estacion> estaciones;
     int pl_totales;
     void inicializar_arbol(BinTree<string>& a);
+    void i_subir_bicis(const BinTree<string>& a, Cjt_bicis& cb);
 
 public:
     /**
@@ -74,8 +76,8 @@ public:
      * \post: si la estación destino o la bici no existen, si la
      * estación destino es igual a la estación origen o si la bici no
      * cabe en la estación destino, se escribe un error en el canal de salida
-     */
-    void mover_bici(string destino, string idb);
+     
+    void mover_bici(string destino, string idb);*/
 
     /**
      * @brief Consultora que indica si una estación está llena
@@ -115,12 +117,7 @@ public:
 
     /**
      * @brief 
-     */
-    void subir_bicis();
-
-    /**
-     * @brief 
-     */
-    void i_subir_bicis();
+     
+    void subir_bicis(Cjt_bicis& cb);*/
 };
 #endif

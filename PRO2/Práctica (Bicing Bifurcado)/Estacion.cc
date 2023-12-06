@@ -7,7 +7,7 @@ Estacion::Estacion() {
 
 void Estacion::anadir_bici(string idb) {
     Bici b;
-    //bicis.insert({idb,b});
+    bicis.insert(idb);
     --pl_estacion;
 }
 

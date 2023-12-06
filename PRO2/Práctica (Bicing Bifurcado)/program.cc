@@ -1,9 +1,10 @@
 /**
  * @file program.cc
  */
-#include "Estacion.hh"
 #include "Cjt_bicis.hh"
+#include "Estacion.hh"
 #include "Cjt_estaciones.hh"
+using namespace std;
 
 int main() {
     Cjt_estaciones e;
@@ -19,7 +20,7 @@ int main() {
             else if (not e.existe_estacion(ide)) cout << "error: la estacion no existe" << endl;
             else if (e.estacion_llena(ide)) cout << "error: la estacion esta llena" << endl;
             else {
-                b.alta_bici(idb,ide);
+                b.anadir_bici(idb);
                 e.alta_bici(idb,ide);
             }
         }
@@ -29,8 +30,7 @@ int main() {
             cout << "#bb " << idb << endl;
             if (not b.existe_bici(idb)) cout << "error: la bici no existe" << endl;
             else {
-                string est = b.estacion_bici(idb);
-                b.baja_bici(idb);
+                b.eliminar_bici(idb);
                 e.baja_bici(idb,ide);
             }
         }
@@ -46,7 +46,7 @@ int main() {
             cin >> idb;
             cout << "#vb " << idb << endl;
             if (not b.existe_bici(ide)) cout << "error: la bici no existe" << endl;
-            else b.imprimir_viajes(idb);
+            //else b.imprimir_viajes(idb);
         }
 
         else if (op == "mover_bici" or op == "mb") {
@@ -54,11 +54,11 @@ int main() {
             cout << "#mb " << idb << ' ' << ide << endl;
             if (not e.existe_estacion(ide)) cout << "error: la estacion no existe" << endl;
             else if (not b.existe_bici(idb)) cout << "error: la bici no existe" << endl;
-            //else if (b.iguales(ide,idb)) cout << "error: la bici ya esta en el sitio" << endl;
+            //else if (b.estaciones_iguales(ide,idb)) cout << "error: la bici ya esta en el sitio" << endl;
             else if (e.estacion_llena(ide)) cout << "error: la bici no cabe" << endl;
-            else {
+            /*else {
                 b.mover_bici(ide,idb);
-            }
+            }*/
         }
 
         else if (op == "bicis_estacion" or op == "be") {

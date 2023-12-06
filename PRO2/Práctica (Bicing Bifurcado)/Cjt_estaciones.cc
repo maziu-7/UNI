@@ -40,10 +40,10 @@ bool Cjt_estaciones::existe_estacion(string ide) const {
     return true;
 }
 
-void Cjt_estaciones::mover_bici(string destino, string idb) {
-    //bici -> estacion -> cjt estaciones?
-    //viaje nuevo
-}
+/*void Cjt_estaciones::mover_bici(string destino, string idb) {
+    bici -> estacion -> cjt estaciones?
+    viaje nuevo
+}*/
 
 bool Cjt_estaciones::estacion_llena(const string ide) {
     if ((*estaciones.find(ide)).second.estacion_llena()) return true;
@@ -66,10 +66,25 @@ int Cjt_estaciones::plazas_totales() const {
     return pl_totales;
 }
 
-void Cjt_estaciones::subir_bicis() {
+/*void Cjt_estaciones::subir_bicis(Cjt_bicis& cb) {
 
-}
+}*/
 
-void Cjt_estaciones::i_subir_bicis() {
+/*void Cjt_estaciones::i_subir_bicis(const BinTree<string>& a, Cjt_bicis& cb) {
+    if (cas base) {
+        ...
+    }
+    else {
+
+    }
     
-}
+    primero a.left despues a.right
+    calculo:
+        condiciones del bucle:
+            -espacio en el padre
+            -haya alguna bici en la izq o en la der
+            condiciones dentro:
+                -cual izq o der tiene mas bicis
+                -en caso de empate coger la bici con menor id
+    llamadas recursivas a los hijos
+}*/
