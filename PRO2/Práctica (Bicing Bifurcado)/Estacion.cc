@@ -39,3 +39,8 @@ int Estacion::cantidad_bicis() const {
 int Estacion::plazas_libres() const {
     return pl_estacion;
 }
+
+string Estacion::bici_menor() const {
+    set<string>::const_iterator it = bicis.begin();
+    return (*it);
+}

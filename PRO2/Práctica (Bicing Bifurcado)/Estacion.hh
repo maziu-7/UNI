@@ -84,5 +84,10 @@ public:
      * @brief
      */
     int plazas_libres() const;
+
+    /**
+     * @brief 
+     */
+    string bici_menor() const;
 };
 #endif

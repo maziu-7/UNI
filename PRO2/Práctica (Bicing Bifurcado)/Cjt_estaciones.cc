@@ -38,7 +38,7 @@ bool Cjt_estaciones::existe_estacion(string ide) const {
     return true;
 }
 
-void Cjt_estaciones::mover_bici(string idb, string ide) {
+void Cjt_estaciones::mover_bici(string ide, string idb) {
     
 }
 
@@ -74,27 +74,29 @@ void Cjt_estaciones::i_subir_bicis(const BinTree<string>& a, Cjt_bicis& b) {
         map<string, Estacion>::iterator der = estaciones.find(a.right().value());
         while (not (*it).second.estacion_llena() and ((*izq).second.cantidad_bicis() != 0 or (*der).second.cantidad_bicis() != 0)) {
             if ((*izq).second.cantidad_bicis() > (*der).second.cantidad_bicis()) {
-                string idb = (*izq).second.;
+                string idb = (*izq).second.bici_menor();
                 baja_bici(idb, a.left().value());
                 alta_bici(idb, a.value());
+                b.modificar_estacion(idb, a.value());
             }
             else if ((*izq).second.cantidad_bicis() < (*der).second.cantidad_bicis()) {
-                string idb = (*der).second.;
+                string idb = (*der).second.bici_menor();
                 baja_bici(idb, a.right().value());
                 alta_bici(idb, a.value());
                 b.modificar_estacion(idb, a.value());
             }
             else {
-                string bici_izq = (*izq).second.;
-                string bici_der = (*der).second.;
+                string bici_izq = (*izq).second.bici_menor();
+                string bici_der = (*der).second.bici_menor();
                 if (bici_izq < bici_der) {
-                    string idb = (*izq).second.;
+                    string idb = (*izq).second.bici_menor();
                     baja_bici(idb, a.left().value());
                     alta_bici(idb, a.value());
+                    b.modificar_estacion(idb, a.value());
                     i_subir_bicis(a.left(), b);
                 }
                 else {
-                    string idb = (*der).second.;
+                    string idb = (*der).second.bici_menor();
                     baja_bici(idb, a.right().value());
                     alta_bici(idb, a.value());
                     b.modificar_estacion(idb, a.value());
@@ -103,4 +105,12 @@ void Cjt_estaciones::i_subir_bicis(const BinTree<string>& a, Cjt_bicis& b) {
             }
         }
     }
+}
+
+void asignar_estacion(BinTree<string>& a) {
+    i_asignar_estacion(a);
+}
+
+void i_asignar_estacion(const BinTree<string>& a) {
+
 }

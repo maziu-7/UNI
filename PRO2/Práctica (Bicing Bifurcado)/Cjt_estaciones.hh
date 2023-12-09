@@ -26,6 +26,7 @@ private:
     int pl_totales;
     void inicializar_arbol(BinTree<string>& a);
     void i_subir_bicis(const BinTree<string>& a, Cjt_bicis& cb);
+    void i_asignar_estacion(const BinTree<string>& a);
 
 public:
     /**
@@ -77,7 +78,7 @@ public:
      * estación destino es igual a la estación origen o si la bici no
      * cabe en la estación destino, se escribe un error en el canal de salida
      */
-    void mover_bici(string idb, string ide);
+    void mover_bici(string ide, string idb);
 
     /**
      * @brief Consultora que indica si una estación está llena
@@ -123,6 +124,6 @@ public:
     /**
      * @brief 
      */
-    void i_asignar_estacion(const BinTree<string>& a);
+    void asignar_estacion();
 };
 #endif

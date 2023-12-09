@@ -18,3 +18,7 @@ void Bici::imprimir_viajes() {
 void Bici::mover_bici(string ide) {
 
 }
+
+void Bici::modificar_estacion(string ide) {
+    estacion = ide;
+}

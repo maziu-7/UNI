@@ -57,7 +57,8 @@ int main() {
             else if (b.estacion_bici(idb) == ide) cout << "error: la bici ya esta en el sitio" << endl;
             else if (e.estacion_llena(ide)) cout << "error: la bici no cabe" << endl;
             else {
-                b.mover_bici(ide,idb);
+                b.mover_bici(ide, idb);
+                e.mover_bici(ide, idb);
             }
         }
 
@@ -84,11 +85,13 @@ int main() {
 
         else if (op == "subir_bicis" or op == "sb") {
             cout << "#sb" << endl;
+            //e.subir_bicis(a);
         }
 
         else if (op == "asignar_estacion" or op == "ae") {
             cin >> idb;
-            cout << "#ae " << idb << endl; 
+            cout << "#ae " << idb << endl;
+            //e.asignar_estacion(idb);
         }
     }
 }
