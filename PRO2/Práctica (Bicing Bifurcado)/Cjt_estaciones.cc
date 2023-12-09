@@ -38,9 +38,9 @@ bool Cjt_estaciones::existe_estacion(string ide) const {
     return true;
 }
 
-/*void Cjt_estaciones::mover_bici(string idb, string ide) {
+void Cjt_estaciones::mover_bici(string idb, string ide) {
     
-}*/
+}
 
 bool Cjt_estaciones::estacion_llena(const string ide) {
     if ((*estaciones.find(ide)).second.estacion_llena()) return true;
@@ -72,26 +72,35 @@ void Cjt_estaciones::i_subir_bicis(const BinTree<string>& a, Cjt_bicis& b) {
         map<string, Estacion>::iterator it = estaciones.find(a.value());
         map<string, Estacion>::iterator izq = estaciones.find(a.left().value());
         map<string, Estacion>::iterator der = estaciones.find(a.right().value());
-        while (not(*it).second.estacion_llena() and ((*izq).second.cantidad_bicis() != 0 or (*der).second.cantidad_bicis() != 0)) {
+        while (not (*it).second.estacion_llena() and ((*izq).second.cantidad_bicis() != 0 or (*der).second.cantidad_bicis() != 0)) {
             if ((*izq).second.cantidad_bicis() > (*der).second.cantidad_bicis()) {
-                //string idb = 
+                string idb = (*izq).second.;
+                baja_bici(idb, a.left().value());
+                alta_bici(idb, a.value());
             }
             else if ((*izq).second.cantidad_bicis() < (*der).second.cantidad_bicis()) {
-
+                string idb = (*der).second.;
+                baja_bici(idb, a.right().value());
+                alta_bici(idb, a.value());
+                b.modificar_estacion(idb, a.value());
             }
             else {
-
+                string bici_izq = (*izq).second.;
+                string bici_der = (*der).second.;
+                if (bici_izq < bici_der) {
+                    string idb = (*izq).second.;
+                    baja_bici(idb, a.left().value());
+                    alta_bici(idb, a.value());
+                    i_subir_bicis(a.left(), b);
+                }
+                else {
+                    string idb = (*der).second.;
+                    baja_bici(idb, a.right().value());
+                    alta_bici(idb, a.value());
+                    b.modificar_estacion(idb, a.value());
+                    i_subir_bicis(a.right(), b);
+                }
             }
         }
     }
 }
-/*primero a.left despues a.right
-    calculo:
-        condiciones del bucle:
-            -espacio en el padre
-            -haya alguna bici en la izq o en la der
-            condiciones dentro:
-                -cual izq o der tiene mas bicis
-                -en caso de empate coger la bici con menor id
-    llamadas recursivas a los hijos
-*/
