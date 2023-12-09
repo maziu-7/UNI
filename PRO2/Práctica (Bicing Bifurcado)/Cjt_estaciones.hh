@@ -119,5 +119,10 @@ public:
      * @brief 
      */
     void subir_bicis(Cjt_bicis& cb);
+
+    /**
+     * @brief 
+     */
+    void i_asignar_estacion(const BinTree<string>& a);
 };
 #endif

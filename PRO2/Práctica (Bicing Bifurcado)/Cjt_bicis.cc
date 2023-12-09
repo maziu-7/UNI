@@ -32,5 +32,6 @@ void Cjt_bicis::mover_bici(string idb, string ide) {
 }
 
 void Cjt_bicis::modificar_estacion(string idb, string ide) {
-    
+    map<string, Bici>::iterator it = conjunto_bicis.find(idb);
+    modificar_estacion(ide);
 }
