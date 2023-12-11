@@ -17,9 +17,9 @@ bool Cjt_bicis::existe_bici(const string& idb) const {
     return true;
 }
 
-void Bici::viaje_nuevo(const string& origen, const string& destino) {
-    pair<string, string> viajes(origen, destino);
-    viajes_bici.insert(viajes_bici.end(),viajes);
+void Cjt_bicis::viaje_nuevo(const string& origen, const string& destino, const string& idb) {
+    map<string, Bici>::iterator it = conjunto_bicis.find(idb);
+    (*it).second.viaje_nuevo(origen, destino);
 }
 
 void Cjt_bicis::imprimir_viajes(const string& idb) {

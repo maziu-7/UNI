@@ -66,7 +66,7 @@ public:
     /**
      * @brief  
      */
-    string estacion_bici(string idb) const;
+    string estacion_bici(const string& idb) const;
 
     /**
      * @brief Consultora que indica si existe una estación

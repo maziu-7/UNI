@@ -59,7 +59,7 @@ int main() {
             else {
                 string origen = e.estacion_bici(ide);
                 e.mover_bici(ide, idb);
-                b.viaje_nuevo(origen, ide);
+                b.viaje_nuevo(origen, ide, idb);
             }
         }
 

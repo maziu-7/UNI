@@ -60,6 +60,11 @@ public:
     /**
      * @brief 
      */
+    void viaje_nuevo(const string& origen, const string& destino, const string& idb);
+
+    /**
+     * @brief 
+     */
     void imprimir_viajes(const string& idb);
 
     /**
