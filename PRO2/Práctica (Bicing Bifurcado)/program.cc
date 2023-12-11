@@ -57,7 +57,7 @@ int main() {
             else if (e.estacion_bici(idb) == ide) cout << "error: la bici ya esta en el sitio" << endl;
             else if (e.estacion_llena(ide)) cout << "error: la bici no cabe" << endl;
             else {
-                string origen = e.estacion_bici(ide);
+                string origen = e.estacion_bici(idb);
                 e.mover_bici(ide, idb);
                 b.viaje_nuevo(origen, ide, idb);
             }
