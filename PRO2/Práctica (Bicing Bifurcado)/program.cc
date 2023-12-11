@@ -45,7 +45,7 @@ int main() {
         else if (op == "viajes_bici" or op == "vb") {
             cin >> idb;
             cout << "#vb " << idb << endl;
-            if (not b.existe_bici(ide)) cout << "error: la bici no existe" << endl;
+            if (not b.existe_bici(idb)) cout << "error: la bici no existe" << endl;
             else b.imprimir_viajes(idb);
         }
 

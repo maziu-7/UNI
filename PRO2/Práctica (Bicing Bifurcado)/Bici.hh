@@ -52,11 +52,6 @@ public:
     /**
      * @brief 
      */
-    void mover_bici(const string& ide);
-
-    /**
-     * @brief 
-     */
     void modificar_estacion(const string& ide);
 };
 #endif

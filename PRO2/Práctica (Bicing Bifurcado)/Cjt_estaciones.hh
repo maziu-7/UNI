@@ -64,6 +64,11 @@ public:
     void baja_bici(const string& idb, const string& ide);
 
     /**
+     * @brief  
+     */
+    string estacion_bici(const string& idb) const;
+
+    /**
      * @brief Consultora que indica si existe una estación
      * \pre: cert
      * \post: si la estación no existe, devuelve falso
@@ -124,6 +129,6 @@ public:
     /**
      * @brief 
      */
-    void asignar_estacion();
+    void asignar_estacion(const BinTree<string>& a);
 };
 #endif

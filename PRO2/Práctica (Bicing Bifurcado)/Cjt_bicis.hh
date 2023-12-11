@@ -74,7 +74,7 @@ public:
     /**
      * @brief 
      */
-    void mover_bici(const string& idb, const string& ide);
+    void mover_bici(const string& origen, const string& destino);
 
     /**
      * @brief 
