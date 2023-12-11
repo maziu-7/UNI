@@ -33,7 +33,7 @@ void Cjt_estaciones::baja_bici(const string& idb, const string& ide) {
     ++pl_totales;
 }
 
-string Cjt_bicis::estacion_bici(const string& idb) const {
+string Cjt_estaciones::estacion_bici(const string& idb) const {
     map<string,Estacion>::const_iterator it = estaciones.find(idb);
     return (*it).first;
 }
@@ -46,8 +46,6 @@ bool Cjt_estaciones::existe_estacion(const string& ide) const {
 void Cjt_estaciones::mover_bici(const string& ide, const string& idb) {
     map<string,Estacion>::const_iterator it = estaciones.find(idb);
     string origen = estacion_bici(idb);
-    viaje_nuevo(origen, destino);
-
 }
 
 bool Cjt_estaciones::estacion_llena(const string& ide) const {

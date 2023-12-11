@@ -17,21 +17,15 @@ bool Cjt_bicis::existe_bici(const string& idb) const {
     return true;
 }
 
-string Cjt_bicis::estacion_bici(const string& idb) const {
-    map<string,Bici>::const_iterator it = conjunto_bicis.find(idb);
-    return (*it).first;
+void Bici::viaje_nuevo(const string& origen, const string& destino) {
+    pair<string, string> viajes(origen, destino);
+    viajes_bici.insert(viajes_bici.end(),viajes);
 }
 
 void Cjt_bicis::imprimir_viajes(const string& idb) {
     map<string, Bici>::iterator it;
     it = conjunto_bicis.find(idb);
     (*it).second.imprimir_viajes();
-}
-
-void Cjt_bicis::mover_bici(const string& idb, const string& destino) {
-    map<string,Bici>::const_iterator it = conjunto_bicis.find(idb);
-    string origen = estacion_bici(idb);
-    viaje_nuevo(origen, destino);
 }
 
 void Cjt_bicis::modificar_estacion(const string& idb, const string& ide) {

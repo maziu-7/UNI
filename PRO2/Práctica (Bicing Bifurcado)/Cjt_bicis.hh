@@ -58,23 +58,9 @@ public:
     bool existe_bici(const string& idb) const;
 
     /**
-     * @brief Consultora que indica en qué estación
-     * se encuentra una bici
-     * \pre: string idenfiticador de la bici
-     * \post: si la bici no existe se escribe un mensaje
-     * de error en el canal de salida
-     */
-    string estacion_bici(const string& idb) const;
-
-    /**
      * @brief 
      */
     void imprimir_viajes(const string& idb);
-
-    /**
-     * @brief 
-     */
-    void mover_bici(const string& origen, const string& destino);
 
     /**
      * @brief 

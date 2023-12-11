@@ -39,7 +39,7 @@ int main() {
             cin >> idb;
             cout << "#eb " << idb << endl;
             if (not b.existe_bici(idb)) cout << "error: la bici no existe" << endl;
-            else cout << b.estacion_bici(idb) << endl;
+            else cout << e.estacion_bici(idb) << endl;
         }
 
         else if (op == "viajes_bici" or op == "vb") {
@@ -54,11 +54,12 @@ int main() {
             cout << "#mb " << idb << ' ' << ide << endl;
             if (not e.existe_estacion(ide)) cout << "error: la estacion no existe" << endl;
             else if (not b.existe_bici(idb)) cout << "error: la bici no existe" << endl;
-            else if (b.estacion_bici(idb) == ide) cout << "error: la bici ya esta en el sitio" << endl;
+            else if (e.estacion_bici(idb) == ide) cout << "error: la bici ya esta en el sitio" << endl;
             else if (e.estacion_llena(ide)) cout << "error: la bici no cabe" << endl;
             else {
-                b.mover_bici(ide, idb);
+                string origen = e.estacion_bici(ide);
                 e.mover_bici(ide, idb);
+                b.viaje_nuevo(origen, ide);
             }
         }
 
