@@ -65,7 +65,7 @@ int main() {
         else if (op == "bicis_estacion" or op == "be") {
             cin >> ide;
             cout << "#be " << ide << endl;
-            if (not b.existe_bici(ide)) cout << "error: la estacion no existe" << endl;
+            if (not e.existe_estacion(ide)) cout << "error: la estacion no existe" << endl;
             else e.bicis_estacion(ide);
         }
 
