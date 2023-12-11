@@ -23,39 +23,39 @@ void Cjt_estaciones::inicializar_estaciones() {
     inicializar_arbol(arbol_estaciones);
 }
 
-void Cjt_estaciones::alta_bici(string idb, string ide) {
+void Cjt_estaciones::alta_bici(const string& idb, const string& ide) {
     estaciones[ide].anadir_bici(idb);
     --pl_totales;
 }
 
-void Cjt_estaciones::baja_bici(string idb, string ide) {
-    (*estaciones.find(ide)).second.eliminar_bici(idb);
+void Cjt_estaciones::baja_bici(const string& idb, const string& ide) {
+    estaciones[ide].eliminar_bici(idb);
     ++pl_totales;
 }
 
-bool Cjt_estaciones::existe_estacion(string ide) const {
+bool Cjt_estaciones::existe_estacion(const string& ide) const {
     if (estaciones.find(ide) == estaciones.end()) return false;
     return true;
 }
 
-void Cjt_estaciones::mover_bici(string ide, string idb) {
+void Cjt_estaciones::mover_bici(const string& ide, const string& idb) {
     
 }
 
-bool Cjt_estaciones::estacion_llena(const string ide) {
+bool Cjt_estaciones::estacion_llena(const string& ide) const {
     if ((*estaciones.find(ide)).second.estacion_llena()) return true;
     return false;
 }
 
-void Cjt_estaciones::modificar_capacidad(string ide, int n) {
+void Cjt_estaciones::modificar_capacidad(const string& ide, int n) {
     estaciones.find(ide)->second.modificar_capacidad(n);
 }
 
-void Cjt_estaciones::bicis_estacion(string ide) const {
+void Cjt_estaciones::bicis_estacion(const string& ide) const {
     estaciones.find(ide)->second.bicis_estacion();
 }
 
-int Cjt_estaciones::cantidad_bicis(string ide) const {
+int Cjt_estaciones::cantidad_bicis(const string& ide) const {
     return (*estaciones.find(ide)).second.cantidad_bicis();
 }
 

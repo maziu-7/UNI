@@ -39,7 +39,7 @@ public:
      * se escribe un mensaje de error en el canal de salida,
      * en caso contrario, se añade el viaje nuevo a viajes_bici
      */
-    void viaje_nuevo(string origen, string destino);
+    void viaje_nuevo(const string& origen, const string& destino);
 
     /**
      * @brief Escritora que imprime todos los viajes de una bici
@@ -52,11 +52,11 @@ public:
     /**
      * @brief 
      */
-    void mover_bici(string ide);
+    void mover_bici(const string& ide);
 
     /**
      * @brief 
      */
-    void modificar_estacion(string ide);
+    void modificar_estacion(const string& ide);
 };
 #endif

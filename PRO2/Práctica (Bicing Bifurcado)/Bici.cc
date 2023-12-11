@@ -3,7 +3,7 @@ using namespace std;
 
 Bici::Bici() {}
 
-void Bici::viaje_nuevo(string origen, string destino) {
+void Bici::viaje_nuevo(const string& origen, const string& destino) {
     pair<string, string> viajes(origen, destino);
     viajes_bici.insert(viajes_bici.end(),viajes);
 }
@@ -15,10 +15,10 @@ void Bici::imprimir_viajes() {
     }
 }
 
-void Bici::mover_bici(string ide) {
+void Bici::mover_bici(const string& ide) {
 
 }
 
-void Bici::modificar_estacion(string ide) {
+void Bici::modificar_estacion(const string& ide) {
     estacion = ide;
 }

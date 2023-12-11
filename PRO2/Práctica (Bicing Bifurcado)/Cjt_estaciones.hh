@@ -52,7 +52,7 @@ public:
      * en la estación o si la bici no cabe se escribe un
      * mensaje de error en el canal de salida
      */
-    void alta_bici(string idb, string ide);
+    void alta_bici(const string& idb, const string& ide);
 
     /**
      * @brief Modificadora que da de baja la bici especificada
@@ -61,14 +61,14 @@ public:
      * en el canal de salida, en caso contrario, se elimina la bici
      * del sistema, modificando también las plazas libres de la estación
      */
-    void baja_bici(string idb, string ide);
+    void baja_bici(const string& idb, const string& ide);
 
     /**
      * @brief Consultora que indica si existe una estación
      * \pre: cert
      * \post: si la estación no existe, devuelve falso
      */
-    bool existe_estacion(string ide) const;
+    bool existe_estacion(const string& ide) const;
 
     /**
      * @brief Modificadora que mueve una bici de una estación a otra
@@ -78,7 +78,7 @@ public:
      * estación destino es igual a la estación origen o si la bici no
      * cabe en la estación destino, se escribe un error en el canal de salida
      */
-    void mover_bici(string ide, string idb);
+    void mover_bici(const string& ide, const string& idb);
 
     /**
      * @brief Consultora que indica si una estación está llena
@@ -86,7 +86,7 @@ public:
      * \post: si la estación no existe, se escribe un mensaje de error
      * en el canal de salida
      */
-    bool estacion_llena(const string ide);
+    bool estacion_llena(const string& ide) const;
 
     /**
      * @brief Modificadora que altera la capacidad de la estación especificada
@@ -96,7 +96,7 @@ public:
      * menor a la cantidad de bicis que hay actualmente en la estación,
      * se escribe un error en el canal de salida
      */
-    void modificar_capacidad(string ide, int n);
+    void modificar_capacidad(const string& ide, int n);
 
     /**
      * @brief Consultora que indica qué bicis contiene una estación
@@ -104,12 +104,12 @@ public:
      * \post: si la estación no existe se escribe un mensaje de error
      * en el canal de salida
      */
-    void bicis_estacion(string ide) const;
+    void bicis_estacion(const string& ide) const;
 
     /**
      * @brief 
      */
-    int cantidad_bicis(string ide) const;
+    int cantidad_bicis(const string& ide) const;
 
     /**
      * @brief 

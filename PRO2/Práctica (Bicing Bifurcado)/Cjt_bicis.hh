@@ -38,7 +38,7 @@ public:
      * en la estación o si la bici no cabe se escribe un
      * mensaje de error en el canal de salida
      */
-    void anadir_bici(string idb);
+    void anadir_bici(const string& idb);
 
     /**
      * @brief Modificadora que da de baja una bici
@@ -47,7 +47,7 @@ public:
      * en el canal de salida, en caso contrario, se elimina la bici
      * del sistema, modificando también las plazas libres de la estación
      */
-    void eliminar_bici(string idb);
+    void eliminar_bici(const string& idb);
 
     /**
      * @brief Consultora que indica si existe una bici
@@ -55,7 +55,7 @@ public:
      * \post: si la bici no existe se escribe un mensaje
      * error en el canal de salida 
      */
-    bool existe_bici(string idb);
+    bool existe_bici(const string& idb) const;
 
     /**
      * @brief Consultora que indica en qué estación
@@ -64,21 +64,21 @@ public:
      * \post: si la bici no existe se escribe un mensaje
      * de error en el canal de salida
      */
-    string estacion_bici(string idb);
+    string estacion_bici(const string& idb) const;
 
     /**
      * @brief 
      */
-    void imprimir_viajes(string idb);
+    void imprimir_viajes(const string& idb);
 
     /**
      * @brief 
      */
-    void mover_bici(string idb, string ide);
+    void mover_bici(const string& idb, const string& ide);
 
     /**
      * @brief 
      */
-    void modificar_estacion(string idb, string ide);
+    void modificar_estacion(const string& idb, const string& ide);
 };
 #endif

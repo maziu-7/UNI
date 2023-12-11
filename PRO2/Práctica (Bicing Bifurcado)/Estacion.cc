@@ -3,13 +3,13 @@ using namespace std;
 
 Estacion::Estacion() {}
 
-void Estacion::anadir_bici(string idb) {
+void Estacion::anadir_bici(const string& idb) {
     Bici b;
     bicis.insert(idb);
     --pl_estacion;
 }
 
-void Estacion::eliminar_bici(string idb) {
+void Estacion::eliminar_bici(const string& idb) {
     bicis.erase(idb);
     ++pl_estacion;
 }
