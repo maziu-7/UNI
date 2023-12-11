@@ -46,6 +46,8 @@ bool Cjt_estaciones::existe_estacion(const string& ide) const {
 void Cjt_estaciones::mover_bici(const string& ide, const string& idb) {
     map<string,Estacion>::const_iterator it = estaciones.find(idb);
     string origen = estacion_bici(idb);
+    alta_bici(idb, ide);
+    baja_bici(idb, origen);
 }
 
 bool Cjt_estaciones::estacion_llena(const string& ide) const {
