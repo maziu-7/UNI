@@ -7,7 +7,7 @@ Bici.o:  Bici.cc Bici.hh
 	g++ -c Bici.cc $(OPCIONS)
 
 Cjt_bicis.o:  Cjt_bicis.cc Cjt_bicis.hh
-	g++ -c Procesador.cc $(OPCIONS)
+	g++ -c Cjt_bicis.cc $(OPCIONS)
 
 Estacion.o:  Estacion.cc Estacion.hh
 	g++ -c Estacion.cc $(OPCIONS)
