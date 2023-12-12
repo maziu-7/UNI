@@ -21,3 +21,6 @@ program.o: program.cc
 clean:
 	rm *.o
 	rm *.exe
+
+practica.tar:
+	tar -cvf practica.tar Bici.hh Cjt_bicis.hh Estacion.hh Cjt_estaciones.hh Bici.cc Cjt_bicis.cc Estacion.cc Cjt_estaciones.cc program.cc Makefile
