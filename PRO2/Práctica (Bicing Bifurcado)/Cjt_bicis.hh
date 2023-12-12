@@ -38,7 +38,7 @@ public:
      * en la estación o si la bici no cabe se escribe un
      * mensaje de error en el canal de salida
      */
-    void anadir_bici(const string& idb);
+    void anadir_bici(const string& idb, const string& ide);
 
     /**
      * @brief Modificadora que da de baja una bici

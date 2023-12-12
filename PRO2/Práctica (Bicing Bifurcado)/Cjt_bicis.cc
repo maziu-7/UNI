@@ -3,8 +3,9 @@ using namespace std;
 
 Cjt_bicis::Cjt_bicis() {}
 
-void Cjt_bicis::anadir_bici(const string& idb) {
+void Cjt_bicis::anadir_bici(const string& idb, const string& ide) {
     Bici b;
+    b.modificar_estacion(ide);
     conjunto_bicis.insert(make_pair(idb, b));
 }
 

@@ -33,6 +33,8 @@ be e404
 be e1
 mover_bici b404 e1
 mb b1 e1
+mb b1 e122
+mb b1 e1
 viajes_bici b1
 vb b404
 vb b3
@@ -78,4 +80,5 @@ ae c8
 ae c9
 ae c10
 ae c11
+ae c12
 fin

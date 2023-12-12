@@ -6,6 +6,7 @@ Bici::Bici() {}
 void Bici::viaje_nuevo(const string& origen, const string& destino) {
     pair<string, string> viajes(origen, destino);
     viajes_bici.insert(viajes_bici.end(),viajes);
+    estacion = destino;
 }
 
 void Bici::imprimir_viajes() {

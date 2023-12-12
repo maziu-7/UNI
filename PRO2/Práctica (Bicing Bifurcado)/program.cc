@@ -20,7 +20,7 @@ int main() {
             else if (not e.existe_estacion(ide)) cout << "error: la estacion no existe" << endl;
             else if (e.estacion_llena(ide)) cout << "error: la bici no cabe" << endl;
             else {
-                b.anadir_bici(idb);
+                b.anadir_bici(idb,ide);
                 e.alta_bici(idb,ide);
             }
         }
@@ -30,6 +30,7 @@ int main() {
             cout << "#bb " << idb << endl;
             if (not b.existe_bici(idb)) cout << "error: la bici no existe" << endl;
             else {
+                ide = b.estacion_bici(idb);
                 b.eliminar_bici(idb);
                 e.baja_bici(idb,ide);
             }
@@ -75,7 +76,7 @@ int main() {
             cin >> ide >> n;
             cout << "#mc " << ide << ' ' << n << endl;
             if (not e.existe_estacion(ide)) cout << "error: la estacion no existe" << endl;
-            else if (e.cantidad_bicis(ide) < n) cout << "error: capacidad insuficiente" << endl;
+            else if (e.cantidad_bicis(ide) > n) cout << "error: capacidad insuficiente" << endl;
             else e.modificar_capacidad(ide, n);
         }
 
@@ -92,7 +93,8 @@ int main() {
         else if (op == "asignar_estacion" or op == "ae") {
             cin >> idb;
             cout << "#ae " << idb << endl;
-            if (e.plazas_totales()) cout << "error: no hay plazas libres" << endl;
+            if (b.existe_bici(idb)) cout << "error: la bici ya existe" << endl;
+            else if (e.plazas_totales() == 0) cout << "error: no hay plazas libres" << endl;
             else {
                 e.asignar_estacion(idb, b);
                 cout << b.estacion_bici(idb) << endl;

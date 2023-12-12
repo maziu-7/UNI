@@ -20,6 +20,7 @@ void Cjt_estaciones::inicializar_arbol(BinTree<string>& a) {
 }
 
 void Cjt_estaciones::inicializar_estaciones() {
+    
     inicializar_arbol(arbol_estaciones);
 }
 
@@ -50,7 +51,10 @@ bool Cjt_estaciones::estacion_llena(const string& ide) const {
 }
 
 void Cjt_estaciones::modificar_capacidad(const string& ide, int n) {
-    estaciones.find(ide)->second.modificar_capacidad(n);
+    map<string,Estacion>::iterator it = estaciones.find(ide);
+    int capacidad = it->second.plazas_libres() + it->second.cantidad_bicis();
+    it->second.modificar_capacidad(n);
+    pl_totales += n - capacidad;
 }
 
 void Cjt_estaciones::bicis_estacion(const string& ide) const {
@@ -95,17 +99,17 @@ void Cjt_estaciones::i_subir_bicis(const BinTree<string>& a, Cjt_bicis& b) {
                     baja_bici(idb, a.left().value());
                     alta_bici(idb, a.value());
                     b.modificar_estacion(idb, a.value());
-                    i_subir_bicis(a.left(), b);
                 }
                 else {
                     string idb = (*der).second.bici_menor();
                     baja_bici(idb, a.right().value());
                     alta_bici(idb, a.value());
                     b.modificar_estacion(idb, a.value());
-                    i_subir_bicis(a.right(), b);
                 }
             }
         }
+        i_subir_bicis(a.left(), b);
+        i_subir_bicis(a.right(), b);
     }
 }
 
@@ -115,11 +119,10 @@ void Cjt_estaciones::asignar_estacion(const string& idb, Cjt_bicis& b) {
     string ide;
     i_asignar_estacion(arbol_estaciones, ide, coef_max, num_est, pl);
     alta_bici(idb, ide);
-    b.anadir_bici(idb);
-    //mover_bici(ide, idb);
+    b.anadir_bici(idb,ide);
 }
 
-void Cjt_estaciones::i_asignar_estacion(const BinTree<string>& a, string ide, double& coef_max, int& num_est, int& pl) {
+void Cjt_estaciones::i_asignar_estacion(const BinTree<string>& a, string& ide, double& coef_max, int& num_est, int& pl) {
     if (a.left().empty() and a.right().empty()) {
         pl = estaciones[a.value()].plazas_libres();
         num_est = 1;
