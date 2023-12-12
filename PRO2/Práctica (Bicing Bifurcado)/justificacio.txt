@@ -8,7 +8,7 @@ Iterativa (Subir bicis):
         -Cos del bucle
         -Acabament
 
-Recursiva (Asignar estación (const BinTree<string>& a, const string& ide_mejor, int& coef_max, int& pl, int& nest)):
+Recursiva (Asignar estación):
     ·Hipótesis de inducción
         ae_rec(a.left(), id_mejor, coef_max, pl izq, nest izq);
         ae_rec(a.right(), id_mejor, coef_max, pl der, nest der);
