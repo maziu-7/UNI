@@ -86,13 +86,13 @@ int main() {
 
         else if (op == "subir_bicis" or op == "sb") {
             cout << "#sb" << endl;
-            //e.subir_bicis(a);
+            e.subir_bicis(b);
         }
 
         else if (op == "asignar_estacion" or op == "ae") {
             cin >> idb;
             cout << "#ae " << idb << endl;
-            //e.asignar_estacion(idb);
+            e.asignar_estacion(idb, b);
         }
     }
 }
