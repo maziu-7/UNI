@@ -26,7 +26,7 @@ private:
     int pl_totales;
     void inicializar_arbol(BinTree<string>& a);
     void i_subir_bicis(const BinTree<string>& a, Cjt_bicis& cb);
-    void i_asignar_estacion(const BinTree<string>& a);
+    void i_asignar_estacion(const BinTree<string>& a, string ide, double& coef_max, int& num_est, int& pl);
 
 public:
     /**
@@ -129,6 +129,6 @@ public:
     /**
      * @brief 
      */
-    void asignar_estacion(const BinTree<string>& a);
+    void asignar_estacion(const string& idb, Cjt_bicis& b);
 };
 #endif

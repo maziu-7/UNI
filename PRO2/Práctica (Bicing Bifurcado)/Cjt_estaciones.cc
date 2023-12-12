@@ -114,10 +114,34 @@ void Cjt_estaciones::i_subir_bicis(const BinTree<string>& a, Cjt_bicis& b) {
     }
 }
 
-void asignar_estacion(const BinTree<string>& a) {
-    i_asignar_estacion(a);
+void Cjt_estaciones::asignar_estacion(const string& idb, Cjt_bicis& b) {
+    int pl, num_est;
+    double coef_max = 0.0;
+    string ide;
+    i_asignar_estacion(arbol_estaciones, ide, coef_max, num_est, pl);
+    alta_bici(idb, ide);
+    b.anadir_bici(idb);
 }
 
-void i_asignar_estacion(const BinTree<string>& a) {
-    
+void Cjt_estaciones::i_asignar_estacion(const BinTree<string>& a, string ide, double& coef_max, int& num_est, int& pl) {
+    if (a.left().empty() and a.right().empty()) {
+        pl = estaciones[a.value()].plazas_libres();
+        num_est = 1;
+        if ((coef_max < pl or (coef_max == pl and ide > a.value()))) {
+            coef_max = pl;
+            ide = a.value();
+        }
+    }
+    else {
+        int est_izq, est_der, pl_izq, pl_der;
+        i_asignar_estacion(a.left(), ide, coef_max, est_izq, pl_izq);
+        i_asignar_estacion(a.right(), ide, coef_max, est_der, pl_der);
+        pl = pl_izq + pl_der + estaciones[a.value()].plazas_libres();
+        num_est = est_izq + est_der + 1;
+        double coef_max_nuevo = double(pl)/double(num_est);
+        if ((coef_max < coef_max_nuevo or (coef_max == coef_max_nuevo and ide > a.value())) and estaciones[a.value()].plazas_libres() > 0) {
+            coef_max = coef_max_nuevo;
+            ide = a.value();
+        }
+    }
 }
