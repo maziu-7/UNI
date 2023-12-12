@@ -64,11 +64,6 @@ public:
     void baja_bici(const string& idb, const string& ide);
 
     /**
-     * @brief  
-     */
-    string estacion_bici(const string& idb) const;
-
-    /**
      * @brief Consultora que indica si existe una estación
      * \pre: cert
      * \post: si la estación no existe, devuelve falso
@@ -83,7 +78,7 @@ public:
      * estación destino es igual a la estación origen o si la bici no
      * cabe en la estación destino, se escribe un error en el canal de salida
      */
-    void mover_bici(const string& ide, const string& idb);
+    void mover_bici(const string& ide, const string& idb, const string& origen);
 
     /**
      * @brief Consultora que indica si una estación está llena

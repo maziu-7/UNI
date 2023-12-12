@@ -3,8 +3,12 @@ using namespace std;
 
 Estacion::Estacion() {}
 
+Estacion::Estacion(int n) {
+    capacidad = n;
+    pl_estacion = n;
+}
+
 void Estacion::anadir_bici(const string& idb) {
-    Bici b;
     bicis.insert(idb);
     --pl_estacion;
 }

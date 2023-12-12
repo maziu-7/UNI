@@ -18,3 +18,7 @@ void Bici::imprimir_viajes() {
 void Bici::modificar_estacion(const string& ide) {
     estacion = ide;
 }
+
+string Bici::estacio_actual() const {
+    return estacion;
+}

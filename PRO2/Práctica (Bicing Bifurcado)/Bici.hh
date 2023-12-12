@@ -53,5 +53,10 @@ public:
      * @brief 
      */
     void modificar_estacion(const string& ide);
+
+    /**
+     * @brief  
+     */
+    string estacio_actual() const;
 };
 #endif

@@ -17,12 +17,9 @@ bool Cjt_bicis::existe_bici(const string& idb) const {
     return true;
 }
 
-/*
-string Cjt_estaciones::estacion_bici(const string& idb) const {
-    map<string,Estacion>::const_iterator it = estaciones.find(idb);
-    return (*it).first;
+string Cjt_bicis::estacion_bici(const string& idb) {
+    return conjunto_bicis[idb].estacio_actual();
 }
-*/
 
 void Cjt_bicis::viaje_nuevo(const string& origen, const string& destino, const string& idb) {
     map<string, Bici>::iterator it = conjunto_bicis.find(idb);

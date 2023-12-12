@@ -9,7 +9,7 @@ void Cjt_estaciones::inicializar_arbol(BinTree<string>& a) {
     if (ide != "#") {
         int c;
         cin >> c;
-        Estacion e;
+        Estacion e(c);
         pl_totales += c;
         estaciones.insert(make_pair(ide, e));
         BinTree<string> izq, der;
@@ -33,24 +33,19 @@ void Cjt_estaciones::baja_bici(const string& idb, const string& ide) {
     ++pl_totales;
 }
 
-string Cjt_estaciones::estacion_bici(const string& idb) const {
-    map<string,Estacion>::const_iterator it = estaciones.find(idb);
-    return (*it).first;
-}
-
 bool Cjt_estaciones::existe_estacion(const string& ide) const {
     if (estaciones.find(ide) == estaciones.end()) return false;
     return true;
 }
 
-void Cjt_estaciones::mover_bici(const string& ide, const string& idb) {
-    string origen = estacion_bici(idb);
+void Cjt_estaciones::mover_bici(const string& ide, const string& idb, const string& origen) {
     alta_bici(idb, ide);
     baja_bici(idb, origen);
 }
 
 bool Cjt_estaciones::estacion_llena(const string& ide) const {
-    if ((*estaciones.find(ide)).second.estacion_llena()) return true;
+    map<string,Estacion>::const_iterator it = estaciones.find(ide);
+    if ((*it).second.estacion_llena()) return true;
     return false;
 }
 
@@ -121,6 +116,7 @@ void Cjt_estaciones::asignar_estacion(const string& idb, Cjt_bicis& b) {
     i_asignar_estacion(arbol_estaciones, ide, coef_max, num_est, pl);
     alta_bici(idb, ide);
     b.anadir_bici(idb);
+    //mover_bici(ide, idb);
 }
 
 void Cjt_estaciones::i_asignar_estacion(const BinTree<string>& a, string ide, double& coef_max, int& num_est, int& pl) {

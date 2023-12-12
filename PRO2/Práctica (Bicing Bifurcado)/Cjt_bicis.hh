@@ -58,6 +58,11 @@ public:
     bool existe_bici(const string& idb) const;
 
     /**
+     * @brief  
+     */
+    string estacion_bici(const string& idb);
+
+    /**
      * @brief 
      */
     void viaje_nuevo(const string& origen, const string& destino, const string& idb);

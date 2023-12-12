@@ -33,6 +33,11 @@ public:
     Estacion();
 
     /**
+     * @brief Construct a new Estacion object
+     */
+    Estacion(int n);
+
+    /**
      * @brief Modificadora que añade una bici a una estación
      * \pre: string identificador de la bici y de la estación
      * \post: si la estación no existe, si la bici ya está
