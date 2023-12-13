@@ -6,9 +6,9 @@
 
 #include "Estacion.hh"
 #include "Cjt_bicis.hh"
-#include "BinTree.hh"
 
 #ifndef NO_DIAGRAM
+#include "BinTree.hh"
 #include <map>
 #endif
 
