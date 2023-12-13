@@ -21,7 +21,7 @@ class Cjt_estaciones {
 
 private:
     BinTree<string> arbol_estaciones;
-    map<string, Estacion> estaciones;
+    map<string, Estacion> ce;
     int pl_totales = 0;
     void inicializar_arbol(BinTree<string>& a);
     void i_subir_bicis(const BinTree<string>& a, Cjt_bicis& cb);

@@ -18,7 +18,7 @@
 class Cjt_bicis {
 
 private:
-    map<string,Bici> conjunto_bicis; //identificadores de las bicis junto a sus viajes
+    map<string,Bici> cb; //identificadores de las bicis junto a sus viajes
 
 public:
     /**

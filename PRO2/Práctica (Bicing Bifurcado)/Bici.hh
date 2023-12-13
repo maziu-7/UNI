@@ -17,7 +17,7 @@ using namespace std;
 class Bici {
 
 private:
-    list<pair<string,string>> viajes_bici; //viajes de cada bici
+    list<pair<string,string>> vbicis; //viajes de cada bici
     string estacion; //identificador de la estación actual en la que
                      //se encuentra la bici
 public:

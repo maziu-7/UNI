@@ -1,3 +1,6 @@
+/** @file Estacion.cc
+    @brief Implementación de la clase Estacion
+ */
 #include "Estacion.hh"
 using namespace std;
 
