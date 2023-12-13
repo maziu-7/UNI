@@ -1,4 +1,4 @@
-OPCIONS =-D_JUDGE_ -D_GLIBCXX_DEBUG -O2 -Wall -Wextra -Werror -Wno-sign-compare -std=c++11 -fno-extended-identifiers
+OPCIONS =-D_JUDGE_ -D_GLIBCXX_DEBUG -O2 -Wall -Wextra -Werror -fno-extended-identifiers -Wno-sign-compare -std=c++11
 
 program.exe: program.o Bici.o Cjt_bicis.o Estacion.o Cjt_estaciones.o
 	g++ -o program.exe program.o Bici.o Cjt_bicis.o Estacion.o Cjt_estaciones.o
