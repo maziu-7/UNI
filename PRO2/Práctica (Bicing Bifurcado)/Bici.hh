@@ -21,6 +21,8 @@ private:
     string estacion; //identificador de la estación actual en la que
                      //se encuentra la bici
 public:
+    //Constructoras
+
     /**
      * @brief Constructora por defecto
      * \pre: cierto
@@ -28,6 +30,8 @@ public:
      * que ha hecho una bici
      */
     Bici();
+
+    //Modificadoras
 
     /**
      * @brief Modificadora que añade un viaje a una bici
@@ -40,25 +44,29 @@ public:
     void viaje_nuevo(const string& origen, const string& destino);
 
     /**
-     * @brief Escritora que imprime todos los viajes de una bici
-     * \pre: cierto
-     * \post: si la estación no existe escribe un mensaje de error en
-     * el canal de salida
-     */
-    void imprimir_viajes();
-
-    /**
      * @brief 
      * \pre: 
      * \post: 
      */
     void modificar_estacion(const string& ide);
 
+    //Consultoras
+    
     /**
      * @brief  
      * \pre: 
      * \post: 
      */
     string estacio_actual() const;
+
+    //Lectura y escritura
+
+    /**
+     * @brief Escritora que imprime todos los viajes de una bici
+     * \pre: cierto
+     * \post: si la estación no existe escribe un mensaje de error en
+     * el canal de salida
+     */
+    void imprimir_viajes();
 };
 #endif

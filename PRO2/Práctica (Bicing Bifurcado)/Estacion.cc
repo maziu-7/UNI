@@ -9,12 +9,12 @@ Estacion::Estacion(int n) {
 }
 
 void Estacion::anadir_bici(const string& idb) {
-    bicis.insert(idb);
+    bicis_est.insert(idb);
     --pl_estacion;
 }
 
 void Estacion::eliminar_bici(const string& idb) {
-    bicis.erase(idb);
+    bicis_est.erase(idb);
     ++pl_estacion;
 }
 
@@ -29,8 +29,8 @@ bool Estacion::estacion_llena() const {
 }
 
 void Estacion::bicis_estacion() const {
-    set<string>::iterator it = bicis.begin();
-    while (it != bicis.end()) {
+    set<string>::iterator it = bicis_est.begin();
+    while (it != bicis_est.end()) {
         cout << *it << endl;
         ++it;
     }
@@ -45,5 +45,5 @@ int Estacion::plazas_libres() const {
 }
 
 string Estacion::bici_menor() const {
-    return (*bicis.begin());
+    return (*bicis_est.begin());
 }

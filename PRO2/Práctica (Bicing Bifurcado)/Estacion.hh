@@ -18,7 +18,7 @@
 class Estacion {
 
 private:
-    set<string> bicis; //identificador de cada bici
+    set<string> bicis_est; //identificador de cada bici
     int pl_estacion, capacidad;
 
 public:

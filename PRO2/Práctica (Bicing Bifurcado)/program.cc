@@ -2,9 +2,9 @@
     @file program.cc
     @brief Programa principal donde se ejecutan las instrucciones
  */
-#include "Cjt_bicis.hh"
-#include "Estacion.hh"
 #include "Cjt_estaciones.hh"
+#include "Estacion.hh"
+#include "Cjt_bicis.hh"
 using namespace std;
 
 /** @brief 

@@ -20,7 +20,6 @@ void Cjt_estaciones::inicializar_arbol(BinTree<string>& a) {
 }
 
 void Cjt_estaciones::inicializar_estaciones() {
-    
     inicializar_arbol(arbol_estaciones);
 }
 
