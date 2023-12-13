@@ -63,6 +63,6 @@ public:
      * \pre: 
      * \post: 
      */
-    string estacio_actual() const;
+    string estacion_actual() const;
 };
 #endif

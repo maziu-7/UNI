@@ -8,7 +8,7 @@ Bici::Bici() {}
 
 void Bici::viaje_nuevo(const string& origen, const string& destino) {
     pair<string, string> viajes(origen, destino);
-    vbicis.insert(vbicis.end(),viajes);
+    vbicis.insert(vbicis.end(), viajes);
     estacion = destino;
 }
 
@@ -23,6 +23,6 @@ void Bici::modificar_estacion(const string& ide) {
     estacion = ide;
 }
 
-string Bici::estacio_actual() const {
+string Bici::estacion_actual() const {
     return estacion;
 }

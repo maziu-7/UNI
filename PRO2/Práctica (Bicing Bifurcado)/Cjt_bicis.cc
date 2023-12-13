@@ -7,9 +7,9 @@ using namespace std;
 Cjt_bicis::Cjt_bicis() {}
 
 void Cjt_bicis::anadir_bici(const string& idb, const string& ide) {
-    Bici bici;
-    bici.modificar_estacion(ide);
-    cb.insert(make_pair(idb, bici));
+    Bici b;
+    b.modificar_estacion(ide);
+    cb.insert(make_pair(idb, b));
 }
 
 void Cjt_bicis::eliminar_bici(const string& idb) {
@@ -22,7 +22,7 @@ bool Cjt_bicis::existe_bici(const string& idb) const {
 }
 
 string Cjt_bicis::estacion_bici(const string& idb) {
-    return cb[idb].estacio_actual();
+    return cb[idb].estacion_actual();
 }
 
 void Cjt_bicis::viaje_nuevo(const string& origen, const string& destino, const string& idb) {

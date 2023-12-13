@@ -2,9 +2,9 @@
     @file program.cc
     @brief Programa principal donde se ejecutan las instrucciones
  */
-#include "Cjt_estaciones.hh"
-#include "Estacion.hh"
 #include "Cjt_bicis.hh"
+#include "Estacion.hh"
+#include "Cjt_estaciones.hh"
 using namespace std;
 
 /** @brief 
@@ -33,8 +33,8 @@ int main() {
             cout << "#bb " << idb << endl;
             if (not cb.existe_bici(idb)) cout << "error: la bici no existe" << endl;
             else {
-                cb.eliminar_bici(idb);
                 ide = cb.estacion_bici(idb);
+                cb.eliminar_bici(idb);
                 ce.baja_bici(idb,ide);
             }
         }
