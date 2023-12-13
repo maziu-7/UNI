@@ -1,7 +1,6 @@
-/**
- * @file Cjt_bicis.hh
- * @brief Especificación de la clase Cjt_bicis
- */
+/** @file Cjt_bicis.hh
+    @brief Especificación de la clase Cjt_bicis
+*/
 #ifndef CJT_BICIS_HH
 #define CJT_BICIS_HH
 
@@ -12,10 +11,9 @@
 #include <map>
 #endif
 
-/**
- * @class Cjt_bicis
- * @brief Contiene la información de todas las bicis.
- * A través de un mapa, se indica en qué estación están 
+/** @class Cjt_bicis
+    @brief Contiene la información de todas las bicis.
+    A través de un mapa, se indica en qué estación están
  */
 class Cjt_bicis {
 
@@ -58,22 +56,30 @@ public:
     bool existe_bici(const string& idb) const;
 
     /**
-     * @brief  
+     * @brief 
+     * \pre: 
+     * \post:  
      */
     string estacion_bici(const string& idb);
 
     /**
      * @brief 
+     * \pre: 
+     * \post: 
      */
     void viaje_nuevo(const string& origen, const string& destino, const string& idb);
 
     /**
      * @brief 
+     * \pre: 
+     * \post: 
      */
     void imprimir_viajes(const string& idb);
 
     /**
      * @brief 
+     * \pre: 
+     * \post: 
      */
     void modificar_estacion(const string& idb, const string& ide);
 };

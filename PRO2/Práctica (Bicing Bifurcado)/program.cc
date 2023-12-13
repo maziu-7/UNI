@@ -1,11 +1,14 @@
-/**
- * @file program.cc
+/** @mainpage
+    @file program.cc
+    @brief Programa principal donde se ejecutan las instrucciones
  */
 #include "Cjt_bicis.hh"
 #include "Estacion.hh"
 #include "Cjt_estaciones.hh"
 using namespace std;
 
+/** @brief 
+ */
 int main() {
     Cjt_estaciones e;
     Cjt_bicis b;

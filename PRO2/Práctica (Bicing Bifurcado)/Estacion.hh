@@ -1,7 +1,6 @@
-/**
- * @file Estacion.hh
- * @brief Especificación de la clase Estacion
- */
+/** @file Estacion.hh
+    @brief Especificación de la clase Estacion
+*/
 #ifndef ESTACION_HH
 #define ESTACION_HH
 
@@ -20,8 +19,7 @@ class Estacion {
 
 private:
     set<string> bicis; //identificador de cada bici
-    int pl_estacion; //plazas libres de una estación
-    int capacidad;
+    int pl_estacion, capacidad;
 
 public:
     /**
@@ -82,16 +80,22 @@ public:
 
     /**
      * @brief 
+     * \pre: 
+     * \post: 
      */
     int cantidad_bicis() const;
 
     /**
-     * @brief
+     * @brief 
+     * \pre: 
+     * \post: 
      */
     int plazas_libres() const;
 
     /**
      * @brief 
+     * \pre: 
+     * \post: 
      */
     string bici_menor() const;
 };

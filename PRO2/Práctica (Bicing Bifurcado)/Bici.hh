@@ -1,7 +1,6 @@
-/**
- * @file Bici.hh
- * @brief Especificación de la clase Bici
- */
+/** @file Bici.hh
+    @brief Especificación de la clase Bici
+*/
 #ifndef BICI_HH
 #define BICI_HH
 
@@ -11,22 +10,21 @@
 using namespace std;
 #endif
 
-/**
- * @class Bici
- * @brief Contiene los viajes que realiza cada bici en una lista
- * de pair de strings, con su estación de origen y su estación de destino.
+/** @class Bici
+    @brief Contiene los viajes que realiza cada bici en una lista
+    de pair de strings, con su estación de origen y su estación de destino.
  */
 class Bici {
 
 private:
     list<pair<string,string>> viajes_bici; //viajes de cada bici
-    string estacion; //identificador de estación de la bici
-
+    string estacion; //identificador de la estación actual en la que
+                     //se encuentra la bici
 public:
     /**
      * @brief Constructora por defecto
      * \pre: cierto
-     * \post: una clase Bici vacía donde se guardan los viajes
+     * \post: una clase Bici vacía donde se podrán guardar los viajes
      * que ha hecho una bici
      */
     Bici();
@@ -51,11 +49,15 @@ public:
 
     /**
      * @brief 
+     * \pre: 
+     * \post: 
      */
     void modificar_estacion(const string& ide);
 
     /**
      * @brief  
+     * \pre: 
+     * \post: 
      */
     string estacio_actual() const;
 };

@@ -1,7 +1,6 @@
-/**
- * @file Cjt_estaciones.hh
- * @brief Especificación de la clase Cjt_estaciones
- */
+/** @file Cjt_estaciones.hh
+    @brief Especificación de la clase Cjt_estaciones
+*/
 #ifndef CJT_ESTACIONES_HH
 #define CJT_ESTACIONES_HH
 
@@ -108,21 +107,29 @@ public:
 
     /**
      * @brief 
+     * \pre: 
+     * \post: 
      */
     int cantidad_bicis(const string& ide) const;
 
     /**
      * @brief 
+     * \pre: 
+     * \post: 
      */
     int plazas_totales() const;
 
     /**
      * @brief 
+     * \pre: 
+     * \post: 
      */
     void subir_bicis(Cjt_bicis& cb);
 
     /**
      * @brief 
+     * \pre: 
+     * \post: 
      */
     void asignar_estacion(const string& idb, Cjt_bicis& b);
 };
