@@ -26,17 +26,13 @@ string Cjt_bicis::estacion_bici(const string& idb) {
 }
 
 void Cjt_bicis::viaje_nuevo(const string& origen, const string& destino, const string& idb) {
-    map<string, Bici>::iterator it = cb.find(idb);
-    (*it).second.viaje_nuevo(origen, destino);
+    cb[idb].viaje_nuevo(origen, destino);
 }
 
 void Cjt_bicis::imprimir_viajes(const string& idb) {
-    map<string, Bici>::iterator it;
-    it = cb.find(idb);
-    (*it).second.imprimir_viajes();
+    cb[idb].imprimir_viajes();
 }
 
 void Cjt_bicis::modificar_estacion(const string& idb, const string& ide) {
-    map<string, Bici>::iterator it = cb.find(idb);
-    (*it).second.modificar_estacion(ide);
+    cb[idb].modificar_estacion(ide);
 }
