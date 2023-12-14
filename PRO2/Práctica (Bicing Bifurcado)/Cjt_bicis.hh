@@ -13,7 +13,6 @@
 
 /** @class Cjt_bicis
     @brief Contiene la información de todas las bicis.
-    A través de un mapa, se indica en qué estación están
  */
 class Cjt_bicis {
 
