@@ -22,63 +22,71 @@ private:
 public:
     /**
      * @brief Constructora por defecto
-     * \pre: cierto
-     * \post: un conjunto de bicis Cjt_bicis para guardar
+     * \pre cierto
+     * \post un conjunto de bicis Cjt_bicis para guardar
      * los viajes que ha hecho cada bici
+     * \coste 
      */
     Cjt_bicis();
 
     /**
      * @brief Modificadora que añade una bici a una estación
-     * \pre: string identificador de una bici y de una estación
-     * \post: si la estación no existe, si la bici ya está
+     * \pre string identificador de una bici y de una estación
+     * \post si la estación no existe, si la bici ya está
      * en la estación o si la bici no cabe se escribe un
      * mensaje de error en el canal de salida
+     * \coste 
      */
     void anadir_bici(const string& idb, const string& ide);
 
     /**
      * @brief Modificadora que da de baja una bici
-     * \pre: string identificador de la bici
-     * \post: si la bici no existe se produce un mensaje de error
+     * \pre string identificador de la bici
+     * \post si la bici no existe se produce un mensaje de error
      * en el canal de salida, en caso contrario, se elimina la bici
      * del sistema, modificando también las plazas libres de la estación
+     * \coste 
      */
     void eliminar_bici(const string& idb);
 
     /**
      * @brief Consultora que indica si existe una bici
-     * \pre: string identificador de la bici
-     * \post: si la bici no existe se escribe un mensaje
+     * \pre string identificador de la bici
+     * \post si la bici no existe se escribe un mensaje
      * error en el canal de salida 
+     * \coste 
      */
     bool existe_bici(const string& idb) const;
 
     /**
      * @brief 
-     * \pre: 
-     * \post:  
+     * \pre
+     * \post
+     * \coste   
      */
     string estacion_bici(const string& idb);
 
     /**
      * @brief 
-     * \pre: 
-     * \post: 
+     * \pre 
+     * \post 
+     * \coste 
      */
     void viaje_nuevo(const string& origen, const string& destino, const string& idb);
 
     /**
      * @brief 
-     * \pre: 
-     * \post: 
+     * \pre 
+     * \post 
+     * \coste 
      */
     void imprimir_viajes(const string& idb);
 
     /**
      * @brief 
-     * \pre: 
-     * \post: 
+     * \pre 
+     * \post 
+     * \coste 
      */
     void modificar_estacion(const string& idb, const string& ide);
 };

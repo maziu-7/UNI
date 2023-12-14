@@ -25,19 +25,21 @@ public:
 
     /**
      * @brief Constructora por defecto
-     * \pre: cierto
-     * \post: una clase Bici vacía donde se podrán guardar los viajes
+     * \pre cierto
+     * \post una clase Bici vacía donde se podrán guardar los viajes
      * que ha hecho una bici
+     * \coste 
      */
     Bici();
 
     /**
      * @brief Modificadora que añade un viaje a una bici
-     * \pre: dos strings de identificación de estación, origen y destino
-     * \post: si la estación no existe, si la bici no existe,
+     * \pre dos strings de identificación de estación, origen y destino
+     * \post si la estación no existe, si la bici no existe,
      * si la bici no cabe o si origen y destino son iguales,
      * se escribe un mensaje de error en el canal de salida,
      * en caso contrario, se añade el viaje nuevo a viajes_bici
+     * \coste 
      */
     void viaje_nuevo(const string& origen, const string& destino);
 
@@ -51,8 +53,9 @@ public:
 
     /**
      * @brief 
-     * \pre: 
-     * \post: 
+     * \pre 
+     * \post 
+     * \coste 
      */
     void modificar_estacion(const string& ide);
 
@@ -60,9 +63,20 @@ public:
     
     /**
      * @brief  
-     * \pre: 
-     * \post: 
+     * \pre 
+     * \post 
+     * \coste 
      */
     string estacion_actual() const;
+
+    //Lectura y escritura
+
+    /**
+     * @brief Escritora que imprime todos los viajes de una bici
+     * \pre: cierto
+     * \post: si la estación no existe escribe un mensaje de error en
+     * el canal de salida
+     */
+    void imprimir_viajes();
 };
 #endif
