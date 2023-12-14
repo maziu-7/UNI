@@ -4,8 +4,6 @@
 #include "Cjt_estaciones.hh"
 using namespace std;
 
-Cjt_estaciones::Cjt_estaciones() {}
-
 void Cjt_estaciones::inicializar_arbol(BinTree<string>& a) {
     string ide;
     cin >> ide;
@@ -20,59 +18,6 @@ void Cjt_estaciones::inicializar_arbol(BinTree<string>& a) {
         inicializar_arbol(der);
         a = BinTree<string>(ide, izq, der);
     }
-}
-
-void Cjt_estaciones::inicializar_estaciones() {
-    inicializar_arbol(arbol_estaciones);
-}
-
-void Cjt_estaciones::alta_bici(const string& idb, const string& ide) {
-    ce[ide].anadir_bici(idb);
-    --pl_totales;
-}
-
-void Cjt_estaciones::baja_bici(const string& idb, const string& ide) {
-    ce[ide].eliminar_bici(idb);
-    ++pl_totales;
-}
-
-bool Cjt_estaciones::existe_estacion(const string& ide) const {
-    if (ce.find(ide) == ce.end()) return false;
-    return true;
-}
-
-void Cjt_estaciones::mover_bici(const string& ide, const string& idb, const string& origen) {
-    alta_bici(idb, ide);
-    baja_bici(idb, origen);
-}
-
-bool Cjt_estaciones::estacion_llena(const string& ide) const {
-    map<string,Estacion>::const_iterator it = ce.find(ide);
-    if ((*it).second.estacion_llena()) return true;
-    return false;
-}
-
-void Cjt_estaciones::modificar_capacidad(const string& ide, int n) {
-    map<string,Estacion>::iterator it = ce.find(ide);
-    int capacidad = it->second.plazas_libres() + it->second.cantidad_bicis();
-    it->second.modificar_capacidad(n);
-    pl_totales += n - capacidad;
-}
-
-void Cjt_estaciones::bicis_estacion(const string& ide) const {
-    ce.find(ide)->second.bicis_estacion();
-}
-
-int Cjt_estaciones::cantidad_bicis(const string& ide) const {
-    return (*ce.find(ide)).second.cantidad_bicis();
-}
-
-int Cjt_estaciones::plazas_totales() const {
-    return pl_totales;
-}
-
-void Cjt_estaciones::subir_bicis(Cjt_bicis& cb) {
-    i_subir_bicis(arbol_estaciones, cb);
 }
 
 void Cjt_estaciones::i_subir_bicis(const BinTree<string>& a, Cjt_bicis& b) {
@@ -115,15 +60,6 @@ void Cjt_estaciones::i_subir_bicis(const BinTree<string>& a, Cjt_bicis& b) {
     }
 }
 
-void Cjt_estaciones::asignar_estacion(const string& idb, Cjt_bicis& cb) {
-    int pl, num_est;
-    double coef_max = 0.0;
-    string ide;
-    i_asignar_estacion(arbol_estaciones, ide, coef_max, num_est, pl);
-    alta_bici(idb, ide);
-    cb.anadir_bici(idb,ide);
-}
-
 void Cjt_estaciones::i_asignar_estacion(const BinTree<string>& a, string& ide, double& coef_max, int& num_est, int& pl) {
     if (a.left().empty() and a.right().empty()) {
         pl = ce[a.value()].plazas_libres();
@@ -145,4 +81,68 @@ void Cjt_estaciones::i_asignar_estacion(const BinTree<string>& a, string& ide, d
             ide = a.value();
         }
     }
+}
+
+Cjt_estaciones::Cjt_estaciones() {}
+
+void Cjt_estaciones::alta_bici(const string& idb, const string& ide) {
+    ce[ide].anadir_bici(idb);
+    --pl_totales;
+}
+
+void Cjt_estaciones::baja_bici(const string& idb, const string& ide) {
+    ce[ide].eliminar_bici(idb);
+    ++pl_totales;
+}
+
+void Cjt_estaciones::mover_bici(const string& ide, const string& idb, const string& origen) {
+    alta_bici(idb, ide);
+    baja_bici(idb, origen);
+}
+
+void Cjt_estaciones::modificar_capacidad(const string& ide, int n) {
+    map<string,Estacion>::iterator it = ce.find(ide);
+    int capacidad = it->second.plazas_libres() + it->second.cantidad_bicis();
+    it->second.modificar_capacidad(n);
+    pl_totales += n - capacidad;
+}
+
+void Cjt_estaciones::subir_bicis(Cjt_bicis& cb) {
+    i_subir_bicis(arbol_estaciones, cb);
+}
+
+bool Cjt_estaciones::existe_estacion(const string& ide) const {
+    if (ce.find(ide) == ce.end()) return false;
+    return true;
+}
+
+bool Cjt_estaciones::estacion_llena(const string& ide) const {
+    map<string,Estacion>::const_iterator it = ce.find(ide);
+    if ((*it).second.estacion_llena()) return true;
+    return false;
+}
+
+void Cjt_estaciones::bicis_estacion(const string& ide) const {
+    ce.find(ide)->second.bicis_estacion();
+}
+
+int Cjt_estaciones::cantidad_bicis(const string& ide) const {
+    return (*ce.find(ide)).second.cantidad_bicis();
+}
+
+int Cjt_estaciones::plazas_totales() const {
+    return pl_totales;
+}
+
+void Cjt_estaciones::asignar_estacion(const string& idb, Cjt_bicis& cb) {
+    int pl, num_est;
+    double coef_max = 0.0;
+    string ide;
+    i_asignar_estacion(arbol_estaciones, ide, coef_max, num_est, pl);
+    alta_bici(idb, ide);
+    cb.anadir_bici(idb,ide);
+}
+
+void Cjt_estaciones::inicializar_estaciones() {
+    inicializar_arbol(arbol_estaciones);
 }

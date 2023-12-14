@@ -12,16 +12,18 @@
 
 /**
  * @class Estacion 
- * @brief Contiene las bicis que hay en una estación, almacenadas
- * en un set con sus respectivos identificadores y viajes
+ * @brief Representa una estación con todas las bicis que contiene
  */
 class Estacion {
 
 private:
     set<string> bicis_est; //identificador de cada bici
-    int pl_estacion, capacidad;
+    int pl_estacion, capacidad; //plazas libres de la estación
+                                //y su capacidad total, respectivamente
 
 public:
+    //Consultoras
+
     /**
      * @brief Constructora por defecto
      * \pre cierto
@@ -38,6 +40,8 @@ public:
      * \coste 
      */
     Estacion(int n);
+
+    //Modificadoras
 
     /**
      * @brief Modificadora que añade una bici a una estación
@@ -68,6 +72,8 @@ public:
      * \coste 
      */
     void modificar_capacidad(int n);
+
+    //Consultoras
 
     /**
      * @brief Consultora que indica si una estación está llena

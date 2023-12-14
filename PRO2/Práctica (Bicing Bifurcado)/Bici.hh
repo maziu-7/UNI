@@ -11,13 +11,12 @@ using namespace std;
 #endif
 
 /** @class Bici
-    @brief Contiene los viajes que realiza cada bici en una lista
-    de pair de strings, con su estación de origen y su estación de destino.
+    @brief Representa una bici con sus respectivos viajes
  */
 class Bici {
 
 private:
-    list<pair<string, string>> vbicis; //viajes de cada bici
+    list<pair<string, string>> vbicis; //viajes de la bici
     string estacion; //identificador de la estación actual en la que
                      //se encuentra la bici
 public:
@@ -26,27 +25,25 @@ public:
     /**
      * @brief Constructora por defecto
      * \pre cierto
-     * \post una clase Bici vacía donde se podrán guardar los viajes
-     * que ha hecho una bici
+     * \post El resultado es una bici sin viajes
      * \coste 
      */
     Bici();
 
+    //Modificadoras
+
     /**
-     * @brief Modificadora que añade un viaje a una bici
-     * \pre deben existir mínimo dos estaciones
-     * \post si la estación no existe, si la bici no existe,
-     * si la bici no cabe o si origen y destino son iguales,
-     * se escribe un mensaje de error en el canal de salida,
-     * en caso contrario, se añade el viaje nuevo a viajes_bici
+     * @brief Añade un viaje a la bici
+     * \pre Origen y destino existen y son diferentes
+     * \post Añade un viaje al parámetro implícito
      * \coste 
      */
     void viaje_nuevo(const string& origen, const string& destino);
 
     /**
-     * @brief 
-     * \pre 
-     * \post 
+     * @brief Modifica la estación en la que se encuentra la bici
+     * \pre cierto
+     * \post El parámetro implícito se convierte en <em>ide</em>
      * \coste 
      */
     void modificar_estacion(const string& ide);
@@ -54,20 +51,19 @@ public:
     //Consultoras
     
     /**
-     * @brief  
-     * \pre 
-     * \post 
+     * @brief Consultora de la estación
+     * \pre cierto
+     * \post El resultado es la estación en la que se encuentra la bici actualmente
      * \coste 
      */
     string estacion_actual() const;
 
-    //Lectura y escritura
+    //Lectura y/o escritura
 
     /**
-     * @brief Escritora que imprime todos los viajes de una bici
+     * @brief Operación de escritura
      * \pre: cierto
-     * \post: si la estación no existe escribe un mensaje de error en
-     * el canal de salida
+     * \post: Escribe todos los viajes que ha hecho la bici
      */
     void imprimir_viajes();
 };

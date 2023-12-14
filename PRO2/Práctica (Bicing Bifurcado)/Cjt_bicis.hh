@@ -12,7 +12,7 @@
 #endif
 
 /** @class Cjt_bicis
-    @brief Contiene la información de todas las bicis.
+    @brief Representa todas las bicis con sus identificadores e viajes
  */
 class Cjt_bicis {
 
@@ -20,74 +20,77 @@ private:
     map<string,Bici> cb; //identificadores de las bicis junto a sus viajes
 
 public:
+    //Constructoras
+
     /**
      * @brief Constructora por defecto
      * \pre cierto
-     * \post un conjunto de bicis Cjt_bicis para guardar
-     * los viajes que ha hecho cada bici
+     * \post El resultado es un <em>Cjt_bicis</em> vacío 
      * \coste 
      */
     Cjt_bicis();
 
+    //Modificadoras
+
     /**
-     * @brief Modificadora que añade una bici a una estación
-     * \pre string identificador de una bici y de una estación
-     * \post si la estación no existe, si la bici ya está
-     * en la estación o si la bici no cabe se escribe un
-     * mensaje de error en el canal de salida
+     * @brief Añade una bici a una estación
+     * \pre La estación <em>ide</em> existe, la bici <em>idb</em> no está incluída previamente en la estación
+     * y la bici cabe en la estación
+     * \post El parámetro implícito pasa a tener una bici más
      * \coste 
      */
     void anadir_bici(const string& idb, const string& ide);
 
     /**
-     * @brief Modificadora que da de baja una bici
-     * \pre string identificador de la bici
-     * \post si la bici no existe se produce un mensaje de error
-     * en el canal de salida, en caso contrario, se elimina la bici
-     * del sistema, modificando también las plazas libres de la estación
+     * @brief Elimina una bici
+     * \pre La bici <em>idb</em> existe
+     * \post El parámetro implícito pasa a tener una bici menos
      * \coste 
      */
     void eliminar_bici(const string& idb);
 
     /**
-     * @brief Consultora que indica si existe una bici
-     * \pre string identificador de la bici
-     * \post si la bici no existe se escribe un mensaje
-     * error en el canal de salida 
-     * \coste 
-     */
-    bool existe_bici(const string& idb) const;
-
-    /**
-     * @brief 
-     * \pre
-     * \post
-     * \coste   
-     */
-    string estacion_bici(const string& idb);
-
-    /**
-     * @brief 
-     * \pre 
-     * \post 
+     * @brief Añade un viaje a una bici
+     * \pre La bici <em>idb</em> existe
+     * \post El parámetro implícito pasa a tener un viaje más
      * \coste 
      */
     void viaje_nuevo(const string& origen, const string& destino, const string& idb);
 
     /**
-     * @brief 
-     * \pre 
-     * \post 
-     * \coste 
-     */
-    void imprimir_viajes(const string& idb);
-
-    /**
-     * @brief 
-     * \pre 
-     * \post 
+     * @brief Modifica la estación en la que se encuentra una bici
+     * \pre La bici <em>idb</em> existe
+     * \post El parámetro implícito de una bici del conjunto pasa a tener una estación diferente
      * \coste 
      */
     void modificar_estacion(const string& idb, const string& ide);
+
+    //Consultoras
+
+    /**
+     * @brief Consulta la existencia de una bici
+     * \pre El parámetro implícito está inicializado
+     * \post El resultado es cierto si existe; falso si no
+     * \coste 
+     */
+    bool existe_bici(const string& idb) const;
+
+    /**
+     * @brief Consultora de una estación
+     * \pre El parámetro implícito está inicializado y la bici <em>idb</em> existe
+     * \post El resultado es el identificador de la estación del parámetro implícito
+     * \coste 
+     */
+    string estacion_bici(const string& idb);
+
+    //Lectura y/o escritura
+
+    /**
+     * @brief Operación de escritura
+     * \pre La bici <em>idb</em> existe
+     * \post Escribe todos los viajes que ha hecho la bici <em>idb</em>
+     * \coste 
+     */
+    void imprimir_viajes(const string& idb);
 };
 #endif

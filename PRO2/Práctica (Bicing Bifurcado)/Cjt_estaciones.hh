@@ -28,6 +28,8 @@ private:
     void i_asignar_estacion(const BinTree<string>& a, string& ide, double& coef_max, int& num_est, int& pl);
 
 public:
+    //Constructoras
+
     /**
      * @brief Constructora por defecto
      * \pre cierto
@@ -37,14 +39,7 @@ public:
      */
     Cjt_estaciones();
 
-    /**
-     * @brief Lee los parámetros de entrada y va añadiéndolos
-     * a Cjt_estaciones
-     * \pre árbol de strings (identificadores de estación) vacío
-     * \post los parámetros se guardan en el árbol
-     * \coste 
-     */
-    void inicializar_estaciones();
+    //Modificadoras
 
     /**
      * @brief Modificadora que añade una bici a una estación
@@ -67,14 +62,6 @@ public:
     void baja_bici(const string& idb, const string& ide);
 
     /**
-     * @brief Consultora que indica si existe una estación
-     * \pre cert
-     * \post si la estación no existe, devuelve falso
-     * \coste 
-     */
-    bool existe_estacion(const string& ide) const;
-
-    /**
      * @brief Modificadora que mueve una bici de una estación a otra
      * \pre string identificador de la estación destino y string
      * identificador de la bici
@@ -84,15 +71,6 @@ public:
      * \coste 
      */
     void mover_bici(const string& ide, const string& idb, const string& origen);
-
-    /**
-     * @brief Consultora que indica si una estación está llena
-     * \pre string idenficador de estación
-     * \post si la estación no existe, se escribe un mensaje de error
-     * en el canal de salida
-     * \coste 
-     */
-    bool estacion_llena(const string& ide) const;
 
     /**
      * @brief Modificadora que altera la capacidad de la estación especificada
@@ -106,7 +84,34 @@ public:
     void modificar_capacidad(const string& ide, int n);
 
     /**
-     * @brief Consultora que indica qué bicis contiene una estación
+     * @brief 
+     * \pre 
+     * \post
+     * \coste 
+     */
+    void subir_bicis(Cjt_bicis& cb);
+
+    //Consultoras
+
+    /**
+     * @brief Consultora que indica si existe una estación
+     * \pre cert
+     * \post si la estación no existe, devuelve falso
+     * \coste 
+     */
+    bool existe_estacion(const string& ide) const;
+
+    /**
+     * @brief Consultora que indica si una estación está llena
+     * \pre string idenficador de estación
+     * \post si la estación no existe, se escribe un mensaje de error
+     * en el canal de salida
+     * \coste 
+     */
+    bool estacion_llena(const string& ide) const;
+
+    /**
+     * @brief Consultora y escritora que indica qué bicis contiene una estación
      * \pre string identificador de la estación
      * \post si la estación no existe se escribe un mensaje de error
      * en el canal de salida
@@ -131,19 +136,22 @@ public:
     int plazas_totales() const;
 
     /**
-     * @brief 
-     * \pre 
-     * \post
-     * \coste 
-     */
-    void subir_bicis(Cjt_bicis& cb);
-
-    /**
-     * @brief 
+     * @brief Consultora y escritora
      * \pre 
      * \post
      * \coste 
      */
     void asignar_estacion(const string& idb, Cjt_bicis& b);
+
+    //Lectura y/o escritura
+
+    /**
+     * @brief Lee los parámetros de entrada y va añadiéndolos
+     * a Cjt_estaciones
+     * \pre árbol de strings (identificadores de estación) vacío
+     * \post los parámetros se guardan en el árbol
+     * \coste 
+     */
+    void inicializar_estaciones();
 };
 #endif

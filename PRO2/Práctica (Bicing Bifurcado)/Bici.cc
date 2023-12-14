@@ -12,17 +12,17 @@ void Bici::viaje_nuevo(const string& origen, const string& destino) {
     estacion = destino;
 }
 
-void Bici::imprimir_viajes() {
-    list<pair<string, string>>::iterator pos;
-    for (pos = vbicis.begin(); pos != vbicis.end(); ++pos) {
-        cout << pos->first << ' ' << pos->second << endl;
-    }
-}
-
 void Bici::modificar_estacion(const string& ide) {
     estacion = ide;
 }
 
 string Bici::estacion_actual() const {
     return estacion;
+}
+
+void Bici::imprimir_viajes() {
+    list<pair<string, string>>::iterator pos;
+    for (pos = vbicis.begin(); pos != vbicis.end(); ++pos) {
+        cout << pos->first << ' ' << pos->second << endl;
+    }
 }
