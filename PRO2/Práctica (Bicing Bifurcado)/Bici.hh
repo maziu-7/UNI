@@ -34,7 +34,7 @@ public:
 
     /**
      * @brief Modificadora que añade un viaje a una bici
-     * \pre dos strings de identificación de estación, origen y destino
+     * \pre deben existir mínimo dos estaciones
      * \post si la estación no existe, si la bici no existe,
      * si la bici no cabe o si origen y destino son iguales,
      * se escribe un mensaje de error en el canal de salida,
@@ -42,14 +42,6 @@ public:
      * \coste 
      */
     void viaje_nuevo(const string& origen, const string& destino);
-
-    /**
-     * @brief Escritora que imprime todos los viajes de una bici
-     * \pre: cierto
-     * \post: si la estación no existe escribe un mensaje de error en
-     * el canal de salida
-     */
-    void imprimir_viajes();
 
     /**
      * @brief 
