@@ -26,7 +26,7 @@ public:
      * @brief Constructora por defecto
      * \pre cierto
      * \post El resultado es una <em>Bici</em> sin viajes
-     * \coste 
+     * \coste Constante
      */
     Bici();
 
@@ -36,7 +36,7 @@ public:
      * @brief Añade un viaje a la bici
      * \pre Origen y destino existen y son diferentes
      * \post Añade un viaje al parámetro implícito
-     * \coste 
+     * \coste Constante
      */
     void viaje_nuevo(const string& origen, const string& destino);
 
@@ -44,7 +44,7 @@ public:
      * @brief Modifica la estación en la que se encuentra la bici
      * \pre cierto
      * \post El parámetro implícito se convierte en <em>ide</em>
-     * \coste 
+     * \coste Constante
      */
     void modificar_estacion(const string& ide);
 
@@ -54,7 +54,7 @@ public:
      * @brief Consultora de la estación
      * \pre cierto
      * \post El resultado es la estación en la que se encuentra la bici actualmente
-     * \coste 
+     * \coste Constante
      */
     string estacion_actual() const;
 
@@ -62,8 +62,9 @@ public:
 
     /**
      * @brief Operación de escritura
-     * \pre: cierto
-     * \post: Escribe todos los viajes que ha hecho la bici
+     * \pre cierto
+     * \post Escribe todos los viajes que ha hecho la bici
+     * \coste Lineal
      */
     void imprimir_viajes();
 };

@@ -28,7 +28,7 @@ public:
      * @brief Constructora por defecto
      * \pre cierto
      * \post El resultado es una <em>Estacion</em> vacía
-     * \coste 
+     * \coste Constante
      */
     Estacion();
 
@@ -36,7 +36,7 @@ public:
      * @brief Constructora con valores concretos
      * \pre n > 0
      * \post El resultado es una estación con plazas libres <em>n</em> y capacidad <em>n</em>
-     * \coste 
+     * \coste Constante
      */
     Estacion(int n);
 
@@ -46,7 +46,7 @@ public:
      * @brief Añade una bici a la estación
      * \pre La bici <em>idb</em> no está en la estación y cabe en esta
      * \post El parámetro implícito pasa a tener una bici más
-     * \coste 
+     * \coste Lineal
      */
     void anadir_bici(const string& idb);
 
@@ -54,7 +54,7 @@ public:
      * @brief Da de baja una bici
      * \pre La bici <em>idb</em> existe y está en la estación
      * \post El parámetro implícito pasa a tener una bici menos
-     * \coste 
+     * \coste Lineal
      */
     void eliminar_bici(const string& idb);
 
@@ -62,7 +62,7 @@ public:
      * @brief Altera la capacidad de la estación
      * \pre n > 0, n >= cantidad de bicis actual
      * \post Se han modificado los valores del parámetro implícito
-     * \coste 
+     * \coste Constante
      */
     void modificar_capacidad(int n);
 
@@ -72,7 +72,7 @@ public:
      * @brief Consultora de la capacidad de una estación
      * \pre cierto
      * \post Si la estación está llena es cierto, sino, es falso
-     * \coste 
+     * \coste Constante
      */
     bool estacion_llena() const;
 
@@ -81,7 +81,7 @@ public:
      * \pre cierto
      * \post Se han escrito las bicis que contiene la estación en el canal
      * estándar de salida
-     * \coste 
+     * \coste Constante
      */
     void bicis_estacion() const;
 
@@ -89,7 +89,7 @@ public:
      * @brief Consultora de la cantidad de bicis de la estación
      * \pre cierto
      * \post El resultado es la cantidad de bicis de la estación
-     * \coste 
+     * \coste Constante
      */
     int cantidad_bicis() const;
 
@@ -97,7 +97,7 @@ public:
      * @brief Consultora de las plazas de la estación
      * \pre cierto
      * \post El resultado es el número de plazas libres que hay en la estación
-     * \coste 
+     * \coste Constante
      */
     int plazas_libres() const;
 
@@ -105,7 +105,7 @@ public:
      * @brief Consultora de la bici menor
      * \pre La estación no está vacía
      * \post El resultado es la bici con el identificador de orden más pequeño
-     * \coste 
+     * \coste Constante
      */
     string bici_menor() const;
 };

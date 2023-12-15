@@ -26,7 +26,7 @@ public:
      * @brief Constructora por defecto
      * \pre cierto
      * \post El resultado es un <em>Cjt_bicis</em> vacío 
-     * \coste 
+     * \coste Constante
      */
     Cjt_bicis();
 
@@ -37,7 +37,7 @@ public:
      * \pre La estación <em>ide</em> existe, la bici <em>idb</em> no está incluída previamente en la estación
      * y la bici cabe en la estación
      * \post El parámetro implícito pasa a tener una bici más
-     * \coste 
+     * \coste Cuasilineal
      */
     void anadir_bici(const string& idb, const string& ide);
 
@@ -45,7 +45,7 @@ public:
      * @brief Elimina una bici
      * \pre La bici <em>idb</em> existe
      * \post El parámetro implícito pasa a tener una bici menos
-     * \coste 
+     * \coste Logarítmico
      */
     void eliminar_bici(const string& idb);
 
@@ -53,7 +53,7 @@ public:
      * @brief Añade un viaje a una bici
      * \pre La bici <em>idb</em> existe
      * \post El parámetro implícito pasa a tener un viaje más
-     * \coste 
+     * \coste Logarítmico
      */
     void viaje_nuevo(const string& origen, const string& destino, const string& idb);
 
@@ -61,7 +61,7 @@ public:
      * @brief Modifica la estación en la que se encuentra una bici
      * \pre La bici <em>idb</em> existe
      * \post El parámetro implícito de una bici del conjunto pasa a tener una estación diferente
-     * \coste 
+     * \coste Logarítmico
      */
     void modificar_estacion(const string& idb, const string& ide);
 
@@ -71,7 +71,7 @@ public:
      * @brief Consulta la existencia de una bici
      * \pre El parámetro implícito está inicializado
      * \post El resultado es cierto si existe; falso si no
-     * \coste 
+     * \coste Logarítmico
      */
     bool existe_bici(const string& idb) const;
 
@@ -79,7 +79,7 @@ public:
      * @brief Consultora de una estación
      * \pre El parámetro implícito está inicializado y la bici <em>idb</em> existe
      * \post El resultado es el identificador de la estación del parámetro implícito
-     * \coste 
+     * \coste Logarítmico
      */
     string estacion_bici(const string& idb);
 
@@ -89,7 +89,7 @@ public:
      * @brief Operación de escritura
      * \pre La bici <em>idb</em> existe
      * \post Escribe todos los viajes que ha hecho la bici <em>idb</em>
-     * \coste 
+     * \coste Cuasilineal
      */
     void imprimir_viajes(const string& idb);
 };
