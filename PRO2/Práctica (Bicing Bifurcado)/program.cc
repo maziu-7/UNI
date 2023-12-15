@@ -1,6 +1,6 @@
 /** @mainpage
     @file program.cc
-    @brief Programa principal
+    @brief Programa principal de <em>Bicing Bifurcado</em>
  */
 #include "Cjt_bicis.hh"
 #include "Estacion.hh"
