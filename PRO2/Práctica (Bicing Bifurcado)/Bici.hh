@@ -25,7 +25,7 @@ public:
     /**
      * @brief Constructora por defecto
      * \pre cierto
-     * \post El resultado es una bici sin viajes
+     * \post El resultado es una <em>Bici</em> sin viajes
      * \coste 
      */
     Bici();

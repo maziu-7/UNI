@@ -27,16 +27,15 @@ public:
     /**
      * @brief Constructora por defecto
      * \pre cierto
-     * \post una clase Estacion vacía para guardar los
-     * identificadores de las bicis que contiene una estación
+     * \post El resultado es una <em>Estacion</em> vacía
      * \coste 
      */
     Estacion();
 
     /**
-     * @brief 
-     * \pre 
-     * \post 
+     * @brief Constructora con valores concretos
+     * \pre n > 0
+     * \post El resultado es una estación con plazas libres <em>n</em> y capacidad <em>n</em>
      * \coste 
      */
     Estacion(int n);
@@ -44,31 +43,25 @@ public:
     //Modificadoras
 
     /**
-     * @brief Modificadora que añade una bici a una estación
-     * \pre string identificador de la bici y de la estación
-     * \post si la estación no existe, si la bici ya está
-     * en la estación o si la bici no cabe se escribe un
-     * mensaje de error en el canal de salida
+     * @brief Añade una bici a la estación
+     * \pre La bici <em>idb</em> no está en la estación y cabe en esta
+     * \post El parámetro implícito pasa a tener una bici más
      * \coste 
      */
     void anadir_bici(const string& idb);
 
     /**
-     * @brief Modificadora que da de baja la bici especificada
-     * \pre string identificador de la bici
-     * \post si la bici no existe se produce un mensaje de error
-     * en el canal de salida, en caso contrario, se elimina la bici
-     * del sistema, modificando también las plazas libres de la estación
+     * @brief Da de baja una bici
+     * \pre La bici <em>idb</em> existe y está en la estación
+     * \post El parámetro implícito pasa a tener una bici menos
      * \coste 
      */
     void eliminar_bici(const string& idb);
 
     /**
-     * @brief Modificadora que altera la capacidad de la estación especificada
-     * \pre entero estrictamente positivo
-     * \post si la estación no existe o si el entero es un número
-     * menor a la cantidad de bicis que hay actualmente en la estación,
-     * se escribe un error en el canal de salida
+     * @brief Altera la capacidad de la estación
+     * \pre n > 0, n >= cantidad de bicis actual
+     * \post Se han modificado los valores del parámetro implícito
      * \coste 
      */
     void modificar_capacidad(int n);
@@ -76,43 +69,42 @@ public:
     //Consultoras
 
     /**
-     * @brief Consultora que indica si una estación está llena
+     * @brief Consultora de la capacidad de una estación
      * \pre cierto
-     * \post si la estación no existe, se escribe un mensaje de error
-     * en el canal de salida
+     * \post Si la estación está llena es cierto, sino, es falso
      * \coste 
      */
     bool estacion_llena() const;
 
     /**
-     * @brief Consultora que indica qué bicis contiene una estación
+     * @brief Consultora y escritora de qué bicis hay en la estación
      * \pre cierto
-     * \post si la estación no existe se escribe un mensaje de error
-     * en el canal de salida
+     * \post Se han escrito las bicis que contiene la estación en el canal
+     * estándar de salida
      * \coste 
      */
     void bicis_estacion() const;
 
     /**
-     * @brief 
-     * \pre 
-     * \post 
+     * @brief Consultora de la cantidad de bicis de la estación
+     * \pre cierto
+     * \post El resultado es la cantidad de bicis de la estación
      * \coste 
      */
     int cantidad_bicis() const;
 
     /**
-     * @brief 
-     * \pre 
-     * \post 
+     * @brief Consultora de las plazas de la estación
+     * \pre cierto
+     * \post El resultado es el número de plazas libres que hay en la estación
      * \coste 
      */
     int plazas_libres() const;
 
     /**
-     * @brief 
-     * \pre 
-     * \post 
+     * @brief Consultora de la bici menor
+     * \pre La estación no está vacía
+     * \post El resultado es la bici con el identificador de orden más pequeño
      * \coste 
      */
     string bici_menor() const;

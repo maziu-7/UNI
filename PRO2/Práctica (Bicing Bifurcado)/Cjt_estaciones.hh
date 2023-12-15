@@ -14,8 +14,7 @@
 
 /**
  * @class Cjt_estaciones 
- * @brief Contiene todas las estaciones en un árbol de
- * strings (identificadores de estación)
+ * @brief Representa todas las estaciones del sistema de Bicing
  */
 class Cjt_estaciones {
 
@@ -33,8 +32,7 @@ public:
     /**
      * @brief Constructora por defecto
      * \pre cierto
-     * \post una clase Cjt_estaciones vacía para
-     * guardar los identificadores de las estaciones
+     * \post El resultado es un <em>Cjt_estaciones</em> vacío
      * \coste 
      */
     Cjt_estaciones();
@@ -42,51 +40,43 @@ public:
     //Modificadoras
 
     /**
-     * @brief Modificadora que añade una bici a una estación
-     * \pre string identificador de la bici
-     * \post si la estación no existe, si la bici ya está
-     * en la estación o si la bici no cabe se escribe un
-     * mensaje de error en el canal de salida
+     * @brief Da de alta una bici a una estación
+     * \pre La estación existe. La bici no está en la estación y cabe en esta 
+     * \post Se ha dado de alta la bici en el parámetro implícito
      * \coste 
      */
     void alta_bici(const string& idb, const string& ide);
 
     /**
-     * @brief Modificadora que da de baja la bici especificada
-     * \pre string identificador de la bici
-     * \post si la bici no existe se produce un mensaje de error
-     * en el canal de salida, en caso contrario, se elimina la bici
-     * del sistema, modificando también las plazas libres de la estación
+     * @brief Da de baja una bici
+     * \pre La bici existe
+     * \post Se ha dado de baja la bici del parámetro implícito
      * \coste 
      */
     void baja_bici(const string& idb, const string& ide);
 
     /**
-     * @brief Modificadora que mueve una bici de una estación a otra
-     * \pre string identificador de la estación destino y string
-     * identificador de la bici
-     * \post si la estación destino o la bici no existen, si la
-     * estación destino es igual a la estación origen o si la bici no
-     * cabe en la estación destino, se escribe un error en el canal de salida
+     * @brief Mueve una bici de una estación a otra
+     * \pre Tanto la estación destino como la bici existen, la bici cabe en la estación
+     * destino y las estaciones origen y destino con diferentes
+     * \post Se ha movido la bici desde <em>origen</em> hasta <em>destino</em>
      * \coste 
      */
     void mover_bici(const string& ide, const string& idb, const string& origen);
 
     /**
-     * @brief Modificadora que altera la capacidad de la estación especificada
-     * \pre string identificador de la estación y un entero
-     * estrictamente positivo
-     * \post si la estación no existe o si el entero es un número
-     * menor a la cantidad de bicis que hay actualmente en la estación,
-     * se escribe un error en el canal de salida
+     * @brief Altera la capacidad de una estación
+     * \pre La estación existe y n > 0, n >= cantidad de bicis actual
+     * \post Se ha modificado la capacidad total de la estación
      * \coste 
      */
     void modificar_capacidad(const string& ide, int n);
 
     /**
-     * @brief 
-     * \pre 
-     * \post
+     * @brief Mueve bicis a niveles superiores del conjunto
+     * \pre El parámetro implícito está inicializado
+     * \post Las bicis afectadas pasan a estar asignadas a estaciones de niveles superiores
+     * a las que estaban
      * \coste 
      */
     void subir_bicis(Cjt_bicis& cb);
@@ -95,7 +85,7 @@ public:
 
     /**
      * @brief Consultora que indica si existe una estación
-     * \pre cert
+     * \pre El parámetro implícito está inicializado
      * \post si la estación no existe, devuelve falso
      * \coste 
      */
@@ -103,42 +93,41 @@ public:
 
     /**
      * @brief Consultora que indica si una estación está llena
-     * \pre string idenficador de estación
-     * \post si la estación no existe, se escribe un mensaje de error
-     * en el canal de salida
+     * \pre cierto
+     * \post si la estación no está llena, devuelve falso
      * \coste 
      */
     bool estacion_llena(const string& ide) const;
 
     /**
      * @brief Consultora y escritora que indica qué bicis contiene una estación
-     * \pre string identificador de la estación
-     * \post si la estación no existe se escribe un mensaje de error
-     * en el canal de salida
+     * \pre La estación <em>ide</em> existe
+     * \post Se han escrito las bicis de la estación <em>ide</em> en el canal
+     * estándar de salida
      * \coste
      */
     void bicis_estacion(const string& ide) const;
 
     /**
-     * @brief 
-     * \pre 
-     * \post
-     * \coste  
+     * @brief Consultora de las bicis de una estación
+     * \pre cierto
+     * \post El resultado es el número de bicis que contiene la estación
+     * \coste 
      */
     int cantidad_bicis(const string& ide) const;
 
     /**
-     * @brief 
-     * \pre 
-     * \post 
+     * @brief Consultora del conjunto de estaciones
+     * \pre cierto
+     * \post El resultado es el número de plazas totales entre todas las estaciones
      * \coste 
      */
     int plazas_totales() const;
 
     /**
-     * @brief Consultora y escritora
-     * \pre 
-     * \post
+     * @brief Consultora y escritora que asigna una bici a una estación
+     * \pre El parámetro implícito está inicializado
+     * \post Se ha añadido una bici al conjunto de estaciones
      * \coste 
      */
     void asignar_estacion(const string& idb, Cjt_bicis& b);
@@ -146,10 +135,9 @@ public:
     //Lectura y/o escritura
 
     /**
-     * @brief Lee los parámetros de entrada y va añadiéndolos
-     * a Cjt_estaciones
-     * \pre árbol de strings (identificadores de estación) vacío
-     * \post los parámetros se guardan en el árbol
+     * @brief Lee los parámetros de entrada y va añadiéndolos a Cjt_estaciones
+     * \pre El parámetro implícito está inicializado y vacío
+     * \post Los nuevos parámetros se guardan en el conjunto de estaciones
      * \coste 
      */
     void inicializar_estaciones();

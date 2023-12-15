@@ -7,7 +7,7 @@
 #include "Cjt_estaciones.hh"
 using namespace std;
 
-/** @brief 
+/** @brief Ejecución del código principal de <em>Bicing Bifurcado</em>
  */
 int main() {
     Cjt_estaciones ce;
