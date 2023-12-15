@@ -1,6 +1,6 @@
 /** @mainpage
     @file program.cc
-    @brief Programa principal donde se ejecutan las instrucciones
+    @brief Programa principal
  */
 #include "Cjt_bicis.hh"
 #include "Estacion.hh"
