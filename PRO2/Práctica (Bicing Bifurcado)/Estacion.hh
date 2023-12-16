@@ -44,7 +44,7 @@ public:
     /**
      * @brief Añade una bici a la estación
      * \pre La bici <em>idb</em> no está en la estación y cabe en esta
-     * \post El parámetro implícito pasa a tener una bici más
+     * \post La estación pasa a tener una bici más
      * \coste Lineal
      */
     void anadir_bici(const string& idb);
@@ -52,7 +52,7 @@ public:
     /**
      * @brief Da de baja una bici
      * \pre La bici <em>idb</em> existe y está en la estación
-     * \post El parámetro implícito pasa a tener una bici menos
+     * \post La estación pasa a tener una bici menos
      * \coste Lineal
      */
     void eliminar_bici(const string& idb);
@@ -68,9 +68,9 @@ public:
     //Consultoras
 
     /**
-     * @brief Consultora de la capacidad de una estación
+     * @brief Consultora de la capacidad de la estación
      * \pre cierto
-     * \post Si la estación está llena es cierto, sino, es falso
+     * \post El resultado indica si la estación está llena o no
      * \coste Constante
      */
     bool estacion_llena() const;
@@ -87,7 +87,7 @@ public:
     /**
      * @brief Consultora de la cantidad de bicis de la estación
      * \pre cierto
-     * \post El resultado es la cantidad de bicis de la estación
+     * \post El resultado es la cantidad de bicis del parámetro implícito
      * \coste Constante
      */
     int cantidad_bicis() const;
@@ -95,7 +95,7 @@ public:
     /**
      * @brief Consultora de las plazas de la estación
      * \pre cierto
-     * \post El resultado es el número de plazas libres que hay en la estación
+     * \post El resultado es el número de plazas libres
      * \coste Constante
      */
     int plazas_libres() const;

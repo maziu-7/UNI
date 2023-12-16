@@ -60,7 +60,7 @@ public:
     /**
      * @brief Modifica la estación en la que se encuentra una bici
      * \pre La bici <em>idb</em> existe
-     * \post El parámetro implícito de una bici del conjunto pasa a tener una estación diferente
+     * \post El parámetro implícito de la bici <em>idb</em> pasa a estar en la estación <em>ide</em>
      * \coste Logarítmico
      */
     void modificar_estacion(const string& idb, const string& ide);
@@ -70,15 +70,15 @@ public:
     /**
      * @brief Consulta la existencia de una bici
      * \pre El parámetro implícito está inicializado
-     * \post El resultado es cierto si existe; falso si no
+     * \post El resultado indica si <em>idb</em> existe
      * \coste Logarítmico
      */
     bool existe_bici(const string& idb) const;
 
     /**
-     * @brief Consultora de una estación
+     * @brief Consultora de la estación de una bici
      * \pre El parámetro implícito está inicializado y la bici <em>idb</em> existe
-     * \post El resultado es el identificador de la estación del parámetro implícito
+     * \post El resultado es el identificador de la estación <em>ide</em>
      * \coste Logarítmico
      */
     string estacion_bici(const string& idb);

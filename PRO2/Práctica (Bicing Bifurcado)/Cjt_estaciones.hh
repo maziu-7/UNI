@@ -41,33 +41,33 @@ public:
 
     /**
      * @brief Da de alta una bici a una estación
-     * \pre La estación existe. La bici no está en la estación y cabe en esta 
-     * \post Se ha dado de alta la bici en el parámetro implícito
+     * \pre La estación <em>ide</em> existe. La bici <em>idb</em> no está en la estación y cabe en esta 
+     * \post Se ha dado de alta la bici <em>idb</em> en el parámetro implícito
      * \coste Cuasilineal
      */
     void alta_bici(const string& idb, const string& ide);
 
     /**
      * @brief Da de baja una bici
-     * \pre La bici existe
-     * \post Se ha dado de baja la bici del parámetro implícito
+     * \pre La bici <em>idb</em> existe
+     * \post Se ha dado de baja la bici <em>idb</em> del parámetro implícito
      * \coste Logarítmico
      */
     void baja_bici(const string& idb, const string& ide);
 
     /**
      * @brief Mueve una bici de una estación a otra
-     * \pre Tanto la estación destino como la bici existen, la bici cabe en la estación
-     * destino y las estaciones origen y destino con diferentes
-     * \post Se ha movido la bici desde <em>origen</em> hasta <em>destino</em>
+     * \pre Tanto la estación <em>destino</em> como la bici <em>idb</em> existen, la bici <em>idb</em> cabe en <em>destino</em>
+     * y las estaciones <em>origen</em> y <em>destino</em> son diferentes
+     * \post Se ha movido la bici <em>idb</em> desde <em>origen</em> hasta <em>destino</em>
      * \coste Cuasilineal
      */
     void mover_bici(const string& ide, const string& idb, const string& origen);
 
     /**
      * @brief Altera la capacidad de una estación
-     * \pre La estación existe y n > 0, n >= cantidad de bicis actual
-     * \post Se ha modificado la capacidad total de la estación
+     * \pre La estación <em>ide</em> existe y n > 0, n >= cantidad de bicis actual
+     * \post Se ha modificado la capacidad total de la estación <em>ide</em>
      * \coste Logarítmico
      */
     void modificar_capacidad(const string& ide, int n);
@@ -86,7 +86,7 @@ public:
     /**
      * @brief Consultora que indica si existe una estación
      * \pre El parámetro implícito está inicializado
-     * \post si la estación no existe, devuelve falso
+     * \post El resultado indica si la estación <em>ide</em> existe
      * \coste Logarítmico
      */
     bool existe_estacion(const string& ide) const;
@@ -94,7 +94,7 @@ public:
     /**
      * @brief Consultora que indica si una estación está llena
      * \pre cierto
-     * \post si la estación no está llena, devuelve falso
+     * \post El resultado indica si la estación <em>ide</em> está llena
      * \coste Logarítmico
      */
     bool estacion_llena(const string& ide) const;
@@ -111,13 +111,13 @@ public:
     /**
      * @brief Consultora de las bicis de una estación
      * \pre cierto
-     * \post El resultado es el número de bicis que contiene la estación
+     * \post El resultado es el número de bicis que contiene la estación <em>ide</em>
      * \coste Logarítmico
      */
     int cantidad_bicis(const string& ide) const;
 
     /**
-     * @brief Consultora del conjunto de estaciones
+     * @brief Consultora de las plazas totales del conjunto de estaciones
      * \pre cierto
      * \post El resultado es el número de plazas totales entre todas las estaciones
      * \coste Constante
@@ -127,7 +127,7 @@ public:
     /**
      * @brief Consultora y escritora que asigna una bici a una estación
      * \pre El parámetro implícito está inicializado
-     * \post Se ha añadido una bici al conjunto de estaciones
+     * \post Se ha añadido la bici <em>idb</em> al conjunto de estaciones
      * \coste Cuasilineal
      */
     void asignar_estacion(const string& idb, Cjt_bicis& b);

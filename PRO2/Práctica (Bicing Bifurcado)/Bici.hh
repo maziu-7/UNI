@@ -17,8 +17,7 @@ class Bici {
 
 private:
     list<pair<string, string>> vbicis; //viajes de la bici
-    string estacion; //identificador de la estación actual en la que
-                     //se encuentra la bici
+    string estacion; //estación que ocupa la bici
                      
 public:
     //Constructoras
@@ -35,8 +34,8 @@ public:
 
     /**
      * @brief Añade un viaje a la bici
-     * \pre Origen y destino existen y son diferentes
-     * \post Añade un viaje al parámetro implícito
+     * \pre <em>origen</em> y <em>destino</em> existen y son diferentes
+     * \post Se ha añadido un viaje al parámetro implícito
      * \coste Constante
      */
     void viaje_nuevo(const string& origen, const string& destino);
@@ -44,7 +43,7 @@ public:
     /**
      * @brief Modifica la estación en la que se encuentra la bici
      * \pre cierto
-     * \post El parámetro implícito se convierte en <em>ide</em>
+     * \post El parámetro implícito se pasa a ser <em>ide</em>
      * \coste Constante
      */
     void modificar_estacion(const string& ide);
@@ -64,7 +63,7 @@ public:
     /**
      * @brief Operación de escritura
      * \pre cierto
-     * \post Escribe todos los viajes que ha hecho la bici
+     * \post Se han escrito por el canal estándar de salida todos los viajes que ha hecho la bici
      * \coste Lineal
      */
     void imprimir_viajes();
