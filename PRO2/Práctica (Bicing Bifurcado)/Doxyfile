@@ -1,6 +1,6 @@
 DOXYFILE_ENCODING      = utf-8
-PROJECT_NAME           = "Práctica - Bicing Bifurcado"
-PROJECT_NUMBER         = "versión 15/12/2023"
+PROJECT_NAME           = "Práctica de PRO2 - Bicing Bifurcado"
+PROJECT_NUMBER         = "versión 15-dic-2023"
 OUTPUT_DIRECTORY       = "./DOC"
 CREATE_SUBDIRS         = NO
 OUTPUT_LANGUAGE        = Spanish
