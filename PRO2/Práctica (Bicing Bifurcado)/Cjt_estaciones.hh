@@ -75,8 +75,7 @@ public:
     /**
      * @brief Mueve bicis a niveles superiores del conjunto
      * \pre El parámetro implícito está inicializado
-     * \post Las bicis afectadas pasan a estar asignadas a estaciones de niveles superiores
-     * a las que estaban
+     * \post Se han subido a estaciones superiores del árbol todas las bicis posibles
      * \coste Cuadrático
      */
     void subir_bicis(Cjt_bicis& cb);
