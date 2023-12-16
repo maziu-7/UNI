@@ -18,8 +18,7 @@ class Estacion {
 
 private:
     set<string> bicis_est; //identificador de cada bici
-    int pl_estacion, capacidad; //plazas libres de la estación
-                                //y su capacidad total, respectivamente
+    int pl_estacion, capacidad;
 
 public:
     //Consultoras
