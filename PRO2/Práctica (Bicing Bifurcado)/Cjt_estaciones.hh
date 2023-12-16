@@ -19,12 +19,12 @@
 class Cjt_estaciones {
 
 private:
-    BinTree<string> arbol_estaciones;
-    map<string, Estacion> ce;
-    int pl_totales = 0;
-    void inicializar_arbol(BinTree<string>& a);
-    void i_subir_bicis(const BinTree<string>& a, Cjt_bicis& cb);
-    void i_asignar_estacion(const BinTree<string>& a, string& ide, double& coef_max, int& num_est, int& pl);
+    BinTree<string> arbol_estaciones; //árbol en el que se encuentran todas las estaciones
+    map<string, Estacion> ce; //identificadores de las estaciones junto a la información específica de cada estación
+    int pl_totales = 0; //plazas libres totales entre todas las estaciones
+    void i_inicializar_estaciones(BinTree<string>& a); //función inmersiva que inicializa todas las estaciones
+    void i_subir_bicis(const BinTree<string>& a, Cjt_bicis& cb); //función inmersiva para subir bicis
+    void i_asignar_estacion(const BinTree<string>& a, string& ide, double& coef_max, int& num_est, int& pl); //función inmersiva para asignar estación
 
 public:
     //Constructoras

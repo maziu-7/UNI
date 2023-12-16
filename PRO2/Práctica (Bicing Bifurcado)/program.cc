@@ -1,4 +1,8 @@
-/** @mainpage
+/** @mainpage Bicing Bifurcado
+
+    El programa principal se encuentra en el módulo program.cc. Teniendo en cuenta los tipos de datos sugeridos por el enunciado,
+    necesitamos varios módulos: uno para representar las bicis de manera individual (Bici), uno para el conjunto de todas las bicis (Cjt_bicis),
+    uno para representar las estaciones individualmente (Estacion) y uno para el conjunto de todas las estaciones (Cjt_estaciones)
     @file program.cc
     @brief Programa principal de <em>Bicing Bifurcado</em>
  */

@@ -19,6 +19,7 @@ private:
     list<pair<string, string>> vbicis; //viajes de la bici
     string estacion; //identificador de la estación actual en la que
                      //se encuentra la bici
+                     
 public:
     //Constructoras
 

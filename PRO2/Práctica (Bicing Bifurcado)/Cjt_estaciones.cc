@@ -4,7 +4,7 @@
 #include "Cjt_estaciones.hh"
 using namespace std;
 
-void Cjt_estaciones::inicializar_arbol(BinTree<string>& a) {
+void Cjt_estaciones::i_inicializar_estaciones(BinTree<string>& a) {
     string ide;
     cin >> ide;
     if (ide != "#") {
@@ -14,8 +14,8 @@ void Cjt_estaciones::inicializar_arbol(BinTree<string>& a) {
         pl_totales += c;
         ce.insert(make_pair(ide, e));
         BinTree<string> izq, der;
-        inicializar_arbol(izq);
-        inicializar_arbol(der);
+        i_inicializar_estaciones(izq);
+        i_inicializar_estaciones(der);
         a = BinTree<string>(ide, izq, der);
     }
 }
@@ -144,5 +144,5 @@ void Cjt_estaciones::asignar_estacion(const string& idb, Cjt_bicis& cb) {
 }
 
 void Cjt_estaciones::inicializar_estaciones() {
-    inicializar_arbol(arbol_estaciones);
+    i_inicializar_estaciones(arbol_estaciones);
 }
