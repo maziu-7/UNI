@@ -126,7 +126,7 @@ public:
     /**
      * @brief Consultora y escritora que asigna una bici a una estación
      * \pre El parámetro implícito está inicializado
-     * \post Se ha añadido la bici <em>idb</em> al conjunto de estaciones
+     * \post Se ha añadido la bici <em>idb</em> al parámetro implícito
      * \coste Cuasilineal
      */
     void asignar_estacion(const string& idb, Cjt_bicis& b);
