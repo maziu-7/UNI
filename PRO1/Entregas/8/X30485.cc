@@ -37,9 +37,9 @@ int main() {
     cout.precision(5);
     int n, k;
     while (cin >> n >> k) {
-        vector < Particle > set (n, Particle());
+        vector<Particle> particula(n, Particle());
         Particle centro_masas;
-        centro_masas.p.x = 0;
+        centro_masas.p.x = 0; //inicializamos todas las varibles a cero
         centro_masas.p.y = 0;
         centro_masas.p.z = 0;
         centro_masas.v.x = 0;
@@ -47,15 +47,15 @@ int main() {
         centro_masas.v.z = 0;
         centro_masas.m = 0;
         for (int i = 0; i < n; ++i) {
-            cin >> set[i].p.x >> set[i].p.y >> set[i].p.z >> set[i].v.x >> set[i].v.y >> set[i].v.z >> set[i].m;
-            centro_masas.p = sum(centro_masas.p, mul(set[i].m, set[i].p));
-            centro_masas.v = sum(centro_masas.v, mul(set[i].m, set[i].v));
-            centro_masas.m += set[i].m;
+            cin >> particula[i].p.x >> particula[i].p.y >> particula[i].p.z >> particula[i].v.x >> particula[i].v.y >> particula[i].v.z >> particula[i].m;
+            centro_masas.p = sum(centro_masas.p, mul(particula[i].m, particula[i].p));
+            centro_masas.v = sum(centro_masas.v, mul(particula[i].m, particula[i].v));
+            centro_masas.m += particula[i].m; //calculamos suma de posiciones, velocidades y masas
         }
         centro_masas.m = 1/centro_masas.m;
-        centro_masas.p = mul(centro_masas.m, centro_masas.p);
-        centro_masas.v = mul(centro_masas.m, centro_masas.v);
-        double t_total = 0;
+        centro_masas.p = mul(centro_masas.m, centro_masas.p); //valor de la posicion del centro de masas
+        centro_masas.v = mul(centro_masas.m, centro_masas.v); //valor de la velocidad del centro de masas
+        double t_total = 0; //tiempo total transcurrido
         while (k > 0) {
             double t;
             cin >> t;
@@ -70,12 +70,12 @@ int main() {
             --k;
         }
         for (int i = 0; i < n; ++i) {
-            set[i].p = sum(set[i].p, mul(t_total, set[i].v ) );
-            printDouble (set[i].p.x);
+            particula[i].p = sum(particula[i].p, mul(t_total, particula[i].v ) );
+            printDouble (particula[i].p.x);
             cout << ' ';
-            printDouble (set[i].p.y);
+            printDouble (particula[i].p.y);
             cout << ' ';
-            printDouble (set[i].p.z);
+            printDouble (particula[i].p.z);
             cout << '\n';
         }
         cout << '\n';
