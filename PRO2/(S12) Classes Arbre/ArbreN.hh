@@ -13,13 +13,13 @@ template <class T> class ArbreNari {
     int N;
     node_arbreNari* primer_node;
 	
-   // especificació operacions privades
+   // especificaciï¿½ operacions privades
  
 static node_arbreNari* copia_node_arbreNari(node_arbreNari* m) { 
 /* Pre: cert */
-/* Post: el resultat és NULL si m és NULL; en cas contrari, el resultat apunta
-         al node arrel d'una jerarquia de nodes que és una còpia de la 
-         jerarquia de nodes que té el node apuntat per m com a arrel */
+/* Post: el resultat ï¿½s NULL si m ï¿½s NULL; en cas contrari, el resultat apunta
+         al node arrel d'una jerarquia de nodes que ï¿½s una cï¿½pia de la 
+         jerarquia de nodes que tï¿½ el node apuntat per m com a arrel */
   node_arbreNari* n;
   if (m == NULL) n = NULL;
   else {
@@ -35,8 +35,8 @@ static node_arbreNari* copia_node_arbreNari(node_arbreNari* m) {
 
 static void esborra_node_arbreNari(node_arbreNari* m) {  
 /* Pre: cert */
-/* Post no fa res si m és NULL; en cas contrari, allibera espai de tots els nodes
-        de la jerarquia que té el node apuntat per m com a arrel */
+/* Post no fa res si m ï¿½s NULL; en cas contrari, allibera espai de tots els nodes
+        de la jerarquia que tï¿½ el node apuntat per m com a arrel */
   if (m != NULL) {
     int ari = m->seg.size();
     for (int i = 0; i < ari; ++i) 
@@ -46,18 +46,18 @@ static void esborra_node_arbreNari(node_arbreNari* m) {
 }
 
   public:
-    // especificació operacions públiques
+    // especificaciï¿½ operacions pï¿½bliques
 
 ArbreNari(int n) {
 /* Pre: cert */
-/* Post: el p.i. és un arbre buit d'aritat n */
+/* Post: el p.i. ï¿½s un arbre buit d'aritat n */
   N = n;
   primer_node= NULL;
 }
 
 ArbreNari(const T &x, int n) {
 /* Pre: cert */
-/* Post: el p.i. és un arbre amb arrel x i n fills buits */
+/* Post: el p.i. ï¿½s un arbre amb arrel x i n fills buits */
   N = n;
   primer_node= new node_arbreNari;
   primer_node->info = x;
@@ -68,21 +68,21 @@ ArbreNari(const T &x, int n) {
 
 ArbreNari(const ArbreNari& original) {
 /* Pre: cert */
-/* Post: el p.i. és una còpia d'original */
+/* Post: el p.i. ï¿½s una cï¿½pia d'original */
   N = original.N;
   primer_node = copia_node_arbreNari(original.primer_node);
 }
 
 ~ArbreNari() 
-// Destructora: Esborra automàticament els objectes locals en
-// sortir d'un àmbit de visibilitat
+// Destructora: Esborra automï¿½ticament els objectes locals en
+// sortir d'un ï¿½mbit de visibilitat
 {
   esborra_node_arbreNari(primer_node);
 }
 
 ArbreNari& operator=(const ArbreNari& original) 
 /* Pre: cert */
-/* Post: El p.i. passa a ser una còpia d'original i qualsevol
+/* Post: El p.i. passa a ser una cï¿½pia d'original i qualsevol
      contingut anterior del p.i. ha estat esborrat 
      (excepte si el p.i. i original ja eren el mateix objecte) */
 {
@@ -96,14 +96,14 @@ ArbreNari& operator=(const ArbreNari& original)
 
 void a_buit() {
 /* Pre: cert */
-/* Post: el p.i. és un arbre buit */
+/* Post: el p.i. ï¿½s un arbre buit */
   esborra_node_arbreNari(primer_node);
   primer_node= NULL;
 }        
 
 void plantar(const T &x, vector<ArbreNari> &v) {
-/* Pre:  el p.i. és buit i la longitud de v és igual a l'aritat del p.i.*/
-/* Post: el p.i. té x com a arrel i els N elements originals  
+/* Pre:  el p.i. ï¿½s buit i la longitud de v ï¿½s igual a l'aritat del p.i.*/
+/* Post: el p.i. tï¿½ x com a arrel i els N elements originals  
          de v com a fills, v passa a contenir arbres buits */
   if (primer_node==NULL){
     if (v.size()==N){ 
@@ -123,8 +123,8 @@ void plantar(const T &x, vector<ArbreNari> &v) {
 
 
 void fills(vector<ArbreNari> &v) {
-/* Pre:  el p.i. no és buit i li diem A, v és un arbre buit */
-/* Post: el p.i. és buit, v passa a contenir els N fills de l'arbre A  */
+/* Pre:  el p.i. no ï¿½s buit i li diem A, v ï¿½s un arbre buit */
+/* Post: el p.i. ï¿½s buit, v passa a contenir els N fills de l'arbre A  */
   if (primer_node!=NULL){
     if (v.size()==0){ 
       node_arbreNari* aux= primer_node;
@@ -140,28 +140,28 @@ void fills(vector<ArbreNari> &v) {
 }
 
 T arrel() const {
-/* Pre: el p.i. no és buit */
-/* Post: el resultat és l'arrel del p.i. */
+/* Pre: el p.i. no ï¿½s buit */
+/* Post: el resultat ï¿½s l'arrel del p.i. */
   if (primer_node != NULL)   return primer_node->info;
   else throw PRO2Excepcio("El p.i. d'arrel no pot ser buit a la crida");
 }
 
 bool es_buit() const {
 /* Pre: cert */
-/* Post: el resultat indica si el p.i. és un arbre buit */
+/* Post: el resultat indica si el p.i. ï¿½s un arbre buit */
     return (primer_node == NULL);
 }
 
 int aritat() const {
 /* Pre: cert */
-/* Post: el resultat és l'aritat del p.i. */
+/* Post: el resultat ï¿½s l'aritat del p.i. */
     return N;
 }
 
 //
 // extension
 //
-#include "program.hh"
+//#include "program.hh"
 
 };
 

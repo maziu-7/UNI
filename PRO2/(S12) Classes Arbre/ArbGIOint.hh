@@ -3,12 +3,12 @@
 
 #include "ArbreG.hh"
 
-// Lectura d'un arbre general d'enters, acció.  Els elements
-// s'introdueixen en preordre: primer l'arrel, després la seva aritat,
-// després el primer subarbre, després el segon, ..., fins l'ultim.
+// Lectura d'un arbre general d'enters, acciï¿½.  Els elements
+// s'introdueixen en preordre: primer l'arrel, desprï¿½s la seva aritat,
+// desprï¿½s el primer subarbre, desprï¿½s el segon, ..., fins l'ultim.
 // Una arbre no buit no pot tenir subarbres buits. 
 //
-// La marca només es fa servir si volem llegir un arbre buit,
+// La marca nomï¿½s es fa servir si volem llegir un arbre buit,
 
 /* Exemple: l'arbre 
 
@@ -23,12 +23,12 @@ es llegeix
 2 0
 3 0 
 4 0 
-(o amb els numeros a la mateixa línia). 
+(o amb els numeros a la mateixa lï¿½nia). 
 Els zeros son les corresponents aritats, no pas la marca */
 
 void llegir_arbre_int(ArbreGen<int>& a, int marca)
    //Pre: a es buit
-   //Post: a conté l'arbre llegit de l'entrada
+   //Post: a contï¿½ l'arbre llegit de l'entrada
 {  
   int x;
   cin >> x;
@@ -45,9 +45,9 @@ void llegir_arbre_int(ArbreGen<int>& a, int marca)
   }
 }
 
-// Escriptura d'un arbre general d'enters, acció.  Els elements
-// s'escriuen en preordre: primer l'arrel, després el primer subarbre,
-// després el segon, ..., fins l'últim.
+// Escriptura d'un arbre general d'enters, acciï¿½.  Els elements
+// s'escriuen en preordre: primer l'arrel, desprï¿½s el primer subarbre,
+// desprï¿½s el segon, ..., fins l'ï¿½ltim.
 
 void escriure_arbre_int(ArbreGen<int> &a) {
   if (not a.es_buit()) {
