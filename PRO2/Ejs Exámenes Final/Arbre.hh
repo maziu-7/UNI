@@ -15,7 +15,7 @@ private:
 
   node_arbre* primer_node;
 
-  // especificació operacions privades
+  // especificaciï¿½ operacions privades
 
 static node_arbre* copia_node_arbre(node_arbre* m) { 
     /* Pre: cert */
@@ -147,9 +147,9 @@ public:
     return (primer_node==NULL);
   }
 
- // Extensión -----------------------------------------------------
+ // Extensiï¿½n -----------------------------------------------------
 
-  #include "program.hh"
+  //#include "program.hh"
 
 };
 
