@@ -10,25 +10,14 @@ using namespace std;
 //      In addition, there is exactly one i in {0..n-2} satisfying |v[i]-v[i+1]|=1.
 // Post: The function returns this particular i in {0..n-2} satisfying |v[i]-v[i+1]|=1.
 int positionDistance1(const vector<int> &v) {
-    int num;
-    bool found = false;
-    while (not found) {
-        for (int i = 0; i < v.size(); ++i) {
-            if (v[i]-v[i+1] > 0) {
-                if (v[i]-v[i+1] == 1) {
-                    num = i;
-                    found = true;
-                }
-            }
-            else if (v[i]-v[i+1] < 0) {
-                if (v[i]-v[i+1] == -1) {
-                    found = true;
-                    num = i;
-                }
-            }
-        }
+    int lo = 0;
+    int hi = v.size() - 1;
+    while (lo < hi) {
+        int mid = (lo + hi + 1)/2;
+        if (v[mid]%2 == v[0]%2) lo = mid;
+        else hi = mid - 1;
     }
-    return num;
+    return lo;
 }
 
 int main()  {
