@@ -518,8 +518,22 @@ public:
   //       Si hi havia menys de tres elements a la llista, llavors res ha canviat.
   //       No s'ha creat ni eliminat memòria.
   // Descomenteu les següents dues linies i implementeu la funció:
-  // void moveSecondToLast() {
-  // }
+  void moveSecondToLast() {
+    if (_size > 2) {
+      Item *first = iteminf.next;
+      Item *second = first->next;
+      Item *last = itemsup.prev;
+
+      first->next = second->next;
+      second->next->prev = first;
+
+      last->next = second;
+      second->prev = last;
+
+      second->next = &itemsup;
+      itemsup.prev = second;
+    }
+  }
   
   
 };

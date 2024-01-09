@@ -518,8 +518,18 @@ public:
   //       de la llista. No s'ha creat ni eliminat memòria.
   //       En el cas en que l'element apuntat per it ja era l'últim, res ha canviat.
   // Descomenteu les següents dues linies i implementeu el mètode:
-  // void moveToEnd(iterator &it) {
-  // }
+  void moveToEnd(iterator &it) {
+    if (it.pitem != itemsup.prev) {
+      Item *last = itemsup.prev;
+
+      it.pitem->prev->next = it.pitem->next;
+      it.pitem->next->prev = it.pitem->prev;
+      last->next = it.pitem;
+      it.pitem->prev = last;
+      it.pitem->next = &itemsup;
+      itemsup.prev = it.pitem;
+    }
+  }
   
 };
 
