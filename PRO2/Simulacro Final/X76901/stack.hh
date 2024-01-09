@@ -20,6 +20,7 @@ private:
   Item* ptopitem;
 
   // Add what it takes to know if the stack is engangled to another stack and which one.
+  Stack* s_entangled;
     
   // Helpers:
   
@@ -63,6 +64,7 @@ public:
     ptopitem = NULL;
     _size = 0;
     // Add initialization of new attributes.
+    s_entangled = NULL;
   }
   
   Stack(const Stack<T> &s) {
@@ -104,6 +106,13 @@ public:
     pnewitem->next = ptopitem;
     ptopitem = pnewitem;
     _size++;
+    if (s_entangled != NULL) {
+      Item *pnewitem2 = new Item();
+      pnewitem2->value = value;
+      pnewitem2->next = s_entangled->ptopitem;
+      s_entangled->ptopitem = pnewitem2;
+      s_entangled->_size++;
+    }
   }
   
   void pop() {
@@ -144,16 +153,16 @@ public:
   // Post: The implicit parameter is linked to the queue q given as parameter,
   //       so that any push on the implicit parameter also piles the same element
   //       on top of q. Any other previous entanglement is cancelled.
-  //void entangle(Stack &s) {
-  //  
-  //}
+  void entangle(Stack &s) {
+    s_entangled = &s;
+  }
 
   // Pre: The implicit parameter is linked to some other stack.
   // Post: The implicit parameter is not linked, so that, unless stated otherwise,
   //       any push on the implicit parameter does not affect any other stack.
-  //void disentangle() {
-  //  
-  //}
+  void disentangle() {
+    s_entangled = NULL;
+  }
 
 
 };
