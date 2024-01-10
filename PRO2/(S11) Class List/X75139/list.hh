@@ -518,8 +518,19 @@ public:
   //       cap al final. No s'ha creat ni eliminat memòria.
   //       En el cas en que l'element apuntat per it ja era l'últim, res ha canviat.
   // Descomenteu les següents dues linies i implementeu el mètode:
-  // void moveTowardsEnd(iterator &it) {
-  // }
+  void moveTowardsEnd(iterator &it) {
+    Item *move = it.pitem;
+    Item *no_move = move->next;
+    if (move == itemsup.prev) return;
+    move->prev->next = move->next;
+    move->next->prev = move->prev;
+
+    move->next = no_move->next;
+    move->prev = no_move;
+
+    no_move->next->prev = move;
+    no_move->next = move;
+  }
   
   
 };
