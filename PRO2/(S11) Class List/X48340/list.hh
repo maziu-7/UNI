@@ -209,11 +209,8 @@ public:
     /* Post: el p.i apunta a l'element següent a E 
        el resultat és el p.i. */
     {
-      if (pitem == &(plist->itemsup)) {
-        cerr << "Error: ++ on iterator at the end of list" << endl;
-        exit(1);
-      }
-      pitem = pitem->next;
+      if (pitem == &(plist->itemsup)) pitem = plist->iteminf.next;
+      else pitem = pitem->next;
       return *this;
     }
     
@@ -237,11 +234,8 @@ public:
     /* Post: el p.i apunta a l'element anterior a E,
        el resultat és el p.i. */
     {
-      if (pitem == plist->iteminf.next) {
-       cerr << "Error: --iterator at the beginning of list" << endl;
-       exit(1);
-      }
-      pitem = pitem->prev;
+      if (pitem == plist->iteminf.next) pitem = &(plist->itemsup);
+      else pitem = pitem->prev;
       return *this;
     }
 
