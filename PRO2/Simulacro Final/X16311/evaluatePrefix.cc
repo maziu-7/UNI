@@ -28,5 +28,3 @@ string evaluatePrefix(BinTree<string> t, int n){
 	string res = i_evaluatePrefix(t);
 	return res.substr(0,n);
 }
-
-
