@@ -1,45 +1,33 @@
-#include <iostream>
-#include <vector>
+#include<iostream>
+#include<vector>
+#include<cmath>
 using namespace std;
 
-int countConstantSubmatrices(const vector<vector<int>>& matrix, int n, int m) {
-    int count = 0;
+typedef vector<char> vc;
+typedef vector<vc> vvc;
 
-    for (int size = 1; size <= min(n, m); ++size) {
-        for (int i = 0; i <= n - size; ++i) {
-            for (int j = 0; j <= m - size; ++j) {
-                // Check if the submatrix is constant
-                int symbol = matrix[i][j];
-                bool isConstant = true;
-                for (int row = i; row < i + size; ++row) {
-                    for (int col = j; col < j + size; ++col) {
-                        if (matrix[row][col] != symbol) {
-                            isConstant = false;
-                            break;
-                        }
+typedef vector<int> vi;
+typedef vector<vi> vvi;
+
+
+int main () {
+    int n, m;
+    while (cin >> n >> m) {
+        vvc table (n, vc(m));
+        vvi dp (n, vi(m, 1)); // we do a dp counting the maximal size constant square with right down vertice being (i,j);
+
+        int sol = 0;
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < m; j++) {
+                cin >> table[i][j];
+                if (j > 0 and i > 0) {
+                    if (table[i][j] == table[i-1][j] and table[i][j] == table[i][j-1] and table[i][j] == table[i-1][j-1]) {
+                        dp[i][j] = 1 + min(dp[i][j-1],min(dp[i-1][j], dp[i-1][j-1]));
                     }
                 }
-                // Increment count if the submatrix is constant
-                if (isConstant) {
-                    ++count;
-                }
+                sol += dp[i][j];
             }
         }
-    }
-    return count;
-}
-
-int main() {
-    int n, m;
-
-    while (cin >> n >> m) {
-        vector<vector<int>> matrix(n, vector<int>(m));
-        // Input matrix
-        for (int i = 0; i < n; ++i) {
-            string row;
-            cin >> row;
-            for (int j = 0; j < m; ++j) matrix[i][j] = row[j] - '0';
-        }
-        cout << countConstantSubmatrices(matrix, n, m) << endl;
+        cout << sol << endl;
     }
 }
