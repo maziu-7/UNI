@@ -4,7 +4,7 @@ using namespace std;
 
 typedef vector<vector<int>> Matrix;
 
-int main(){
+int main() {
     int n, m;
     char x;
     while(cin >> n) {
