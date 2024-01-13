@@ -2,28 +2,23 @@
 #include <vector>
 using namespace std;
 
-void insereix(vector<double>& v) {
-#define vz v.size()-1
-#define x v[vz]
-    int L=0,R=vz-1;
-    while (L <= R) {
-        int M = (L+R)/2;
-        if (v[M]==x) {
-            v.insert(v.begin()+M,x);
-            return;
-        } else if (v[M]<x) L=M+1;
-        else R=M-1;
-    }
-    v.insert(v.begin()+L,x);
-    v.erase(v.begin()+vz);
-}
+void insert(vector<double>& v);
 
-int main () {
+int main()
+{
+    cout.setf(ios::fixed, ios::floatfield);
+    cout.precision(4);
     int n;
     while (cin >> n) {
-        vector <double> v (n);
-        for (int i = 0; i < n; i++) cin >> v[i];
-        insereix(v);
-        for (int i = 0; i < n; i++) cout << v[i] << ' ';
+        vector<double> V(n);
+        for (int i = 0; i < n; ++i) {
+            cin >> V[i];
+        }
+        insert(V);
+        for (int i = 0; i < n; ++i) {
+            cout << " " << V[i];
+        }
+        cout << endl;
     }
+    return 0;
 }
