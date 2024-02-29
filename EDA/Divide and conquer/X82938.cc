@@ -36,7 +36,6 @@ bool search(int x, const vector<int>& v) {
 	return busca_izq(x, v, 0, pico) or busca_der(x, v, pico, v.size()-1);
 }
 
-
 int main() {
     int n;
     while (cin >> n) {
