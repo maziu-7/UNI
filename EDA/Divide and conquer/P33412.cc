@@ -3,21 +3,15 @@
 using namespace std;
 
 bool resis_dico(double x, const vector<double>& v, int i, int j) {
-    if (i > j) return false;
-    int m = (i+j)/2;
-    if (v[m] == x) return true;
-    else if (v[m] > x) {
-        if (m < j and v[m-1] == x) return true;
-        return resis_dico(x, v, i, m-1);
-    }
-    else {
-        if (m > i and v[m-1] == x) return true;
-        return resis_dico(x, v, m-1, j);
-    }
+	if (i > j) return false;
+	int m = (i + j)/2;
+	if (v[m] == x or (m < j and v[m+1] == x) or (m > i and v[m-1] == x)) return true;
+	else if (v[m] > x) return resis_dico(x, v, i, m-1);
+	else return resis_dico(x, v, m+1, j);
 }
 
 bool resistant_search(double x, const vector<double>& v) {
-    return resis_dico(x, v, 0, v.size()-1);
+	return resis_dico(x, v, 0, v.size()-1);
 }
 
 int main() {
