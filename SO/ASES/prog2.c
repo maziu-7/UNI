@@ -1,8 +1,3 @@
-/*
-CLASE 11/03/2024
-ESTE CÓDIGO CREA N HIJOS CONCURRENTEMENTE Y LUEGO LOS HIJOS SE ESPERAN
-S SEGUNDOS A TRAVÉS DE UN SIGNAL, MURIENDO POSTERIORMENTE.
-*/
 #include <unistd.h>
 #include <stdlib.h>
 #include <stdio.h>
@@ -42,7 +37,6 @@ int main(int argc, char* argv[]) {
     sigemptyset(&t.sa_mask);
     t.sa_flags = 0;
     sigaction(SIGALRM, &t, NULL);
-    if(sigaction(SIGALRM, &t, NULL) > 0) error_y_exit("sigaction call error", 1);
 
     for (int i = 0; i < N; ++i) {
         int p = fork();
