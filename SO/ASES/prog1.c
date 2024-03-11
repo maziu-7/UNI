@@ -42,7 +42,7 @@ int main(int argc, char* argv[]) {
     sigemptyset(&t.sa_mask);
     t.sa_flags = 0;
     sigaction(SIGALRM, &t, NULL);
-    if(sigaction(SIGALRM, &t, NULL) > 0) error_y_exit("sigaction call error", 1);
+    if(sigaction(SIGALRM, &t, NULL) < 0) error_y_exit("sigaction call error", 1);
 
     for (int i = 0; i < N; ++i) {
         int p = fork();

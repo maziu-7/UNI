@@ -36,7 +36,8 @@ int main(int argc, char* argv[]) {
     t.sa_handler = func;
     sigemptyset(&t.sa_mask);
     t.sa_flags = 0;
-    sigaction(SIGALRM, &t, NULL);
+    if(sigaction(SIGALRM, &t, NULL) < 0) error_y_exit("sigaction call error", 1);
+    if(sigaction(SIGUSR1, &t, NULL) < 0) error_y_exit("sigaction call error", 1);
 
     for (int i = 0; i < N; ++i) {
         int p = fork();
@@ -50,12 +51,18 @@ int main(int argc, char* argv[]) {
             sigfillset(&m);
             sigdelset(&m, SIGALRM);
             sigsuspend(&m);
+            kill(getppid(), SIGUSR1);
             
             sprintf(buff, "Hijo %d: Adiós!\n", getpid());
             write(1, buff, strlen(buff));
             exit(0);
         }
         else if (p == -1) error_y_exit("Fork call error", 1);
+
+        sigset_t m2;
+        sigfillset(&m2);
+        sigdelset(&m2, SIGUSR1);
+        sigsuspend(&m2);
     }
     while(waitpid(-1, NULL, 0) > 0);
     sprintf(buff, "FIN!\n");
