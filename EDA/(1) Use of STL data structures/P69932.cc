@@ -12,7 +12,7 @@ int main() {
         istringstream iss(s);
         while (iss >> n) S.insert(n);
         bool even = true;
-        set <int>::iterator it = S.begin();
+        auto it = S.begin();
         while (it != S.end()) {
             if (it == S.begin()) {
                 ++c;
