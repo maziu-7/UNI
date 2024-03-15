@@ -60,7 +60,7 @@
     "workbench.layoutControl.enabled": false,   //formato de vscode en ventanas
     "workbench.sideBar.location": "left",      //sidebar
     "material-icon-theme.hidesExplorerArrows": true,    //carpetas sin flechas
-    "editor.fontFamily": "Hack Nerd Font",
+    "editor.fontFamily": "FiraCode Nerd Font Mono",
     "editor.fontSize": 16,
     "editor.fontLigatures": true    , // ==, <=, -> estilo JP
     "editor.fontVariations": false,
@@ -77,11 +77,11 @@
     "editor.scrollbar.vertical": "visible",
     "editor.scrollbar.verticalScrollbarSize": 6,
     "editor.overviewRulerBorder": false,
-    "terminal.integrated.fontFamily": "Hack Nerd Font",    //terminal font
+    "terminal.integrated.fontFamily": "FiraCode Nerd Font Mono",    //terminal font
     "terminal.integrated.fontSize": 12,
     "terminal.integrated.fontWeight": "550",
     "terminal.integrated.lineHeight": 1.4,
-    "terminal.integrated.enableMultiLinePasteWarning": "never",
+    "terminal.integrated.enableMultiLinePasteWarning": "never", 
     "terminal.integrated.localEchoStyle": "italic",
     "terminal.integrated.gpuAcceleration": "on",
     "explorer.confirmDragAndDrop": false,
