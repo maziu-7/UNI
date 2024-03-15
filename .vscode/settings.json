@@ -54,7 +54,6 @@
     "C_Cpp.errorSquiggles": "disabled",
 
     "files.autoSave": "afterDelay",
-    "workbench.colorTheme": "Dracula Soft",
     "workbench.iconTheme": "material-icon-theme",
     "workbench.editor.showTabs": "multiple", //barra de abajo
     "workbench.layoutControl.enabled": false,   //formato de vscode en ventanas
