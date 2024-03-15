@@ -40,8 +40,8 @@ int main(int argc, char* argv[]) {
     struct sigaction t;
     t.sa_handler = func;
     sigemptyset(&t.sa_mask);
-    t.sa_flags = 0;
-    sigaction(SIGALRM, &t, NULL);
+    t.sa_flags = 0; // Se mantiene el tratamiento 
+    sigaction(SIGALRM, &t, NULL); // va a modificar el comportamiento de SIGALRM con func. 
     if(sigaction(SIGALRM, &t, NULL) < 0) error_y_exit("sigaction call error", 1);
 
     for (int i = 0; i < N; ++i) {
@@ -60,10 +60,11 @@ int main(int argc, char* argv[]) {
             sprintf(buff, "Hijo %d: Adiós!\n", getpid());
             write(1, buff, strlen(buff));
             exit(0);
+            //waitpid(-1, NULL, 0); hace una espera bloqueante de manera que crea los hijos seqmente
         }
         else if (p == -1) error_y_exit("Fork call error", 1);
     }
-    while(waitpid(-1, NULL, 0) > 0);
+    while(waitpid(-1, NULL, 0) > 0); // concurrentemente 
     sprintf(buff, "FIN!\n");
     write(1, buff, strlen(buff));
 }
