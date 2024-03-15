@@ -52,7 +52,6 @@
     },
     "C_Cpp.dimInactiveRegions": false,
     "C_Cpp.errorSquiggles": "disabled",
-
     "files.autoSave": "afterDelay",
     "workbench.iconTheme": "material-icon-theme",
     "workbench.editor.showTabs": "multiple", //barra de abajo
