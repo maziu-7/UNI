@@ -61,7 +61,7 @@
     "workbench.sideBar.location": "left",      //sidebar
     "material-icon-theme.hidesExplorerArrows": true,    //carpetas sin flechas
     "editor.fontFamily": "FiraCode Nerd Font Mono",
-    "editor.fontSize": 16,
+    "editor.fontSize": 15,
     "editor.fontLigatures": true    , // ==, <=, -> estilo JP
     "editor.fontVariations": false,
     "editor.fontWeight": "600",   // bold
@@ -85,7 +85,7 @@
     "terminal.integrated.localEchoStyle": "italic",
     "terminal.integrated.gpuAcceleration": "on",
     "explorer.confirmDragAndDrop": false,
-    "window.zoomLevel": 1,
+    "window.zoomLevel": 0.1,
     "notebook.stickyScroll.enabled": true,
     "workbench.tree.enableStickyScroll": false,
     "editor.stickyScroll.enabled": false,
