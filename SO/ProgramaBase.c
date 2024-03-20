@@ -15,4 +15,4 @@ void Usage() {
 void error_y_exit(char *s, int error) {
 	perror(s);
 	exit(error);
-}+
+}
