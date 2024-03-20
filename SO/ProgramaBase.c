@@ -1,4 +1,3 @@
-/*
 #include <unistd.h>
 #include <stdlib.h>
 #include <stdio.h>
@@ -17,4 +16,3 @@ void error_y_exit(char *s, int error) {
 	perror(s);
 	exit(error);
 }
-*/
