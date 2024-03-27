@@ -16,5 +16,5 @@ void error_y_exit(char* s, int e) {
 }
 
 int main(int argc, char* argv[]) {
-    if (argc != 2)
+    if (argc  2)
 }
