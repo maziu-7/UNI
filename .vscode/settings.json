@@ -58,7 +58,7 @@
     "workbench.layoutControl.enabled": false,   //formato de vscode en ventanas
     "workbench.sideBar.location": "left",      //sidebar
     "material-icon-theme.hidesExplorerArrows": true,    //carpetas sin flechas
-    "editor.fontFamily": "FiraCode Nerd Font Mono",
+    "editor.fontFamily": "FiraCode Nerd Font",
     "editor.fontSize": 15,
     "editor.fontLigatures": true, // ==, <=, -> estilo JP
     "editor.fontVariations": false,
